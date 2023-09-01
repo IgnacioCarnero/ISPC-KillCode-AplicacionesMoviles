@@ -56,3 +56,18 @@ OrderTablet es una aplicación para dispositivos Android, diseñada especialment
 ## Conclusión
 OrderTablet es la solución perfecta para restaurantes y bares que desean brindar a sus clientes una experiencia de pedido sin contacto y eficiente. Nuestra aplicación simplifica el proceso de pedidos, mejora la satisfacción del cliente y aumenta la eficiencia operativa llevando el negocio al siguiente nivel.
 
+## Integrantes del Equipo
+Este proyecto se lleva a cabo de manera colaborativa por un equipo compuesto por 9 miembros, cada uno desempeña un rol escencial en la creación y desarrollo de OrderTablet.
+
+
+|Nombre y Apellido|GitHub|LinkedIn|
+---|---|---
+Romina Herrera|https://github.com/Romherre|https://www.linkedin.com/in/romina-herreramicv/|
+Leonardo Farran|https://github.com/Leo-Farran|https://www.linkedin.com/in/leonardo-cesar-farran|
+Facundo Cascallares |https://github.com/FacundoCascallares|https://www.linkedin.com/in/facundocascallares/|
+Mariana Florencia Morisse Rodriguez|https://github.com/florenciamorisse|https://www.linkedin.com/in/mariana-florencia-morisse-rodriguez/|
+Ignacio Carnero|https://github.com/IgnacioCarnero|https://www.linkedin.com/in/ignacio-carnero/|
+Ezequiel Falzoi |https://github.com/ezefalzoi|https://www.linkedin.com/in/ezequielfalzoi/|
+Cecilia Diaz|https://github.com/diazcmn| |
+Di Bella Maximiliano|https://github.com/MDDiBella| |
+
