@@ -1,1 +1,0 @@
-# ISPC-KillCode-AplicacionesMoviles
