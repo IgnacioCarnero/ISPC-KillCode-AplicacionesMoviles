@@ -69,5 +69,5 @@ Mariana Florencia Morisse Rodriguez|https://github.com/florenciamorisse|https://
 Ignacio Carnero|https://github.com/IgnacioCarnero|https://www.linkedin.com/in/ignacio-carnero/|
 Ezequiel Falzoi |https://github.com/ezefalzoi|https://www.linkedin.com/in/ezequielfalzoi/|
 Cecilia Diaz|https://github.com/diazcmn| |
-Di Bella Maximiliano|https://github.com/MDDiBella| |
+Di Bella Maximiliano|https://github.com/MDDiBella|https://www.linkedin.com/in/maximiliano-dante-di-bella-374182147/|
 
