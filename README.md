@@ -68,6 +68,6 @@ Facundo Cascallares |https://github.com/FacundoCascallares|https://www.linkedin.
 Mariana Florencia Morisse Rodriguez|https://github.com/florenciamorisse|https://www.linkedin.com/in/mariana-florencia-morisse-rodriguez/|
 Ignacio Carnero|https://github.com/IgnacioCarnero|https://www.linkedin.com/in/ignacio-carnero/|
 Ezequiel Falzoi |https://github.com/ezefalzoi|https://www.linkedin.com/in/ezequielfalzoi/|
-Cecilia Diaz|https://github.com/diazcmn| |
+Cecilia Diaz|https://github.com/diazcmn| | https://www.linkedin.com/in/diazcmn/git 
 Di Bella Maximiliano|https://github.com/MDDiBella| |
 
