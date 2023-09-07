@@ -64,7 +64,7 @@ Este proyecto se lleva a cabo de manera colaborativa por un equipo compuesto por
 
 
 |Nombre y Apellido|GitHub|LinkedIn|
----|---|---
+----|----|----
 Romina Herrera|https://github.com/Romherre|https://www.linkedin.com/in/romina-herreramicv/|
 Leonardo Farran|https://github.com/Leo-Farran|https://www.linkedin.com/in/leonardo-cesar-farran|
 Facundo Cascallares |https://github.com/FacundoCascallares|https://www.linkedin.com/in/facundocascallares/|
