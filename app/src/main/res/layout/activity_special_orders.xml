@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bkgd_orderview"
+    app:circularflow_defaultRadius="70sp"
     tools:context=".SpecialOrdersActivity">
 
 
@@ -34,6 +35,7 @@
         android:backgroundTint="#00FFFFFF"
         android:scaleX="1.5"
         android:scaleY="1.5"
+        android:contentDescription="btn_back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.589"
@@ -44,15 +46,16 @@
 
     <EditText
         android:id="@+id/msj.DejeSuComentario"
-        android:layout_width="463dp"
-        android:layout_height="263dp"
+        android:layout_width="507dp"
+        android:layout_height="306dp"
         android:layout_marginTop="384dp"
-        android:background="@android:drawable/dialog_frame"
-        android:backgroundTint="@color/bkg_btn"
+        android:background="@android:drawable/alert_light_frame"
+        android:backgroundTint="#B3121111"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:text="@string/specialorders_msj"
+        android:textColor="@color/white"
         android:textColorHighlight="@color/black"
         android:textColorLink="@color/black"
         android:textSize="25sp"
