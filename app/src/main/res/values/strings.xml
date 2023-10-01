@@ -3,4 +3,7 @@
     <string name="btn_menu">Menú</string>
     <string name="btn_welcome">Bienvenidos</string>
     <string name="waiter_msj">"Nos acercaremos a la brevedad "</string>
+    <string name="demorapedido">Su pedido demorará aproximadamente:</string>
+    <string name="tiempopedido">40 minutos</string>
+    <string name="btnalt">btnback</string>
 </resources>
