@@ -31,8 +31,5 @@ public class MainActivity extends AppCompatActivity {
 
   
     }
-    public void btnSaludo(View v) {
-            Toast.makeText(this, "Holaaaa!", Toast.LENGTH_LONG).show();
-    }
-  
+
 }
