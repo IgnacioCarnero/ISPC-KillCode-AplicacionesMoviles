@@ -3,6 +3,8 @@ package com.example.food_app;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,4 +15,8 @@ public class MainActivity extends AppCompatActivity {
 
   
     }
+    public void onClickLogin(View v) {
+        Toast.makeText(this, "Logueo exitoso", Toast.LENGTH_LONG).show();
+    }
+
 }
