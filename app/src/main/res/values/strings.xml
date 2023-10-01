@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Food_app</string>
+    <string name="btn_menu">Menú</string>
+    <string name="btn_welcome">Bienvenidos</string>
 </resources>
