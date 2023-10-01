@@ -15,8 +15,8 @@
         <activity
 
             android:name=".OrderConfirmationActivity"
-
-
+            android:exported="false"/>
+        <activity
             android:name=".ToConfirmOrderActivity"
             android:exported="false"/>
         <activity
