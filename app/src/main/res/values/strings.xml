@@ -3,8 +3,13 @@
     <string name="btn_menu">Menú</string>
     <string name="btn_welcome">Bienvenidos</string>
     <string name="waiter_msj">"Nos acercaremos a la brevedad "</string>
+
     <string name="btn_orderconfirm">Confirmar Pedido</string>
     <string name="btn_specialOrder" />
     <string name="btn_SpecialOrder">Pedidos especiales</string>
     <string name="Preferencias">Preferencias sobre algún plato en particular</string>
+
+    <string name="btn_confirmapedido">Confirmar Pedido</string>
+    <string name="specialorders_msj">Deje aqui su comentario:</string>
+
 </resources>
