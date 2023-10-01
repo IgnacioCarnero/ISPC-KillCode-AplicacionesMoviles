@@ -15,9 +15,9 @@
         <activity
 
             android:name=".ToConfirmOrderActivity"
-
+            android:exported="false"/>
+        <activity
             android:name=".SpecialOrdersActivity"
-
             android:exported="false" />
         <activity
             android:name=".waiterActivity"
