@@ -3,4 +3,5 @@
     <string name="btn_menu">Menú</string>
     <string name="btn_welcome">Bienvenidos</string>
     <string name="waiter_msj">"Nos acercaremos a la brevedad "</string>
+    <string name="txt_recepcionPedido">Recibimos su pedido con éxito!</string>
 </resources>
