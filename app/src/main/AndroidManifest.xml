@@ -13,7 +13,26 @@
         android:theme="@style/Theme.Food_app"
         tools:targetApi="31">
         <activity
+
             android:name=".MenuScroll"
+            android:exported="false"/>
+        <activity
+            android:name=".EstimatedtimeActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".OrderConfirmationActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ToConfirmOrderActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".SpecialOrdersActivity"
+
+
+            android:exported="false" />
+        <activity
+            android:name=".waiterActivity"
+
             android:exported="false" />
         <activity
             android:name=".MenuActivity"

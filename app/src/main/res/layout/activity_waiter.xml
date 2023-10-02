@@ -5,34 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bkgd_welcome"
-    tools:context=".MenuActivity">
+    tools:context=".waiterActivity">
+
 
     <Button
         android:id="@+id/btn_menu"
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:backgroundTint="#40121111"
-        android:text="@string/btn_menu"
+        android:text="@string/waiter_msj"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_backwaiter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.176"
+        app:layout_constraintHorizontal_bias="0.541"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.743"
+        app:layout_constraintVertical_bias="0.932"
         app:strokeColor="#050505" />
 
     <ImageButton
-        android:id="@+id/btn_waiter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="176dp"
-        android:backgroundTint="@color/bkg_btn"
+        android:id="@+id/btn_backwaiter"
+        android:layout_width="142dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.582"
-        app:layout_constraintStart_toEndOf="@+id/btn_menu"
-        app:srcCompat="@mipmap/img_btnwaiter" />
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/img_btnback" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
