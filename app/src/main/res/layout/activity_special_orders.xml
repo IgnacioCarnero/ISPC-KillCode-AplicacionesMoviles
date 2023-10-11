@@ -46,7 +46,7 @@
 
     <EditText
         android:id="@+id/msj.DejeSuComentario"
-        android:layout_width="507dp"
+        android:layout_width="0dp"
         android:layout_height="306dp"
         android:layout_marginTop="384dp"
         android:background="@android:drawable/alert_light_frame"
