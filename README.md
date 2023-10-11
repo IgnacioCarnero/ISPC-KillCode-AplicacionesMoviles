@@ -3,18 +3,18 @@
 ## Documento IEEE 830
 https://docs.google.com/document/d/1qRBMHlPtyhzC0heptoHxnlGo8XgIVy0t/edit#heading=h.gjdgxs
 
-## Diagramas
+## Diagramas (versiones corregidas)
 - Casos de uso
 - Clases
-<br><br>[https://drive.google.com/file/d/1zgEFqjmu0G9twLi2vIQAQ0yNalFE1Dxt/view?usp=drive_link](https://drive.google.com/file/d/1zgEFqjmu0G9twLi2vIQAQ0yNalFE1Dxt/view?usp=sharing)
+<br><br>https://drive.google.com/file/d/1CFNwI2CFi4YkM1WAL8cm8i8i-rkwCsle/view?usp=drive_link
 
 - Entidad-relación
 - Modelo relacional
-<br><br>[https://drive.google.com/file/d/1RuJH2Tp-Q8gEbLVIGbtxpnfJYgyFYpB8/view?usp=drive_link](https://drive.google.com/file/d/150KcSo5vYZYkaW3lfpwFeKE8WCtU9doG/view?usp=sharing)
+<br><br>https://drive.google.com/file/d/1T4-SwKiZqddY06yOedKaVU6dtXSIsEoU/view?usp=drive_link
 
-## Script Base de Datos
+## Script Base de Datos (version corregida)
 
-https://drive.google.com/file/d/1H_BfoHY30iqEsAJg0G1puHsZmq2xq6CJ/view?usp=sharing
+https://drive.google.com/file/d/10ObNqb-WCBHKWzzpS9k0aVKKGeLi7F3H/view?usp=drive_link
 
 ## Descripción
 OrderTablet es una aplicación para dispositivos Android, diseñada especialmente para tabletas. Representa una solución completa e innovadora en la forma en que los bares y restaurantes gestionan los pedidos de sus comenzales. Llevamos la comodidad y la eficiencia a un nuevo nivel al permitir que los comenzales realicen sus pedidos directamente desde la comodidad de su mesa, sin necesidad de esperar al mozo/a. Además, ofrece un sistema de gestión integral que conecta a los 4 roles principales: Comenzal/Mesa, Caja, Cocina, Barra.
