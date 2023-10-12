@@ -810,7 +810,8 @@
                 android:contentDescription="@string/add_btn"
                 app:layout_constraintBottom_toTopOf="@+id/textView58"
                 app:srcCompat="@drawable/add_btn"
-                tools:layout_editor_absoluteX="266dp" />
+                tools:layout_editor_absoluteX="266dp"
+                tools:ignore="MissingConstraints" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -889,7 +890,8 @@
                 android:contentDescription="@string/add_btn"
                 app:layout_constraintStart_toEndOf="@+id/imageView73"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/add_btn" />
+                app:srcCompat="@drawable/add_btn"
+                tools:ignore="TooManyViews" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -976,18 +978,17 @@
             android:id="@+id/button_confirm"
             android:layout_width="220dp"
             android:layout_height="103dp"
-            android:layout_marginTop="380dp"
+            android:layout_marginTop="376dp"
             android:backgroundTint="@color/bkg_btn"
             android:text="@string/btn_orderconfirm"
             android:textSize="30sp"
             app:cornerRadius="20sp"
-            app:layout_constraintVertical_bias="0.524"
-            app:strokeColor="#050505"
-            app:strokeWidth="1.5sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.233"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout16" />
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout16"
+            app:strokeColor="#050505"
+            app:strokeWidth="1.5sp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
