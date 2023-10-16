@@ -37,7 +37,8 @@
     <string name="username">Username</string>
     <string name="ayuda">Ayuda</string>
     <string name="password_hint">Password</string>
-
+    <string name="email">Email</string>
+    <string name="imagen_persona">imagen_persona</string>
 
 
 </resources>
