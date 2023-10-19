@@ -13,22 +13,24 @@
         android:theme="@style/Theme.Food_app"
         tools:targetApi="31">
         <activity
-
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login" />
+        <activity
             android:name=".MenuScroll"
             android:exported="false"/>
+
         <activity
             android:name=".EstimatedtimeActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".OrderConfirmationActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".ToConfirmOrderActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".SpecialOrdersActivity"
-
-
             android:exported="false" />
         <activity
             android:name=".waiterActivity"
