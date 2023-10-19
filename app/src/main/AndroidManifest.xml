@@ -17,6 +17,10 @@
             android:exported="false"
             android:label="@string/title_activity_login" />
         <activity
+            android:name=".MenuScroll"
+            android:exported="false"/>
+
+        <activity
             android:name=".EstimatedtimeActivity"
             android:exported="false" />
         <activity
@@ -30,6 +34,7 @@
             android:exported="false" />
         <activity
             android:name=".waiterActivity"
+
             android:exported="false" />
         <activity
             android:name=".MenuActivity"

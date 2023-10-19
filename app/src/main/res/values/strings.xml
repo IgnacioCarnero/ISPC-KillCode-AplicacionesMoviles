@@ -2,6 +2,18 @@
     <string name="app_name">Food_app</string>
     <string name="btn_menu">Menú</string>
     <string name="btn_welcome">Bienvenidos</string>
+
+    <string name="menu_title">Entradas:</string>
+    <string name="menu_food">Entrada 1 ........ $1235</string>
+    <string name="menu_food_detail">(pan integral, tomates, albahaca, aceite oliva, finas hierbas)</string>\
+    <string name="menu_title_platos">Platos Principales</string>
+    <string name="menu_title_bebidas">Bebidas</string>
+    <string name="menu_platos">Plato 1 ........ $1235</string>
+    <string name="background_img"></string>
+    <string name="add_btn">Añadir</string>
+    <string name="subs_btn">Eliminar</string>
+    <string name="cuantity">Cantidad</string>
+
     <string name="waiter_msj">"Nos acercaremos a la brevedad "</string>
 
     <string name="demorapedido">Su pedido demorará aproximadamente:</string>
@@ -39,6 +51,7 @@
     <string name="password_hint">Password</string>
     <string name="email">Email</string>
     <string name="imagen_persona">imagen_persona</string>
+
 
 
 </resources>
