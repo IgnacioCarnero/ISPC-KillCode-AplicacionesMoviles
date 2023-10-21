@@ -14,12 +14,12 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:contentDescription="@string/background_img"
             android:layout_width="6312dp"
             android:layout_height="3283dp"
+            android:contentDescription="@string/background_img"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
@@ -27,23 +27,26 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout2"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/textView3"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="288dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginEnd="3dp"
                 android:fontFamily="sans-serif-medium"
                 android:text="@string/menu_title"
                 android:textColor="@color/black"
                 android:textSize="28sp"
                 android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,7 +54,7 @@
                 android:id="@+id/textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="288dp"
+                android:layout_marginStart="16dp"
                 android:text="@string/menu_food"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -62,7 +65,7 @@
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="288dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/menu_food_detail"
                 android:textColor="@color/black"
@@ -75,8 +78,8 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginTop="52dp"
-                android:contentDescription="@string/add_btn"
                 android:alpha="0.8"
+                android:contentDescription="@string/add_btn"
                 app:layout_constraintStart_toEndOf="@+id/imageView30"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/add_btn" />
@@ -87,9 +90,9 @@
                 android:layout_height="35dp"
                 android:layout_marginTop="52dp"
                 android:alpha="0.8"
+                android:contentDescription="@string/cuantity"
                 app:layout_constraintStart_toEndOf="@+id/imageView29"
                 app:layout_constraintTop_toTopOf="parent"
-                android:contentDescription="@string/cuantity"
                 app:srcCompat="@drawable/number_zero" />
 
             <ImageView
@@ -99,9 +102,9 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="52dp"
                 android:alpha="0.8"
+                android:contentDescription="@string/subs_btn"
                 app:layout_constraintStart_toEndOf="@+id/textView7"
                 app:layout_constraintTop_toTopOf="parent"
-                android:contentDescription="@string/subs_btn"
                 app:srcCompat="@drawable/substract_btn" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -115,7 +118,7 @@
                 android:id="@+id/textView23"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="288dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:fontFamily="sans-serif-medium"
                 android:text="@string/menu_title"
@@ -129,7 +132,7 @@
                 android:id="@+id/textView25"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="288dp"
+                android:layout_marginStart="16dp"
                 android:text="@string/menu_food"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -140,7 +143,7 @@
                 android:id="@+id/textView26"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="288dp"
+                android:layout_marginStart="16dp"
                 android:text="@string/menu_food_detail"
                 android:textColor="@color/black"
                 android:textSize="12sp"
@@ -195,7 +198,7 @@
                 android:id="@+id/textView29"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="288dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:fontFamily="sans-serif-medium"
                 android:text="@string/menu_title"
@@ -209,7 +212,7 @@
                 android:id="@+id/textView30"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="288dp"
+                android:layout_marginStart="16dp"
                 android:text="@string/menu_food"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -220,7 +223,7 @@
                 android:id="@+id/textView31"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="288dp"
+                android:layout_marginStart="16dp"
                 android:text="@string/menu_food_detail"
                 android:textColor="@color/black"
                 android:textSize="12sp"
@@ -740,8 +743,8 @@
                 android:id="@+id/textView56"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="280dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
                 android:fontFamily="sans-serif-medium"
                 android:text="@string/menu_title_platos"
                 android:textColor="@color/black"
@@ -754,7 +757,7 @@
                 android:id="@+id/textView55"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="280dp"
+                android:layout_marginStart="16dp"
                 android:text="@string/menu_platos"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -765,7 +768,7 @@
                 android:id="@+id/textView58"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="280dp"
+                android:layout_marginStart="16dp"
                 android:text="@string/menu_food_detail"
                 android:textColor="@color/black"
                 android:textSize="12sp"
@@ -773,38 +776,42 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView55" />
 
             <ImageView
-                android:id="@+id/imageView67"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginStart="472dp"
-                android:layout_marginTop="40dp"
-                android:alpha="0.8"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:contentDescription="@string/subs_btn"
-                app:srcCompat="@drawable/substract_btn" />
-
-            <ImageView
                 android:id="@+id/imageView70"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="44dp"
+                android:layout_marginBottom="6dp"
                 android:alpha="0.8"
+                android:contentDescription="@string/cuantity"
+                app:layout_constraintBottom_toTopOf="@+id/textView58"
                 app:layout_constraintStart_toEndOf="@+id/imageView67"
                 app:layout_constraintTop_toTopOf="parent"
-                android:contentDescription="@string/cuantity"
                 app:srcCompat="@drawable/number_zero" />
+
+            <ImageView
+                android:id="@+id/imageView67"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="196dp"
+                android:layout_marginTop="44dp"
+                android:layout_marginBottom="6dp"
+                android:alpha="0.8"
+                android:contentDescription="@string/subs_btn"
+                app:layout_constraintBottom_toTopOf="@+id/textView58"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/substract_btn" />
 
             <ImageView
                 android:id="@+id/imageView71"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_marginTop="40dp"
                 android:alpha="0.8"
-                app:layout_constraintStart_toEndOf="@+id/imageView70"
-                app:layout_constraintTop_toTopOf="parent"
                 android:contentDescription="@string/add_btn"
-                app:srcCompat="@drawable/add_btn" />
+                app:layout_constraintBottom_toTopOf="@+id/textView58"
+                app:srcCompat="@drawable/add_btn"
+                tools:layout_editor_absoluteX="266dp"
+                tools:ignore="MissingConstraints" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -819,8 +826,8 @@
                 android:id="@+id/textView59"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="280dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
                 android:fontFamily="sans-serif-medium"
                 android:text="@string/menu_title_platos"
                 android:textColor="@color/black"
@@ -833,7 +840,7 @@
                 android:id="@+id/textView60"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="280dp"
+                android:layout_marginStart="16dp"
                 android:text="@string/menu_platos"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -844,7 +851,7 @@
                 android:id="@+id/textView61"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="280dp"
+                android:layout_marginStart="16dp"
                 android:text="@string/menu_food_detail"
                 android:textColor="@color/black"
                 android:textSize="12sp"
@@ -852,38 +859,39 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView60" />
 
             <ImageView
-                android:id="@+id/imageView72"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginStart="472dp"
-                android:layout_marginTop="40dp"
-                android:alpha="0.8"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:contentDescription="@string/subs_btn"
-                app:srcCompat="@drawable/substract_btn" />
-
-            <ImageView
                 android:id="@+id/imageView73"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="36dp"
                 android:alpha="0.8"
+                android:contentDescription="@string/cuantity"
                 app:layout_constraintStart_toEndOf="@+id/imageView72"
                 app:layout_constraintTop_toTopOf="parent"
-                android:contentDescription="@string/cuantity"
                 app:srcCompat="@drawable/number_zero" />
+
+            <ImageView
+                android:id="@+id/imageView72"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="36dp"
+                android:alpha="0.8"
+                android:contentDescription="@string/subs_btn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/substract_btn" />
 
             <ImageView
                 android:id="@+id/imageView74"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="36dp"
                 android:alpha="0.8"
+                android:contentDescription="@string/add_btn"
                 app:layout_constraintStart_toEndOf="@+id/imageView73"
                 app:layout_constraintTop_toTopOf="parent"
-                android:contentDescription="@string/add_btn"
-                app:srcCompat="@drawable/add_btn" />
+                app:srcCompat="@drawable/add_btn"
+                tools:ignore="TooManyViews" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -891,6 +899,7 @@
             android:id="@+id/constraintLayout16"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout15">
 
 
@@ -898,8 +907,8 @@
                 android:id="@+id/textView62"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="280dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
                 android:fontFamily="sans-serif-medium"
                 android:text="@string/menu_title_platos"
                 android:textColor="@color/black"
@@ -912,7 +921,7 @@
                 android:id="@+id/textView63"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="280dp"
+                android:layout_marginStart="16dp"
                 android:text="@string/menu_platos"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -923,7 +932,7 @@
                 android:id="@+id/textView64"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="280dp"
+                android:layout_marginStart="16dp"
                 android:text="@string/menu_food_detail"
                 android:textColor="@color/black"
                 android:textSize="12sp"
@@ -931,56 +940,55 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView63" />
 
             <ImageView
-                android:id="@+id/imageView75"
+                android:id="@+id/imageView77"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_marginStart="472dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="36dp"
                 android:alpha="0.8"
-                app:layout_constraintStart_toStartOf="parent"
+                android:contentDescription="@string/add_btn"
+                app:layout_constraintStart_toEndOf="@+id/imageView76"
                 app:layout_constraintTop_toTopOf="parent"
-                android:contentDescription="@string/subs_btn"
-                app:srcCompat="@drawable/substract_btn" />
+                app:srcCompat="@drawable/add_btn" />
 
             <ImageView
                 android:id="@+id/imageView76"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="36dp"
                 android:alpha="0.8"
+                android:contentDescription="@string/cuantity"
                 app:layout_constraintStart_toEndOf="@+id/imageView75"
                 app:layout_constraintTop_toTopOf="parent"
-                android:contentDescription="@string/cuantity"
                 app:srcCompat="@drawable/number_zero" />
 
             <ImageView
-                android:id="@+id/imageView77"
+                android:id="@+id/imageView75"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginStart="188dp"
+                android:layout_marginTop="36dp"
                 android:alpha="0.8"
-                app:layout_constraintStart_toEndOf="@+id/imageView76"
+                android:contentDescription="@string/subs_btn"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:contentDescription="@string/add_btn"
-                app:srcCompat="@drawable/add_btn" />
+                app:srcCompat="@drawable/substract_btn" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
             android:id="@+id/button_confirm"
             android:layout_width="220dp"
             android:layout_height="103dp"
-            android:layout_marginTop="380dp"
+            android:layout_marginTop="376dp"
             android:backgroundTint="@color/bkg_btn"
             android:text="@string/btn_orderconfirm"
             android:textSize="30sp"
             app:cornerRadius="20sp"
-            app:layout_constraintVertical_bias="0.524"
-            app:strokeColor="#050505"
-            app:strokeWidth="1.5sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.233"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout16" />
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout16"
+            app:strokeColor="#050505"
+            app:strokeWidth="1.5sp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
