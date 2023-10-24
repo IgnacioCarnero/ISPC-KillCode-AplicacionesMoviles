@@ -21,8 +21,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <Button
+        android:id="@+id/btn_demora"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:backgroundTint="#40121111"
+        android:text="@string/btn_demora"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_backmenu"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.844"
+        app:strokeColor="#050505" />
+
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/btn_backmenu"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:scaleX="0.8"
