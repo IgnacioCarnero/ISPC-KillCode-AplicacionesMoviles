@@ -44,5 +44,7 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation ("org.jetbrains.kotlin:kotlin-stdlib:1.8.10")
     implementation ("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.10")
+    implementation ("androidx.room:room-runtime:2.4.0") // Reemplaza con la versión más reciente de Room
+    annotationProcessor ("androidx.room:room-compiler:2.4.0") // Reemplaza con la versión más reciente de Room
 
 }
