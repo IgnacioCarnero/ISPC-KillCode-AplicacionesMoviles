@@ -9,70 +9,87 @@
 
     <Button
         android:id="@+id/btn_orderconfirm"
-        android:layout_width="326dp"
-        android:layout_height="109dp"
-        android:backgroundTint="@color/bkg_btn"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:backgroundTint="#80121111"
         android:text="@string/btn_orderconfirm"
         android:textSize="30sp"
-
-
         app:cornerRadius="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.426"
         app:strokeColor="#050505"
-        app:strokeWidth="1.5sp" />
+        app:strokeWidth="1.5sp"
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="431dp" />
 
     <Button
         android:id="@+id/btn_specialOrder"
-        android:layout_width="325dp"
-        android:layout_height="104dp"
-        android:backgroundTint="@color/bkg_btn"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:backgroundTint="#80121111"
         android:text="@string/btn_SpecialOrder"
+
+
         android:textSize="30sp"
-
-
         app:cornerRadius="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_orderconfirm"
-        app:layout_constraintVertical_bias="0.07"
         app:strokeColor="#050505"
-        app:strokeWidth="1.5sp" />
+        app:strokeWidth="1.5sp"
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="564dp" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="360dp"
         android:layout_height="119dp"
-        android:layout_marginBottom="116dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/Preferencias"
         android:textAlignment="center"
-        android:textColor="#8693C1"
+        android:textColor="#000000"
         android:textColorLink="#726691"
         android:textSize="24sp"
         android:textStyle="bold"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.686"
+        app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent" />
 
+
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btn_back_menu_scroll"
         android:layout_width="77dp"
         android:layout_height="97dp"
-        android:layout_marginBottom="16dp"
         android:backgroundTint="#00FFFFFF"
         android:scaleX="1.7"
         android:scaleY="1.7"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.952"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/img_btnback" />
+        app:srcCompat="@mipmap/img_btnback"
+        tools:layout_editor_absoluteX="462dp"
+        tools:layout_editor_absoluteY="827dp" />
+
+    <Button
+        android:id="@+id/btn_cantidad01"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:backgroundTint="#80121111"
+        android:text="@string/cantidad01"
+        android:textAlignment="textStart"
+        android:textSize="7sp"
+        app:cornerRadius="2sp"
+        app:strokeColor="#050505"
+        app:strokeWidth="1.5sp"
+        tools:layout_editor_absoluteX="376dp"
+        tools:layout_editor_absoluteY="380dp" />
+
+    <Button
+        android:id="@+id/btn_cantidad02"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:backgroundTint="#80121111"
+        android:text="@string/cantidad02"
+        android:textAlignment="textStart"
+        android:textSize="7sp"
+        app:cornerRadius="2sp"
+        app:strokeColor="#050505"
+        app:strokeWidth="1.5sp"
+        tools:layout_editor_absoluteX="376dp"
+        tools:layout_editor_absoluteY="447dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

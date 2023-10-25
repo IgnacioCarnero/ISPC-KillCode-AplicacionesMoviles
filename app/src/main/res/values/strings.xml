@@ -51,7 +51,8 @@
     <string name="password_hint">Password</string>
     <string name="email">Email</string>
     <string name="imagen_persona">imagen_persona</string>
-
+    <string name="cantidad01">1</string>
+    <string name="cantidad02">2</string>
 
 
 </resources>
