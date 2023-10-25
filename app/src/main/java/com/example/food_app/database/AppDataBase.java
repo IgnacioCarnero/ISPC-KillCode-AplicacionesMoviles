@@ -10,7 +10,7 @@ import androidx.room.TypeConverters;
 import com.example.food_app.database.dao.CajaDAO;
 import com.example.food_app.database.dao.CategoriaDAO;
 import com.example.food_app.database.dao.ComandaDAO;
-import com.example.food_app.database.dao.ComidaBebidaComandaDAO;
+//import com.example.food_app.database.dao.ComidaBebidaComandaDAO;
 import com.example.food_app.database.dao.ComidaBebidaDAO;
 import com.example.food_app.database.dao.MesaDAO;
 import com.example.food_app.database.dao.MozoDAO;
@@ -32,7 +32,7 @@ public abstract class AppDataBase extends RoomDatabase {
     public abstract CategoriaDAO categoriaDAO();
     public abstract CajaDAO cajaDAO();
     public abstract ComandaDAO comandaDAO();
-    public abstract ComidaBebidaComandaDAO comidaBebidaComandaDAO();
+    //public abstract ComidaBebidaComandaDAO comidaBebidaComandaDAO();
     public abstract ComidaBebidaDAO comidaBebidaDAO();
     public abstract MesaDAO mesaDAO();
     public abstract MozoDAO mozoDAO();
