@@ -51,7 +51,7 @@
     <string name="password_hint">Password</string>
     <string name="email">Email</string>
     <string name="imagen_persona">imagen_persona</string>
-
+    <string name="btn_demora">demora aproximada</string>
 
 
 </resources>
