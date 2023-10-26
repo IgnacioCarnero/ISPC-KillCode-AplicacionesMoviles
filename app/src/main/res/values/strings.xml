@@ -61,7 +61,8 @@
     <string name="cantidad07">7</string>
 
     <string name="btn_demora">demora aproximada</string>
-
+    <string name="paymentmethod">Métodos de pago</string>
+    <string name="estimatedtime">demora aproximada</string>
 
 
 </resources>
