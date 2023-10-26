@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bkgd_welcome"
-    tools:context=".MenuActivity">
+    tools:context=".MenuActivity"
+    tools:visibility="visible">
 
     <Button
         android:id="@+id/btn_menu"
@@ -24,6 +25,21 @@
         app:strokeColor="#050505"
         app:strokeWidth="1dp" />
 
+    <Button
+        android:id="@+id/btn_seleccionar"
+        android:layout_width="264dp"
+        android:layout_height="62dp"
+        android:backgroundTint="#40121111"
+        android:text="@string/btn_seleccionar"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.846"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.383"
+        app:strokeColor="#050505" />
+
     <ImageButton
         android:id="@+id/btn_waiter"
         android:layout_width="wrap_content"
@@ -36,6 +52,20 @@
         app:layout_constraintStart_toEndOf="@+id/btn_menu"
         app:srcCompat="@mipmap/img_btnwaiter"
         app:strokeColor="#050505" />
+
+    <TextView
+        android:id="@+id/txtMesaSeleccionada"
+        android:layout_width="460dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
+        android:textColor="#FAF6F6"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="invisible" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

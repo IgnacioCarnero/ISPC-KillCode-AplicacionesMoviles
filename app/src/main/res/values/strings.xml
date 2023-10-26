@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Food_app</string>
     <string name="btn_menu">Menú</string>
+    <string name="btn_seleccionar">Mesa</string>
     <string name="btn_welcome">Bienvenidos</string>
 
     <string name="menu_title">Entradas:</string>
