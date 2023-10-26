@@ -13,15 +13,24 @@
         android:theme="@style/Theme.Food_app"
         tools:targetApi="31">
         <activity
+
+            android:name=".PaymentMethodActivity"
+
+            android:name=".MenuSelectionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Prueba"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="false"
             android:label="@string/title_activity_login" />
         <activity
             android:name=".MenuScroll"
-            android:exported="false"/>
-
+            android:exported="false" />
         <activity
             android:name=".EstimatedtimeActivity"
+
             android:exported="false" />
         <activity
             android:name=".OrderConfirmationActivity"
@@ -34,7 +43,6 @@
             android:exported="false" />
         <activity
             android:name=".waiterActivity"
-
             android:exported="false" />
         <activity
             android:name=".MenuActivity"

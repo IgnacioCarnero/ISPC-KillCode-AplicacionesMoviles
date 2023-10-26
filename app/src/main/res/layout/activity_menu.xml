@@ -11,33 +11,31 @@
         android:id="@+id/btn_menu"
         android:layout_width="300dp"
         android:layout_height="100dp"
-        android:backgroundTint="#40121111"
+        android:backgroundTint="#66121111"
         android:text="@string/btn_menu"
         android:textSize="30sp"
+        app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.176"
+        app:layout_constraintHorizontal_bias="0.144"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.743"
-        app:strokeColor="#050505" />
+        app:strokeColor="#050505"
+        app:strokeWidth="1dp" />
 
     <ImageButton
         android:id="@+id/btn_waiter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="176dp"
-        android:backgroundTint="#40121111"
+        android:backgroundTint="#80121111"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.582"
+        app:layout_constraintHorizontal_bias="0.564"
         app:layout_constraintStart_toEndOf="@+id/btn_menu"
         app:srcCompat="@mipmap/img_btnwaiter"
-        app:strokeColor="#050505"
-
-
-
-        />
+        app:strokeColor="#050505" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
