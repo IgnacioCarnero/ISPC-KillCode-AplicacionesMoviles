@@ -12,7 +12,7 @@ public class OrderConfirmationActivity extends AppCompatActivity {
 
     Button btn_demora;
 
-    ImageButton btn_backmenu;
+    ImageButton btn_backmenuselection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,12 +20,20 @@ public class OrderConfirmationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_order_confirmation);
 
         btn_demora= findViewById(R.id.btn_demora);
+        btn_backmenuselection= findViewById(R.id.btn_backmenuselection);
 
 
         btn_demora.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(OrderConfirmationActivity.this, EstimatedtimeActivity.class);
+                startActivity(intent);
+            }
+        });
+        btn_backmenuselection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(OrderConfirmationActivity.this, MenuSelectionActivity.class);
                 startActivity(intent);
             }
         });
