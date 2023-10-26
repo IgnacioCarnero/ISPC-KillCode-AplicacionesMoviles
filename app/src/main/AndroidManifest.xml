@@ -13,13 +13,13 @@
         android:theme="@style/Theme.Food_app"
         tools:targetApi="31">
         <activity
-
-            android:name=".PaymentMethodActivity"
-
-            android:name=".MenuSelectionActivity"
+            android:name=".CommentActivity"
             android:exported="false" />
         <activity
-            android:name=".Prueba"
+            android:name=".PaymentMethodActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuSelectionActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
@@ -30,7 +30,6 @@
             android:exported="false" />
         <activity
             android:name=".EstimatedtimeActivity"
-
             android:exported="false" />
         <activity
             android:name=".OrderConfirmationActivity"
