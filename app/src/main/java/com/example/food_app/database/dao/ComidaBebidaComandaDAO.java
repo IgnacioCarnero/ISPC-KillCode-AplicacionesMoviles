@@ -1,7 +1,7 @@
 package com.example.food_app.database.dao;
 
 
-=======
+
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -34,5 +34,5 @@ public interface ComidaBebidaComandaDAO {
 
 
 
- main
+
 

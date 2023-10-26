@@ -5,7 +5,8 @@
 
     <string name="menu_title">Entradas:</string>
     <string name="menu_food">Entrada 1 ........ $1235</string>
-    <string name="menu_food_detail">(pan integral, tomates, albahaca, aceite oliva, finas hierbas)</string>\
+    <string name="menu_food_detail">(pan integral, tomates, albahaca, aceite oliva, finas hierbas)</string>
+    \
     <string name="menu_title_platos">Platos Principales</string>
     <string name="menu_title_bebidas">Bebidas</string>
     <string name="menu_platos">Plato 1 ........ $1235</string>
@@ -18,7 +19,6 @@
 
     <string name="demorapedido">Su pedido demorará aproximadamente:</string>
     <string name="tiempopedido">40 minutos</string>
-
 
 
     <string name="txt_recepcionPedido">Recibimos su pedido con éxito!</string>
@@ -52,6 +52,8 @@
     <string name="email">Email</string>
     <string name="imagen_persona">imagen_persona</string>
     <string name="btn_demora">demora aproximada</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
