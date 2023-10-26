@@ -16,9 +16,6 @@
             android:name=".PaymentMethodActivity"
             android:exported="false" />
         <activity
-            android:name=".paymentmethod"
-            android:exported="false" />
-        <activity
             android:name=".OrderConfirmationActivity"
             android:exported="false" />
         <activity
