@@ -79,7 +79,7 @@
         android:id="@+id/btn_cantidad01"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="368dp"
+        android:layout_marginTop="364dp"
         android:backgroundTint="#80121111"
         android:text="@string/cantidad01"
         android:textAlignment="textStart"
