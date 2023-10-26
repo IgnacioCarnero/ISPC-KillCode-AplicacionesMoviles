@@ -14,6 +14,7 @@
         android:backgroundTint="#66121111"
         android:text="@string/btn_menu"
         android:textSize="30sp"
+        app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.144"
