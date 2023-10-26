@@ -3,6 +3,19 @@
 ## Documento IEEE 830
 https://docs.google.com/document/d/1qRBMHlPtyhzC0heptoHxnlGo8XgIVy0t/edit#heading=h.gjdgxs
 
+## Diagramas (versiones corregidas)
+- Casos de uso
+- Clases
+<br><br>https://drive.google.com/file/d/1CFNwI2CFi4YkM1WAL8cm8i8i-rkwCsle/view?usp=drive_link
+
+- Entidad-relación
+- Modelo relacional
+<br><br>https://drive.google.com/file/d/1T4-SwKiZqddY06yOedKaVU6dtXSIsEoU/view?usp=drive_link
+
+## Script Base de Datos (version corregida)
+
+https://drive.google.com/file/d/10ObNqb-WCBHKWzzpS9k0aVKKGeLi7F3H/view?usp=drive_link
+
 ## Descripción
 OrderTablet es una aplicación para dispositivos Android, diseñada especialmente para tabletas. Representa una solución completa e innovadora en la forma en que los bares y restaurantes gestionan los pedidos de sus comenzales. Llevamos la comodidad y la eficiencia a un nuevo nivel al permitir que los comenzales realicen sus pedidos directamente desde la comodidad de su mesa, sin necesidad de esperar al mozo/a. Además, ofrece un sistema de gestión integral que conecta a los 4 roles principales: Comenzal/Mesa, Caja, Cocina, Barra.
 
@@ -64,7 +77,7 @@ Este proyecto se lleva a cabo de manera colaborativa por un equipo compuesto por
 
 
 |Nombre y Apellido|GitHub|LinkedIn|
----|---|---
+----|----|----
 Romina Herrera|https://github.com/Romherre|https://www.linkedin.com/in/romina-herreramicv/|
 Leonardo Farran|https://github.com/Leo-Farran|https://www.linkedin.com/in/leonardo-cesar-farran|
 Facundo Cascallares |https://github.com/FacundoCascallares|https://www.linkedin.com/in/facundocascallares/|
