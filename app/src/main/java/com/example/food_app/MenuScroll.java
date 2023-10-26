@@ -20,7 +20,7 @@ public class MenuScroll extends AppCompatActivity {
         btn_confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MenuScroll.this, OrderConfirmationActivity.class);
+                Intent intent = new Intent(MenuScroll.this, ToConfirmOrderActivity.class);
                 startActivity(intent);
             }
         });
