@@ -51,9 +51,18 @@
     <string name="password_hint">Password</string>
     <string name="email">Email</string>
     <string name="imagen_persona">imagen_persona</string>
+
+    <string name="cantidad01">1</string>
+    <string name="cantidad02">2</string>
+    <string name="cantidad03">3</string>
+    <string name="cantidad04">4</string>
+    <string name="cantidad05">5</string>
+    <string name="cantidad06">6</string>
+    <string name="cantidad07">7</string>
     <string name="btn_demora">demora aproximada</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="paymentmethod">Métodos de pago</string>
+    <string name="estimatedtime">demora aproximada</string>
+    <string name="btn_verpedido">Ver Pedido</string>
 
 
 </resources>
