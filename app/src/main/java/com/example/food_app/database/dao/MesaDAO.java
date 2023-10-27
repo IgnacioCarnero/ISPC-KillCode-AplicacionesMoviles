@@ -16,6 +16,9 @@ public interface MesaDAO {
     @Query("SELECT  * FROM mesa")
     List<mesaEntity> getId_mesa();
 
+    @Query("SELECT id_mesa FROM mesa WHERE id_mesa = :id_mesa")
+    int getId_mesa(int id_mesa);
+
     @Insert
     void insertMesa(mesaEntity mesaEntity);
 
@@ -24,6 +27,7 @@ public interface MesaDAO {
 
     @Delete
     void deleteMesa(mesaEntity mesaEntity);
+
 }
 
 

@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Food_app</string>
     <string name="btn_menu">Menú</string>
+    <string name="btn_seleccionar">Mesa</string>
     <string name="btn_welcome">Bienvenidos</string>
 
     <string name="menu_title">Entradas:</string>
@@ -10,7 +11,6 @@
     <string name="menu_title_platos">Platos Principales</string>
     <string name="menu_title_bebidas">Bebidas</string>
     <string name="menu_platos">Plato 1 ........ $1235</string>
-    <string name="background_img"></string>
     <string name="add_btn">Añadir</string>
     <string name="subs_btn">Eliminar</string>
     <string name="cuantity">Cantidad</string>
@@ -31,6 +31,7 @@
 
     <string name="btn_confirmapedido">Confirmar Pedido</string>
     <string name="specialorders_msj">Deje aqui su comentario:</string>
+    <string name="comment_msj">La comida y el servicio excelentes...</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -59,11 +60,10 @@
     <string name="cantidad05">5</string>
     <string name="cantidad06">6</string>
     <string name="cantidad07">7</string>
-
     <string name="btn_demora">demora aproximada</string>
     <string name="paymentmethod">Métodos de pago</string>
     <string name="estimatedtime">demora aproximada</string>
     <string name="btn_verpedido">Ver Pedido</string>
-
+    <string name="btn_enviar">Enviar</string>
 
 </resources>

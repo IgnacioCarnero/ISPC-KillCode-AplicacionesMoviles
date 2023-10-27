@@ -15,6 +15,8 @@
         <activity
 
             android:name=".PaymentMethodActivity"
+
+
             android:exported="false" />
         <activity
 
