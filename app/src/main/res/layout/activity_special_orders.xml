@@ -53,6 +53,7 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
+        android:textAlignment="center"
         android:textColor="@color/white"
         android:textColorHighlight="@color/black"
         android:textColorLink="@color/black"

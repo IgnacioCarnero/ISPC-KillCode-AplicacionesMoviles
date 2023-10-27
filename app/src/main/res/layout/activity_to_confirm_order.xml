@@ -62,16 +62,16 @@
 
     <ImageButton
         android:id="@+id/btn_back_menu_scroll"
-        android:layout_width="77dp"
-        android:layout_height="97dp"
-        android:layout_marginBottom="44dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="72dp"
         android:backgroundTint="#80121111"
         android:contentDescription="Boton para volver atras"
-        android:scaleX="1.7"
-        android:scaleY="1.7"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.866"
+        app:layout_constraintHorizontal_bias="0.85"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@mipmap/img_btnback" />
 

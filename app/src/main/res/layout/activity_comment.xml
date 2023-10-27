@@ -8,7 +8,6 @@
     tools:context=".CommentActivity">
 
 
-
     <EditText
         android:id="@+id/txt_comentario"
         android:layout_width="473dp"
@@ -19,6 +18,7 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
+        android:textAlignment="center"
         android:textColor="@color/white"
         android:textColorHighlight="@color/black"
         android:textColorLink="@color/black"
