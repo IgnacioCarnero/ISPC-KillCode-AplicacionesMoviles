@@ -36,7 +36,7 @@ public class MenuActivity extends AppCompatActivity {
         btn_menu = findViewById(R.id.btn_menu);
         btn_seleccionar = findViewById(R.id.btn_seleccionar);
         txtMesaSeleccionada = findViewById(R.id.txtMesaSeleccionada);
-
+        //insertarMesasDeEjemplo();
         btn_waiter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -107,7 +107,6 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     // Función para consultar la mesa por su número
-    // Función para consultar la mesa por su número
     private void consultarMesa(int numeroMesa) {
         // Aquí debes implementar la lógica para consultar la mesa en la base de datos
         // Utiliza appDataBase.mesaDAO().getId_mesa(numeroMesa) para obtener la mesa
@@ -127,6 +126,14 @@ public class MenuActivity extends AppCompatActivity {
             // La mesa no se encontró en la base de datos
             // Puedes mostrar un mensaje de error o realizar otras acciones según tus necesidades
             Log.e("Consulta de Mesa", "La mesa no se encontró en la base de datos.");
+        }
+    }
+    private void insertarMesasDeEjemplo() {
+        // Insertar mesas de ejemplo
+        for (int i = 2; i <= 5; i++) {
+            mesaEntity mesa = new mesaEntity();
+            mesa.setId_mesa(i); // Cambia el ID de acuerdo a tus necesidades
+            appDataBase.mesaDAO().insertMesa(mesa);
         }
     }
 
