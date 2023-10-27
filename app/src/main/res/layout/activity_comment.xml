@@ -8,12 +8,10 @@
     tools:context=".CommentActivity">
 
 
-
     <EditText
         android:id="@+id/msj.DejeSuComentario"
         android:layout_width="293dp"
         android:layout_height="153dp"
-        android:layout_marginTop="200dp"
         android:background="@android:drawable/alert_light_frame"
         android:backgroundTint="#B3121111"
         android:ems="10"
@@ -25,23 +23,16 @@
         android:textColorLink="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.421"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="207dp"
+        tools:layout_editor_absoluteY="430dp" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
         android:backgroundTint="#66121111"
         android:text="@string/btn_enviar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/msj.DejeSuComentario"
-        app:layout_constraintVertical_bias="0.208" />
+        tools:layout_editor_absoluteX="287dp"
+        tools:layout_editor_absoluteY="690dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

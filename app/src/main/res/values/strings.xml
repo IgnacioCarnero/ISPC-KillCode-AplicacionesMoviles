@@ -65,5 +65,13 @@
     <string name="estimatedtime">demora aproximada</string>
     <string name="btn_verpedido">Ver Pedido</string>
     <string name="btn_enviar">Enviar</string>
+    <string name="welcomeUser">Bienvenida Usuario</string>
+    <string name="Menu">Menu\n</string>
+    <string name="btn_backselection2">Volver a la selección 2</string>
+    <string name="btn_estimatedtime">Demora aproximada</string>
+    <string name="txt_pedidorecibido">Recibimos su pedido con éxito</string>
+    <string name="btn_waiter">Llamar al mozo</string>
+    <string name="btn_waiter2">Llamar al moz</string>
+    <string name="btn_comentario">Dejanos tu comentario</string>
 
 </resources>

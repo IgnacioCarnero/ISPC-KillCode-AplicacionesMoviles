@@ -21,7 +21,7 @@ ImageButton btn_waiter;
         btn_waiter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(waiterActivity.this,MenuActivity.class);
+                Intent intent = new Intent(waiterActivity.this,MainActivity.class);
                 startActivity(intent);
             }
         });
