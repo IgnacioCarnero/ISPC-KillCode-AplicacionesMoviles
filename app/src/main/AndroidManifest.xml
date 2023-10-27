@@ -16,8 +16,10 @@
             android:name=".PaymentMethodActivity"
             android:exported="false" />
         <activity
+
             android:name=".MenuSelectionActivity"
             android:exported="false" />
+
         <activity
             android:name=".LoginActivity"
             android:exported="false"

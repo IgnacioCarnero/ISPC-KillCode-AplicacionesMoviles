@@ -5,8 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bkgd_orderview"
+    android:visibility="visible"
     app:circularflow_defaultRadius="70sp"
-    tools:context=".SpecialOrdersActivity">
+    tools:context=".SpecialOrdersActivity"
+    tools:visibility="visible">
 
 
     <Button
@@ -33,9 +35,9 @@
         android:layout_marginBottom="92dp"
         android:background="@color/black"
         android:backgroundTint="#00FFFFFF"
+        android:contentDescription="btn_back"
         android:scaleX="1.5"
         android:scaleY="1.5"
-        android:contentDescription="btn_back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.589"
@@ -54,7 +56,6 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        android:text="@string/specialorders_msj"
         android:textColor="@color/white"
         android:textColorHighlight="@color/black"
         android:textColorLink="@color/black"
@@ -63,6 +64,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="289dp"
+        android:layout_height="43dp"
+        android:text="TextView"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="198dp"
+        tools:layout_editor_absoluteY="441dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
