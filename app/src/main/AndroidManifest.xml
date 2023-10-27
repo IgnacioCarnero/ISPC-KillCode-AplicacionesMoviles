@@ -38,6 +38,9 @@
             android:name=".SpecialOrdersActivity"
             android:exported="false" />
         <activity
+            android:name=".greetingsActivity"
+            android:exported="false" />
+        <activity
             android:name=".CommentActivity"
             android:exported="false" />
         <activity

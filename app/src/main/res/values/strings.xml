@@ -73,5 +73,7 @@
     <string name="btn_waiter">Llamar al mozo</string>
     <string name="btn_waiter2">Llamar al moz</string>
     <string name="btn_comentario">Dejanos tu comentario</string>
+    <string name="txt_comentario">Cuadro para dejar una reseña sobre el lugar</string>
+    <string name="txt_greeting">Te esperamos pronto\n</string>
 
 </resources>
