@@ -32,24 +32,18 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
         appDataBase = AppDataBase.getInstance(getApplicationContext());
 
-        btn_waiter = findViewById(R.id.btn_waiter);
+
         btn_menu = findViewById(R.id.btn_menu);
         btn_seleccionar = findViewById(R.id.btn_seleccionar);
         txtMesaSeleccionada = findViewById(R.id.txtMesaSeleccionada);
         //insertarMesasDeEjemplo();
-        btn_waiter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MenuActivity.this, waiterActivity.class);
-                startActivity(intent);
-            }
-        });
+
 
         btn_menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent btn_menu = new Intent(MenuActivity.this, MenuScroll.class);
+                Intent btn_menu = new Intent(MenuActivity.this, MainActivity.class);
                 startActivity(btn_menu);
             }
         });

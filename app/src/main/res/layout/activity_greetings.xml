@@ -25,8 +25,8 @@
         android:id="@+id/despedida"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="712dp"
-        android:text="Te esperamos pronto "
+        android:layout_marginTop="652dp"
+        android:text="@string/txt_greeting"
         android:textColor="#000000"
         android:textSize="40sp"
         android:textStyle="bold"
@@ -37,19 +37,19 @@
 
     <ImageButton
         android:id="@+id/bnt_back_main"
-        android:layout_width="56dp"
-        android:layout_height="62dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleX="1.5"
-        android:scaleY="1.5"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:backgroundTint="#80121111"
+        android:contentDescription="Volver inicio"
+        android:scaleX="2.5"
+        android:scaleY="2.5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.86"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.941"
-        app:srcCompat="@mipmap/img_btnback"
-        android:contentDescription="Volver atrás"/>
+        app:layout_constraintVertical_bias="0.9"
+        app:srcCompat="@mipmap/img_btnback" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

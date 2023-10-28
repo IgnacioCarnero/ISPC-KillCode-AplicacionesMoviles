@@ -37,10 +37,10 @@ public class fragment1 extends Fragment {
 
     public void init() {
         elements = new ArrayList<>();
-        elements.add(new ListElement("Asado", "Papas", "Pure"));
-        elements.add(new ListElement("Ensalada", "Papas", "Tomate"));
-        elements.add(new ListElement("Asado", "Papas", "Pure"));
-        elements.add(new ListElement("Asado", "Papas", "Pure"));
+        elements.add(new ListElement("Entrada 1", "", ""));
+        elements.add(new ListElement("Entrada 2", "", ""));
+        elements.add(new ListElement("Entrada 3", "", ""));
+        elements.add(new ListElement("Entrada 4", "", ""));
 
         ListAdapter listAdapter = new ListAdapter(elements, requireContext());
         recyclerView.setHasFixedSize(true);

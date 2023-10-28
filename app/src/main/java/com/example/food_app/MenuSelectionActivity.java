@@ -40,7 +40,7 @@ public class MenuSelectionActivity extends AppCompatActivity {
         btn_paymentmethod.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(MenuSelectionActivity.this, MainActivity.class);
+                Intent intent= new Intent(MenuSelectionActivity.this, PaymentMethodActivity.class);
                 //acá va la PaymentMethodActivity en vez de MainActivity
                 startActivity(intent);
             }

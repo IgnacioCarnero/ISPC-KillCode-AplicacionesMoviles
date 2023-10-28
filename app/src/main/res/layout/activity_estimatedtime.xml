@@ -41,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="88dp"
-        android:backgroundTint="#00FFFFFF"
+        android:backgroundTint="#80050505"
         android:contentDescription="@string/btnalt"
         android:scaleX="2"
         android:scaleY="2"
