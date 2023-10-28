@@ -25,28 +25,31 @@
         android:id="@+id/btn_demora"
         android:layout_width="300dp"
         android:layout_height="100dp"
-        android:backgroundTint="#40121111"
+        android:layout_marginBottom="132dp"
+        android:backgroundTint="#66121111"
         android:text="@string/btn_demora"
         android:textSize="30sp"
+        app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_backmenu"
-        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintEnd_toStartOf="@+id/btn_backmenuselection"
+        app:layout_constraintHorizontal_bias="0.437"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.844"
-        app:strokeColor="#050505" />
+        app:strokeColor="#050505"
+        app:strokeWidth="1dp" />
 
-    <ImageView
-        android:id="@+id/btn_backmenu"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:scaleX="0.8"
-        android:scaleY="0.8"
+
+    <ImageButton
+        android:id="@+id/btn_backmenuselection"
+        android:layout_width="142dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="156dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleX="1.8"
+        android:scaleY="1.8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.843"
+        app:layout_constraintHorizontal_bias="0.799"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.503"
         app:srcCompat="@mipmap/img_btnback" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
