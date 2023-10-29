@@ -21,7 +21,8 @@
             android:exported="false" />
         <activity
             android:name=".MenuSelectionActivity"
-
+            android:exported="false" />
+        <activity
             android:name=".ClientActivity"
             android:exported="false" />
         <activity
@@ -59,9 +60,7 @@
         <activity
             android:name=".waiterActivity"
             android:exported="false" />
-        <activity
-        android:name=".MenuSelectionActivity"
-        android:exported="false" />
+
         <activity
             android:name=".MenuActivity"
             android:exported="true">
