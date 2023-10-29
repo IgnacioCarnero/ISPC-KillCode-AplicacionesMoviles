@@ -6,7 +6,9 @@ package com.example.food_app;
         import android.widget.Button;
         import android.widget.EditText;
         import android.widget.Toast;
-
+        import android.content.Intent;
+        import android.widget.CheckBox;
+        import android.widget.CompoundButton;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -15,12 +17,24 @@ public class LoginActivity extends AppCompatActivity {
     EditText password;
     Button loginButton;
     Button registerButton;
+
+    CheckBox forgotPasswordCheckBox;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         loginButton = findViewById(R.id.loginButton);
+        registerButton = findViewById(R.id.registerButton);
+        forgotPasswordCheckBox = findViewById(R.id.forgotPasswordCheckBox);
+
+        forgotPasswordCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                loginButton.setEnabled(!isChecked); // Habilita o deshabilita el botón de inicio de sesión
+            }
+        });
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -32,4 +46,9 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+    public void goToRegister(View view) {
+        Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
+    }
 }
+

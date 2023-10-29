@@ -13,10 +13,20 @@
         android:theme="@style/Theme.Food_app"
         tools:targetApi="31">
         <activity
+
+            android:name=".NewPassword"
+            android:exported="false" />
+        <activity
+            android:name=".passwordResetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuSelectionActivity"
+
             android:name=".ClientActivity"
             android:exported="false" />
         <activity
             android:name=".PaymentMethodActivity"
+
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
