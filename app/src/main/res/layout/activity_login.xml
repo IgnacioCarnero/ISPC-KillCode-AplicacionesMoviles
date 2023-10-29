@@ -52,7 +52,7 @@
         android:layout_width="320dp"
         android:layout_height="57dp"
         android:layout_margin="30dp"
-        android:backgroundTint="@color/blue"
+        android:backgroundTint="#004AAD"
         android:text="@string/login"
         android:textSize="18sp"
         app:cornerRadius="20dp"
@@ -67,7 +67,7 @@
         android:layout_width="320dp"
         android:layout_height="57dp"
         android:layout_margin="30dp"
-        android:backgroundTint="@color/blue"
+        android:backgroundTint="#004AAD"
         android:text="@string/register"
         android:textSize="18sp"
         app:cornerRadius="20dp"
@@ -76,5 +76,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.867" />
+
+    <CheckBox
+        android:id="@+id/forgotPasswordCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Olvidaste tu contraseña?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerButton"
+        app:layout_constraintVertical_bias="0.221" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

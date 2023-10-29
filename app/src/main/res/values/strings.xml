@@ -31,7 +31,7 @@
 
     <string name="btn_confirmapedido">Confirmar Pedido</string>
     <string name="specialorders_msj">Deje aqui su comentario:</string>
-    <string name="comment_msj">La comida y el servicio excelentes...</string>
+    <string name="comment_msj">La comida y el servicio excelentes..."</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -52,6 +52,7 @@
     <string name="password_hint">Password</string>
     <string name="email">Email</string>
     <string name="imagen_persona">imagen_persona</string>
+    <string name="background_img">Descripción de la imagen de fondo</string>
 
     <string name="cantidad01">1</string>
     <string name="cantidad02">2</string>

@@ -4,4 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#0000FF</color>
     <color name="bkg_btn">#RRGGBB</color>
+    <color name="colorBoton">#004AAD</color>
 </resources>
