@@ -9,29 +9,34 @@
     tools:context=".PaymentMethodActivity">
 
     <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="514dp"
-        android:layout_height="443dp"
-        android:background="#00FFFFFF"
-        android:scaleX="0.3"
-        android:scaleY="0.3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.058"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/btn_comentarios"
-        tools:layout_editor_absoluteY="654dp" />
-
-    <ImageButton
         android:id="@+id/btn_waiter_paymentmethod"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
         android:backgroundTint="#80121111"
+        android:contentDescription="@string/btn_waiter2"
         android:scaleX="0.8"
         android:scaleY="0.8"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:srcCompat="@mipmap/img_btnwaiter"
-        tools:layout_editor_absoluteX="29dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.979"
+        app:srcCompat="@mipmap/img_btnwaiter" />
+
+    <ImageButton
+        android:id="@+id/btn_comentario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/btn_comentario"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.417"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.958"
+        app:srcCompat="@mipmap/btn_comentarios" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
