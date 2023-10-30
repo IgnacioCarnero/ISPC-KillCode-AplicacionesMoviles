@@ -1,6 +1,5 @@
 package com.example.food_app;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,8 +10,13 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.food_app.database.AppDataBase;
+import com.example.food_app.database.entity.categoriaEntity;
+import com.example.food_app.database.entity.comidaBebida;
 import com.example.food_app.database.entity.mesaEntity;
 
 import java.util.List;
@@ -21,6 +25,7 @@ public class MenuActivity extends AppCompatActivity {
     ImageButton btn_waiter;
     Button btn_menu;
     Button btn_seleccionar;
+    Button btn_crudProducts;
     TextView txtMesaSeleccionada;
 
     AppDataBase appDataBase;
@@ -35,8 +40,28 @@ public class MenuActivity extends AppCompatActivity {
 
         btn_menu = findViewById(R.id.btn_menu);
         btn_seleccionar = findViewById(R.id.btn_seleccionar);
+        btn_crudProducts = findViewById(R.id.btn_crudProducts);
         txtMesaSeleccionada = findViewById(R.id.txtMesaSeleccionada);
         //insertarMesasDeEjemplo();
+
+        //insertarCategoriasDeEjemplo();
+      /*  btn_waiter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, waiterActivity.class);
+                startActivity(intent);
+            }
+        });
+
+       */
+
+        btn_crudProducts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent btn_crudProducts = new Intent(MenuActivity.this, CrudProducts.class);
+                startActivity(btn_crudProducts);
+            }
+        });
 
 
         btn_menu.setOnClickListener(new View.OnClickListener() {
@@ -45,6 +70,18 @@ public class MenuActivity extends AppCompatActivity {
 
                 Intent btn_menu = new Intent(MenuActivity.this, MainActivity.class);
                 startActivity(btn_menu);
+
+                // se realiza para despues verificar logs
+                List<categoriaEntity> categorias = appDataBase.categoriaDAO().getAllCategorias();
+                List<comidaBebida> comidaBebidaEntityList = appDataBase.comidaBebidaDAO().getId_comidaBebida();
+
+                // Imprime las categorías en el registro (log)
+                for (categoriaEntity categoria : categorias) {
+                    Log.d("Categoría Insertada", "ID: " + categoria.getId_categoria() + ", Nombre: " + categoria.getNombre());
+                }
+                for (comidaBebida comida : comidaBebidaEntityList) {
+                    Log.d("Comida Insertada", "ID: " + comida.getNombre() + ", Nombre: " + comida.getTipo());
+                }
             }
         });
 
@@ -100,6 +137,7 @@ public class MenuActivity extends AppCompatActivity {
         });
     }
 
+
     // Función para consultar la mesa por su número
     private void consultarMesa(int numeroMesa) {
         // Aquí debes implementar la lógica para consultar la mesa en la base de datos
@@ -131,4 +169,23 @@ public class MenuActivity extends AppCompatActivity {
         }
     }
 
+    private void insertarCategoriasDeEjemplo(){
+        categoriaEntity uno = new categoriaEntity("Entrada");
+        categoriaEntity dos = new categoriaEntity("Plato principal");
+        categoriaEntity tres = new categoriaEntity("Postre");
+        categoriaEntity cuatro = new categoriaEntity("Bebida");
+        appDataBase.categoriaDAO().insertCategoria(uno);
+        appDataBase.categoriaDAO().insertCategoria(dos);
+        appDataBase.categoriaDAO().insertCategoria(tres);
+        appDataBase.categoriaDAO().insertCategoria(cuatro);
+    }
+    private void eliminarRegistroComidaBebida() {
+        // Aquí ejecuta la lógica para eliminar el registro que desees
+        // Por ejemplo, elimina el registro con un ID específico, como el 12
+        AppDataBase appDataBase = AppDataBase.getInstance(getApplicationContext());
+        List<comidaBebida> comidaBebidaEntityList = appDataBase.comidaBebidaDAO().getId_comidaBebida();
+        if (comidaBebidaEntityList.size() > 1) {
+            appDataBase.comidaBebidaDAO().deleteComidaBebida(comidaBebidaEntityList.get(9));
+        }
+    }
 }

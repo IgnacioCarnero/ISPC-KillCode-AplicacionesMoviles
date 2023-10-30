@@ -1,16 +1,18 @@
 package com.example.food_app;
 
+import java.math.BigDecimal;
+
 public class ListElement {
+    private String name;
+    private String tipo;
+    private BigDecimal precio;
+    private String descripcion;
 
-    public String name;
-    public String descripcion;
-    public String anexo;
-
-
-    public ListElement(String name, String descripcion, String anexo) {
+    public ListElement(String name, String tipo, BigDecimal precio, String descripcion) {
         this.name = name;
+        this.tipo = tipo;
+        this.precio = precio;
         this.descripcion = descripcion;
-        this.anexo = anexo;
     }
 
     public String getName() {
@@ -21,6 +23,22 @@ public class ListElement {
         this.name = name;
     }
 
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public BigDecimal getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(BigDecimal precio) {
+        this.precio = precio;
+    }
+
     public String getDescripcion() {
         return descripcion;
     }
@@ -28,16 +46,4 @@ public class ListElement {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-
-    public String getAnexo() {
-        return anexo;
-    }
-
-    public void setAnexo(String anexo) {
-        this.anexo = anexo;
-    }
-
-
-
-
 }
