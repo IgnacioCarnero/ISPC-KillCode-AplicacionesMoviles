@@ -1,0 +1,39 @@
+Index: .idea/deploymentTargetDropDown.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"deploymentTargetDropDown\">\r\n    <targetSelectedWithDropDown>\r\n      <Target>\r\n        <type value=\"QUICK_BOOT_TARGET\" />\r\n        <deviceKey>\r\n          <Key>\r\n            <type value=\"VIRTUAL_DEVICE_PATH\" />\r\n\r\n            <value value=\"C:\\Users\\ezequ\\.android\\avd\\Nexus_7_API_34.avd\" />\r\n\r\n          </Key>\r\n        </deviceKey>\r\n      </Target>\r\n    </targetSelectedWithDropDown>\r\n\r\n    <timeTargetWasSelectedWithDropDown value=\"2023-10-01T15:14:45.105989100Z\" />\r\n\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/deploymentTargetDropDown.xml b/.idea/deploymentTargetDropDown.xml
+--- a/.idea/deploymentTargetDropDown.xml	
++++ b/.idea/deploymentTargetDropDown.xml	
+@@ -1,21 +1,17 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="deploymentTargetDropDown">
+-    <targetSelectedWithDropDown>
++    <runningDeviceTargetSelectedWithDropDown>
+       <Target>
+-        <type value="QUICK_BOOT_TARGET" />
++        <type value="RUNNING_DEVICE_TARGET" />
+         <deviceKey>
+           <Key>
+-            <type value="VIRTUAL_DEVICE_PATH" />
+-
+-            <value value="C:\Users\ezequ\.android\avd\Nexus_7_API_34.avd" />
+-
++            <type value="SERIAL_NUMBER" />
++            <value value="ZY22G79K4B" />
+           </Key>
+         </deviceKey>
+       </Target>
+-    </targetSelectedWithDropDown>
+-
+-    <timeTargetWasSelectedWithDropDown value="2023-10-01T15:14:45.105989100Z" />
+-
++    </runningDeviceTargetSelectedWithDropDown>
++    <timeTargetWasSelectedWithDropDown value="2023-10-01T20:59:21.426455Z" />
+   </component>
+ </project>
+\ No newline at end of file

@@ -5,34 +5,72 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bkgd_welcome"
-    tools:context=".MenuActivity">
+    tools:context=".MenuActivity"
+    tools:visibility="visible">
+
+    <Button
+        android:id="@+id/btn_crudProducts"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:backgroundTint="#66121111"
+        android:text="@string/crudProducts"
+        android:textSize="30sp"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.543"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtMesaSeleccionada"
+        app:layout_constraintVertical_bias="0.556"
+        app:strokeColor="#050505"
+        app:strokeWidth="1dp" />
 
     <Button
         android:id="@+id/btn_menu"
         android:layout_width="300dp"
         android:layout_height="100dp"
-        android:backgroundTint="#40121111"
-        android:text="@string/btn_menu"
+        android:backgroundTint="#66121111"
+        android:text="@string/welcomeUser"
         android:textSize="30sp"
+        app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.176"
+        app:layout_constraintHorizontal_bias="0.543"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_seleccionar"
+        app:layout_constraintVertical_bias="0.075"
+        app:strokeColor="#050505"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/btn_seleccionar"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:backgroundTint="#80121111"
+        android:text="@string/btn_seleccionar"
+        android:textSize="30sp"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.543"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_crudProducts"
+        app:strokeColor="#050505"
+        app:strokeWidth="1dp" />
+
+    <TextView
+        android:id="@+id/txtMesaSeleccionada"
+        android:layout_width="460dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="84dp"
+        android:textAlignment="center"
+        android:textColor="#FAF6F6"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.743"
-        app:strokeColor="#050505" />
-
-    <ImageButton
-        android:id="@+id/btn_waiter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="176dp"
-        android:backgroundTint="@color/bkg_btn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.582"
-        app:layout_constraintStart_toEndOf="@+id/btn_menu"
-        app:srcCompat="@mipmap/img_btnwaiter" />
+        tools:visibility="invisible" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

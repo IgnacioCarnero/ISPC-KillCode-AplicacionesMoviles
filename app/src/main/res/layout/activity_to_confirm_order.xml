@@ -9,39 +9,36 @@
 
     <Button
         android:id="@+id/btn_orderconfirm"
-        android:layout_width="326dp"
-        android:layout_height="109dp"
-        android:backgroundTint="@color/bkg_btn"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="416dp"
+        android:backgroundTint="#80121111"
         android:text="@string/btn_orderconfirm"
         android:textSize="30sp"
-
-
         app:cornerRadius="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintHorizontal_bias="0.086"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.524"
         app:strokeColor="#050505"
         app:strokeWidth="1.5sp" />
 
+
     <Button
         android:id="@+id/btn_specialOrder"
-        android:layout_width="325dp"
-        android:layout_height="104dp"
-        android:backgroundTint="@color/bkg_btn"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="552dp"
+        android:backgroundTint="#80121111"
+
+
         android:text="@string/btn_SpecialOrder"
         android:textSize="30sp"
-
-
         app:cornerRadius="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintHorizontal_bias="0.086"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_orderconfirm"
-        app:layout_constraintVertical_bias="0.145"
+        app:layout_constraintTop_toTopOf="parent"
         app:strokeColor="#050505"
         app:strokeWidth="1.5sp" />
 
@@ -49,31 +46,245 @@
         android:id="@+id/textView"
         android:layout_width="360dp"
         android:layout_height="119dp"
-        android:layout_marginBottom="128dp"
         android:text="@string/Preferencias"
         android:textAlignment="center"
-        android:textColor="#8693C1"
+        android:textColor="#000000"
         android:textColorLink="#726691"
         android:textSize="24sp"
         android:textStyle="bold"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.141"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.066"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.972" />
 
     <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="77dp"
-        android:layout_height="97dp"
-        android:layout_marginBottom="104dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleX="1.7"
-        android:scaleY="1.7"
+        android:id="@+id/btn_back_menu_scroll"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="72dp"
+        android:backgroundTint="#80121111"
+        android:contentDescription="Boton para volver atras"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.888"
+        app:layout_constraintHorizontal_bias="0.85"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@mipmap/img_btnback" />
+
+    <Button
+        android:id="@+id/btn_cantidad01"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="364dp"
+        android:backgroundTint="#80121111"
+        android:text="@string/cantidad01"
+        android:textAlignment="textStart"
+        android:textSize="7sp"
+        app:cornerRadius="2sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.682"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="#050505"
+        app:strokeWidth="1.5sp"/>
+
+    <Button
+        android:id="@+id/btn_cantidad02"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="432dp"
+        android:backgroundTint="#80121111"
+        android:text="@string/cantidad02"
+        android:textAlignment="textStart"
+        android:textSize="7sp"
+        app:cornerRadius="2sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.682"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="#050505"
+        app:strokeWidth="1.5sp" />
+
+    <Button
+        android:id="@+id/btn_cantidad03"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="488dp"
+        android:backgroundTint="#80121111"
+        android:text="@string/cantidad03"
+        android:textAlignment="textStart"
+        android:textSize="7sp"
+        app:cornerRadius="2sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.682"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="#050505"
+        app:strokeWidth="1.5sp" />
+
+    <Button
+        android:id="@+id/btn_cantidad04"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="552dp"
+        android:backgroundTint="#80121111"
+        android:text="@string/cantidad04"
+        android:textAlignment="textStart"
+        android:textSize="7sp"
+        app:cornerRadius="2sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.682"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="#050505"
+        app:strokeWidth="1.5sp" />
+
+    <Button
+        android:id="@+id/btn_cantidad05"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="608dp"
+        android:backgroundTint="#80121111"
+        android:text="@string/cantidad05"
+        android:textAlignment="textStart"
+        android:textSize="7sp"
+        app:cornerRadius="2sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.682"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="#050505"
+        app:strokeWidth="1.5sp" />
+
+    <Button
+        android:id="@+id/btn_cantidad06"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="668dp"
+        android:backgroundTint="#80121111"
+        android:text="@string/cantidad06"
+        android:textAlignment="textStart"
+        android:textSize="7sp"
+        app:cornerRadius="2sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.682"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="#050505"
+        app:strokeWidth="1.5sp" />
+
+    <Button
+        android:id="@+id/btn_cantidad07"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="180dp"
+        android:backgroundTint="#80121111"
+        android:text="@string/cantidad07"
+        android:textAlignment="textStart"
+        android:textSize="7sp"
+        app:cornerRadius="2sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.682"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="#050505"
+        app:strokeWidth="1.5sp" />
+
+    <TextView
+        android:id="@+id/textView_cantidad01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="384dp"
+        android:visibility="invisible"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_cantidad02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="440dp"
+        android:visibility="invisible"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_cantidad03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="496dp"
+        android:visibility="invisible"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.828"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textView_cantidad04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="572dp"
+        android:visibility="invisible"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.828"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_cantidad05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="628dp"
+        android:visibility="invisible"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.852"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_cantidad06"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="252dp"
+        android:visibility="invisible"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.865"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_cantidad07"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="188dp"
+        android:visibility="invisible"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

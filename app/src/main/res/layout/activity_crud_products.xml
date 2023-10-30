@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CrudProducts">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="602dp"
+        android:layout_height="326dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".CrudProductoFragment">
+
+        <!-- Campo para el nombre -->
+        <EditText
+            android:id="@+id/nombreEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="Nombre"
+            android:inputType="text"
+            android:minHeight="48dp" />
+
+        <!-- Spinner para el tipo -->
+        <Spinner
+            android:id="@+id/tipoSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
+
+        <!-- Campo para el precio -->
+        <EditText
+            android:id="@+id/precioEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="Precio"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp" />
+
+        <!-- Campo para la descripción -->
+        <EditText
+            android:id="@+id/descripcionEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="Descripción"
+            android:inputType="text"
+            android:minHeight="48dp" />
+
+        <!-- Spinner para la categoría -->
+        <Spinner
+            android:id="@+id/categoriaSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/saveProduct"
+        android:layout_width="400dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="16dp"
+        android:text="Guardar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <Button
+        android:id="@+id/updateProduct"
+        android:layout_width="400dp"
+        android:layout_height="75dp"
+        android:text="Actualizar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/saveProduct" />
+
+    <Button
+        android:id="@+id/deleteProduct"
+        android:layout_width="400dp"
+        android:layout_height="75dp"
+        android:text="Eliminar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/updateProduct" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,31 +10,59 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Food_app"
+        android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
-
+            android:name=".CrudProducts"
+            android:exported="false" />
+        <activity
+            android:name=".NewPassword"
+            android:exported="false" />
+        <activity
+            android:name=".passwordResetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuSelectionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ClientActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PaymentMethodActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login" />
+        <activity
+            android:name=".MenuScroll"
+            android:exported="false" />
+        <activity
             android:name=".EstimatedtimeActivity"
-
-
+            android:exported="false" />
+        <activity
             android:name=".OrderConfirmationActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".ToConfirmOrderActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".SpecialOrdersActivity"
-
-
+            android:exported="false" />
+        <activity
+            android:name=".greetingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CommentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".waiterActivity"
             android:exported="false" />
         <activity
             android:name=".MenuActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

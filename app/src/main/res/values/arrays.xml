@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="categorias_array">
+        <item>Entrada</item>
+        <item>Plato principal</item>
+        <item>Bebida</item>
+        <item>Postre</item>
+    </string-array>
+    <string-array name="tipos_array">
+        <item>Vegetariana</item>
+        <item>Calórica</item>
+        <item>Ligth</item>
+    </string-array>
+</resources>

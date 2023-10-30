@@ -10,26 +10,49 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="442dp"
-        android:layout_height="162dp"
-        android:layout_marginBottom="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="356dp"
+        android:contentDescription="@string/txt_pedidorecibido"
         android:text="@string/txt_recepcionPedido"
-        android:textColor="@color/white"
-        android:textSize="40sp"
+        android:textColor="@color/black"
+        android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="81dp"
-        android:layout_height="76dp"
-        android:layout_marginBottom="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.93"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_demora"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="132dp"
+        android:backgroundTint="#66121111"
+        android:contentDescription="@string/btn_estimatedtime"
+        android:text="@string/btn_demora"
+        android:textSize="30sp"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_backmenuselection"
+        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="#050505"
+        app:strokeWidth="1dp" />
+
+
+    <ImageButton
+        android:id="@+id/btn_backmenuselection"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="156dp"
+        android:backgroundTint="#800C0C0C"
+        android:contentDescription="@string/btn_backselection2"
+        android:scaleX="1.8"
+        android:scaleY="1.8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.799"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@mipmap/img_btnback" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

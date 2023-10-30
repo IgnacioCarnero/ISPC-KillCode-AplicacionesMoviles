@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bkgd_welcome"
+    tools:context=".MenuSelectionActivity">
+
+    <Button
+        android:id="@+id/btn_menuselection"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:backgroundTint="#66121111"
+        android:text="@string/btn_menu"
+        android:textSize="30sp"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.256"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="#000000"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/btn_paymentmethod"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:backgroundTint="#66121111"
+        android:text="@string/paymentmethod"
+        android:textSize="28sp"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.758"
+        app:strokeColor="#000000"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/btn_estimatedtime"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:backgroundTint="#66121111"
+        android:text="@string/estimatedtime"
+        android:textSize="28sp"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.91"
+        app:strokeColor="#000000"
+        app:strokeWidth="1dp" />
+
+    <ImageButton
+        android:id="@+id/btn_waitermenuselection"
+        android:layout_width="133dp"
+        android:layout_height="193dp"
+        android:backgroundTint="#80121111"
+        android:contentDescription="@string/btn_waiter"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintStart_toEndOf="@+id/btn_menuselection"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/img_btnwaiter"
+        app:strokeColor="#050505" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

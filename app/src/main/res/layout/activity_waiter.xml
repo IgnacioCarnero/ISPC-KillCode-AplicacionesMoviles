@@ -12,16 +12,18 @@
         android:id="@+id/btn_menu"
         android:layout_width="300dp"
         android:layout_height="100dp"
-        android:backgroundTint="#40121111"
+        android:backgroundTint="#66121111"
         android:text="@string/waiter_msj"
         android:textSize="30sp"
+        app:cornerRadius="20dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_backwaiter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.541"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.932"
-        app:strokeColor="#050505" />
+        app:strokeColor="#050505"
+        app:strokeWidth="1dp" />
 
     <ImageButton
         android:id="@+id/btn_backwaiter"
