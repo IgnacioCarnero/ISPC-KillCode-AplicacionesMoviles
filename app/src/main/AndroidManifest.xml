@@ -34,9 +34,7 @@
         <activity
             android:name=".passwordResetActivity"
             android:exported="false" />
-        <activity
-            android:name=".NewPassword"
-            android:exported="false" />
+
         <activity
             android:name=".RegisterActivity"
             android:exported="false"/>
