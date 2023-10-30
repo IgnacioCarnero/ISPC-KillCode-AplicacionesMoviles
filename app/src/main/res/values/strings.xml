@@ -7,7 +7,7 @@
     <string name="menu_title">Entradas:</string>
     <string name="menu_food">Entrada 1 ........ $1235</string>
     <string name="menu_food_detail">(pan integral, tomates, albahaca, aceite oliva, finas hierbas)</string>
-    \
+
     <string name="menu_title_platos">Platos Principales</string>
     <string name="menu_title_bebidas">Bebidas</string>
     <string name="menu_platos">Plato 1 ........ $1235</string>
@@ -76,5 +76,6 @@
     <string name="btn_comentario">Dejanos tu comentario</string>
     <string name="txt_comentario">Cuadro para dejar una reseña sobre el lugar</string>
     <string name="txt_greeting">Te esperamos pronto\n</string>
+    <string name="crudProducts">Actualizar Menu</string>
 
 </resources>

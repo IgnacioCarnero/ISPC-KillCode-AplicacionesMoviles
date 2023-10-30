@@ -13,7 +13,9 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
-
+            android:name=".CrudProducts"
+            android:exported="false" />
+        <activity
             android:name=".NewPassword"
             android:exported="false" />
         <activity
@@ -27,7 +29,6 @@
             android:exported="false" />
         <activity
             android:name=".PaymentMethodActivity"
-
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
@@ -60,7 +61,6 @@
         <activity
             android:name=".waiterActivity"
             android:exported="false" />
-
         <activity
             android:name=".MenuActivity"
             android:exported="true">
