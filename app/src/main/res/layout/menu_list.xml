@@ -22,7 +22,7 @@
             android:padding="6dp">
 
             <LinearLayout
-                android:layout_width="565dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="4dp"
@@ -31,14 +31,14 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/name"
+                    android:id="@+id/nombre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="3dp"
                     android:fontFamily="sans-serif-medium"
-                    android:text="Asado"
+                    android:text="Nombre del plato"
                     android:textColor="@color/black"
                     android:textSize="30sp"
                     android:textStyle="bold"
@@ -48,30 +48,39 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/description"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/descripcion"
+                    android:layout_width="241dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:text="Vacio, costilla, entrania"
+                    android:text="Descripción del plato"
                     android:textColor="@color/black"
                     android:textSize="24sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
                 <TextView
-                    android:id="@+id/anexo"
+                    android:id="@+id/tipo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
-                    android:text="Acompaniado con papas fritas"
+                    android:text="Información adicional"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
-
-
+                <TextView
+                    android:id="@+id/precio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Precio del plato"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
             </LinearLayout>
 
@@ -89,17 +98,15 @@
 
             <EditText
                 android:id="@+id/editTextNumberSigned"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="44dp"
-                android:layout_marginTop="2dp"
-                android:layout_centerVertical="true"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="44dp"
                 android:ems="10"
                 android:inputType="numberSigned"
                 android:textColor="@color/white" />
-
-
 
             <ImageView
                 android:id="@+id/btnAdd"
@@ -115,6 +122,5 @@
         </RelativeLayout>
 
     </LinearLayout>
-
 
 </androidx.cardview.widget.CardView>
