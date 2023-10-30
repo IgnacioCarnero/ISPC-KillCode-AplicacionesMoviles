@@ -95,7 +95,7 @@
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_margin="30dp"
-        android:backgroundTint="@color/blue"
+        android:backgroundTint="#004AAD"
         android:text="Register"
         android:textSize="18sp"
         app:cornerRadius="20dp"

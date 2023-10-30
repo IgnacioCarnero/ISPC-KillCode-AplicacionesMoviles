@@ -9,6 +9,8 @@ package com.example.food_app;
         import android.content.Intent;
         import android.widget.CheckBox;
         import android.widget.CompoundButton;
+        import android.util.Log;
+
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -40,13 +42,18 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (username.getText().toString().equals("user") && password.getText().toString().equals("1234")) {
                     Toast.makeText(LoginActivity.this, "Login exitoso!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
+                    startActivity(intent);
+
                 } else {
-                    Toast.makeText(LoginActivity.this, "Login Fallido!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Usuario incorrecto o no registrado", Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
     public void goToRegister(View view) {
+        // Agrega una impresión de registro para verificar si se llama a esta función
+        Log.d("LoginActivity", "Botón Register presionado");
         Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);
     }
