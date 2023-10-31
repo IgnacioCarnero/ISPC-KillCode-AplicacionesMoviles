@@ -1,6 +1,8 @@
 # OrderTablet – Demo APK
 
 https://drive.google.com/file/d/1ekuqhCx4wSBbNz6893lCkYYuaZPVU6XO/view?usp=drive_link
+Usuario de prueba: leonardo@gmail.com
+Password: leonardo
 
 # OrderTablet – Documentación
 
