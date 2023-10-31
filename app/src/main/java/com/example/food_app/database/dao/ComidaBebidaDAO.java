@@ -19,8 +19,8 @@ public interface ComidaBebidaDAO {
     @Query("SELECT * FROM comidaBebida WHERE id_comidaBebida = :comidaBebidaID")
     comidaBebida getId_comidaBebida(int comidaBebidaID);
 
-    @Query("SELECT * FROM comidaBebida WHERE  nombre= :nombreID")
-    comidaBebida getNombre(int nombreID);
+    @Query("SELECT nombre FROM comidaBebida")
+    List<String> getNombres();
 
     @Query("SELECT * FROM comidaBebida WHERE  tipo= :tipoID")
     List<comidaBebida> getTipo(int tipoID);
@@ -34,11 +34,12 @@ public interface ComidaBebidaDAO {
     @Query("SELECT * FROM comidaBebida WHERE  id_categoria = :categotiaID")
     List<comidaBebida> getId_categoria(int categotiaID);
 
+
     @Insert
     void insertComidaBebida(comidaBebida comidaBebida);
 
     @Update
-    void updateComanda(comidaBebida comidaBebida);
+    void updateComidaBebida(comidaBebida comidaBebida);
 
     @Delete
     void deleteComidaBebida(comidaBebida comidaBebida);
