@@ -4,6 +4,10 @@ https://drive.google.com/file/d/1ekuqhCx4wSBbNz6893lCkYYuaZPVU6XO/view?usp=drive
 Usuario de prueba: leonardo@gmail.com
 Password: leonardo
 
+#Video grupal
+
+https://drive.google.com/file/d/1N3UpGrojxx2HNccFFZjifjiYbgEHIQ0n/view?usp=drivesdk
+
 # OrderTablet – Documentación
 
 ## Documento IEEE 830
