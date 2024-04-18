@@ -90,7 +90,7 @@ Este proyecto se lleva a cabo de manera colaborativa por un equipo compuesto por
 ----|----|----
 Romina Herrera|https://github.com/Romherre|https://www.linkedin.com/in/romina-herreramicv/|
 Leonardo Farran|https://github.com/Leo-Farran|https://www.linkedin.com/in/leonardo-cesar-farran|
-Facundo Cascallares |https://github.com/FacundoCascallares|https://www.linkedin.com/in/facundocascallares/|
+Tomas Lencina |https://github.com/TomiLencina|
 Mariana Florencia Morisse Rodriguez|https://github.com/florenciamorisse|https://www.linkedin.com/in/mariana-florencia-morisse-rodriguez/|
 Ignacio Carnero|https://github.com/IgnacioCarnero|https://www.linkedin.com/in/ignacio-carnero/|
 Ezequiel Falzoi |https://github.com/ezefalzoi|https://www.linkedin.com/in/ezequielfalzoi/|
