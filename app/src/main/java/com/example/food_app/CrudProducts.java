@@ -200,13 +200,13 @@ public class CrudProducts extends AppCompatActivity {
     private int mapCategoriaToId(String categoria) {
         switch (categoria) {
             case "Entrada":
-                return 1;
-            case "Plato principal":
                 return 2;
-            case "Postre":
+            case "Plato principal":
                 return 3;
-            case "Bebida":
+            case "Postre":
                 return 4;
+            case "Bebida":
+                return 5;
             default:
                 // Maneja el caso si no se selecciona una categoría válida
                 return 0; // o cualquier otro valor adecuado
