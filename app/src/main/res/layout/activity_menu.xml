@@ -8,69 +8,93 @@
     tools:context=".MenuActivity"
     tools:visibility="visible">
 
+    <!-- Botón 1 (izquierda) -->
+
+    <!-- Botón 2 (derecha) -->
+
+    <!-- Botón 3 (izquierda) -->
+
+    <!-- Botón 4 (derecha) -->
+
+    <!-- TextView para indicar la mesa seleccionada -->
+
     <Button
-        android:id="@+id/btn_crudProducts"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
+        android:id="@+id/btn_config_categoria"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="#80121111"
+        android:text="@string/btn_config_categoria"
+        android:textSize="24sp"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_seleccionar_mesa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="#050505"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/btn_seleccionar_mesa"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="#80121111"
+        android:text="@string/btn_seleccionar_mesa"
+        android:textSize="24sp"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_config_categoria"
+        app:strokeColor="#050505"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/btn_actualizar_menu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="164dp"
         android:backgroundTint="#66121111"
         android:text="@string/crudProducts"
-        android:textSize="30sp"
+        android:textSize="24sp"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.543"
+        app:layout_constraintEnd_toStartOf="@id/btn_bienvenida"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtMesaSeleccionada"
-        app:layout_constraintVertical_bias="0.556"
         app:strokeColor="#050505"
         app:strokeWidth="1dp" />
 
     <Button
-        android:id="@+id/btn_menu"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
+        android:id="@+id/btn_bienvenida"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="164dp"
         android:backgroundTint="#66121111"
         android:text="@string/welcomeUser"
-        android:textSize="30sp"
+        android:textSize="24sp"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.543"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_seleccionar"
-        app:layout_constraintVertical_bias="0.075"
-        app:strokeColor="#050505"
-        app:strokeWidth="1dp" />
-
-    <Button
-        android:id="@+id/btn_seleccionar"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:backgroundTint="#80121111"
-        android:text="@string/btn_seleccionar"
-        android:textSize="30sp"
-        app:cornerRadius="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.543"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_crudProducts"
+        app:layout_constraintStart_toEndOf="@id/btn_actualizar_menu"
         app:strokeColor="#050505"
         app:strokeWidth="1dp" />
 
     <TextView
         android:id="@+id/txtMesaSeleccionada"
-        android:layout_width="460dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="84dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:textAlignment="center"
         android:textColor="#FAF6F6"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/btn_seleccionar_mesa"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.444"
         tools:visibility="invisible" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

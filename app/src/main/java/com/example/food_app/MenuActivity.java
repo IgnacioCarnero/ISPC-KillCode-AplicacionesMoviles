@@ -23,9 +23,9 @@ import java.util.List;
 
 public class MenuActivity extends AppCompatActivity {
     ImageButton btn_waiter;
-    Button btn_menu;
-    Button btn_seleccionar;
-    Button btn_crudProducts;
+    Button btn_bienvenida;
+    Button btn_seleccionar_mesa;
+    Button btn_actualizar_menu;
     TextView txtMesaSeleccionada;
 
     AppDataBase appDataBase;
@@ -38,9 +38,9 @@ public class MenuActivity extends AppCompatActivity {
         appDataBase = AppDataBase.getInstance(getApplicationContext());
 
 
-        btn_menu = findViewById(R.id.btn_menu);
-        btn_seleccionar = findViewById(R.id.btn_seleccionar);
-        btn_crudProducts = findViewById(R.id.btn_crudProducts);
+        btn_bienvenida = findViewById(R.id.btn_bienvenida);
+        btn_seleccionar_mesa = findViewById(R.id.btn_seleccionar_mesa);
+        btn_actualizar_menu = findViewById(R.id.btn_actualizar_menu);
         txtMesaSeleccionada = findViewById(R.id.txtMesaSeleccionada);
         //insertarMesasDeEjemplo();
 
@@ -55,7 +55,7 @@ public class MenuActivity extends AppCompatActivity {
 
        */
 
-        btn_crudProducts.setOnClickListener(new View.OnClickListener() {
+        btn_actualizar_menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent btn_crudProducts = new Intent(MenuActivity.this, CrudProducts.class);
@@ -64,7 +64,7 @@ public class MenuActivity extends AppCompatActivity {
         });
 
 
-        btn_menu.setOnClickListener(new View.OnClickListener() {
+        btn_bienvenida.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -85,9 +85,36 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
-        btn_seleccionar.setOnClickListener(new View.OnClickListener() {
+        btn_seleccionar_mesa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Crear un cuadro de diálogo de lista con dos opciones
+                final CharSequence[] opciones = {"Configurar mesa", "Seleccionar mesa"};
+                AlertDialog.Builder builder = new AlertDialog.Builder(MenuActivity.this);
+                builder.setTitle("Elige una opción");
+                builder.setItems(opciones, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Dependiendo de la opción seleccionada, realiza una acción diferente
+                        if (which == 0) {
+                            // El usuario seleccionó "Configurar mesa"
+                            // Redirige al usuario a la actividad de configuración de mesa
+                            Intent intentConfigurarMesa = new Intent(MenuActivity.this, ConfigurarMesaActivity.class);
+                            startActivity(intentConfigurarMesa);
+                        } else if (which == 1) {
+                            // El usuario seleccionó "Seleccionar mesa"
+                            // Llama al método original para seleccionar mesa
+                            seleccionarMesa();
+                        }
+                    }
+                });
+
+                // Mostrar el cuadro de diálogo
+                builder.show();
+            }
+
+            // Método para seleccionar mesa (originalmente parte del método onClick)
+            private void seleccionarMesa() {
                 // Crea un cuadro de diálogo para ingresar el número de mesa
                 AlertDialog.Builder builder = new AlertDialog.Builder(MenuActivity.this);
                 builder.setTitle("Ingrese el número de mesa");
@@ -134,8 +161,7 @@ public class MenuActivity extends AppCompatActivity {
                 // Muestra el cuadro de diálogo
                 builder.show();
             }
-        });
-    }
+        });}
 
 
     // Función para consultar la mesa por su número

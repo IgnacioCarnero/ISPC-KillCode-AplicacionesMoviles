@@ -77,9 +77,11 @@
             android:exported="false" />
         <activity
             android:name=".MenuActivity"
-            android:exported="false">
+            android:exported="false"/>
+        <activity
+            android:name=".ConfigurarMesaActivity"
+            android:exported="false"/>
 
-        </activity>
     </application>
 
 </manifest>
