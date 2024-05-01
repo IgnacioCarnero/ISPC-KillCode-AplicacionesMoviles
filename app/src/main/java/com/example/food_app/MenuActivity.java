@@ -23,11 +23,11 @@ import java.util.List;
 
 public class MenuActivity extends AppCompatActivity {
     ImageButton btn_waiter;
-    Button btn_menu;
-    Button btn_seleccionar;
-    Button btn_crudProducts;
+    Button btn_bienvenida;
+    Button btn_seleccionar_mesa;
+    Button btn_actualizar_menu;
     TextView txtMesaSeleccionada;
-
+    Button btn_config_categoria;
     AppDataBase appDataBase;
 
 
@@ -38,24 +38,14 @@ public class MenuActivity extends AppCompatActivity {
         appDataBase = AppDataBase.getInstance(getApplicationContext());
 
 
-        btn_menu = findViewById(R.id.btn_menu);
-        btn_seleccionar = findViewById(R.id.btn_seleccionar);
-        btn_crudProducts = findViewById(R.id.btn_crudProducts);
+        btn_bienvenida = findViewById(R.id.btn_bienvenida);
+        btn_seleccionar_mesa = findViewById(R.id.btn_seleccionar_mesa);
+        btn_actualizar_menu = findViewById(R.id.btn_actualizar_menu);
+        btn_config_categoria = findViewById(R.id.btn_config_categoria);
         txtMesaSeleccionada = findViewById(R.id.txtMesaSeleccionada);
-        //insertarMesasDeEjemplo();
 
-        //insertarCategoriasDeEjemplo();
-      /*  btn_waiter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MenuActivity.this, waiterActivity.class);
-                startActivity(intent);
-            }
-        });
 
-       */
-
-        btn_crudProducts.setOnClickListener(new View.OnClickListener() {
+        btn_actualizar_menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent btn_crudProducts = new Intent(MenuActivity.this, CrudProducts.class);
@@ -63,8 +53,16 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
+        btn_config_categoria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentConfigurarCategoria = new Intent(MenuActivity.this, ConfigurarCategoriaActivity.class);
+                startActivity(intentConfigurarCategoria);
+            }
+        });
 
-        btn_menu.setOnClickListener(new View.OnClickListener() {
+
+        btn_bienvenida.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -85,9 +83,36 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
-        btn_seleccionar.setOnClickListener(new View.OnClickListener() {
+        btn_seleccionar_mesa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Crear un cuadro de diálogo de lista con dos opciones
+                final CharSequence[] opciones = {"Configurar mesa", "Seleccionar mesa"};
+                AlertDialog.Builder builder = new AlertDialog.Builder(MenuActivity.this);
+                builder.setTitle("Elige una opción");
+                builder.setItems(opciones, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Dependiendo de la opción seleccionada, realiza una acción diferente
+                        if (which == 0) {
+                            // El usuario seleccionó "Configurar mesa"
+                            // Redirige al usuario a la actividad de configuración de mesa
+                            Intent intentConfigurarMesa = new Intent(MenuActivity.this, ConfigurarMesaActivity.class);
+                            startActivity(intentConfigurarMesa);
+                        } else if (which == 1) {
+                            // El usuario seleccionó "Seleccionar mesa"
+                            // Llama al método original para seleccionar mesa
+                            seleccionarMesa();
+                        }
+                    }
+                });
+
+                // Mostrar el cuadro de diálogo
+                builder.show();
+            }
+
+            // Método para seleccionar mesa (originalmente parte del método onClick)
+            private void seleccionarMesa() {
                 // Crea un cuadro de diálogo para ingresar el número de mesa
                 AlertDialog.Builder builder = new AlertDialog.Builder(MenuActivity.this);
                 builder.setTitle("Ingrese el número de mesa");
@@ -134,58 +159,5 @@ public class MenuActivity extends AppCompatActivity {
                 // Muestra el cuadro de diálogo
                 builder.show();
             }
-        });
-    }
-
-
-    // Función para consultar la mesa por su número
-    private void consultarMesa(int numeroMesa) {
-        // Aquí debes implementar la lógica para consultar la mesa en la base de datos
-        // Utiliza appDataBase.mesaDAO().getId_mesa(numeroMesa) para obtener la mesa
-
-        Integer mesaSeleccionada = appDataBase.mesaDAO().getId_mesa(numeroMesa);
-
-        if (mesaSeleccionada != null) {
-            // La mesa se encontró en la base de datos, lo que significa que existe
-            // Puedes realizar acciones con la mesa seleccionada, como mostrar información o iniciar una actividad
-            Log.d("Consulta de Mesa", "Mesa seleccionada: ID " + mesaSeleccionada);
-
-            // Por ejemplo, puedes iniciar una nueva actividad y pasar la mesa seleccionada como un extra
-            Intent intent = new Intent(MenuActivity.this, MenuScroll.class);
-            intent.putExtra("mesaSeleccionada", mesaSeleccionada);
-            startActivity(intent);
-        } else {
-            // La mesa no se encontró en la base de datos
-            // Puedes mostrar un mensaje de error o realizar otras acciones según tus necesidades
-            Log.e("Consulta de Mesa", "La mesa no se encontró en la base de datos.");
-        }
-    }
-    private void insertarMesasDeEjemplo() {
-        // Insertar mesas de ejemplo
-        for (int i = 2; i <= 5; i++) {
-            mesaEntity mesa = new mesaEntity();
-            mesa.setId_mesa(i); // Cambia el ID de acuerdo a tus necesidades
-            appDataBase.mesaDAO().insertMesa(mesa);
-        }
-    }
-
-    private void insertarCategoriasDeEjemplo(){
-        categoriaEntity uno = new categoriaEntity("Entrada");
-        categoriaEntity dos = new categoriaEntity("Plato principal");
-        categoriaEntity tres = new categoriaEntity("Postre");
-        categoriaEntity cuatro = new categoriaEntity("Bebida");
-        appDataBase.categoriaDAO().insertCategoria(uno);
-        appDataBase.categoriaDAO().insertCategoria(dos);
-        appDataBase.categoriaDAO().insertCategoria(tres);
-        appDataBase.categoriaDAO().insertCategoria(cuatro);
-    }
-    private void eliminarRegistroComidaBebida() {
-        // Aquí ejecuta la lógica para eliminar el registro que desees
-        // Por ejemplo, elimina el registro con un ID específico, como el 12
-        AppDataBase appDataBase = AppDataBase.getInstance(getApplicationContext());
-        List<comidaBebida> comidaBebidaEntityList = appDataBase.comidaBebidaDAO().getId_comidaBebida();
-        if (comidaBebidaEntityList.size() > 1) {
-            appDataBase.comidaBebidaDAO().deleteComidaBebida(comidaBebidaEntityList.get(9));
-        }
-    }
+        });}
 }

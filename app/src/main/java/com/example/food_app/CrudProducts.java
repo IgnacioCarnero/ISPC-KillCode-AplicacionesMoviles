@@ -8,9 +8,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.food_app.database.AppDataBase;
+import com.example.food_app.database.entity.categoriaEntity;
 import com.example.food_app.database.entity.comidaBebida;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +30,7 @@ public class CrudProducts extends AppCompatActivity {
     private Button deleteBtn;
     private Spinner productSpinner;
     private AppDataBase appDataBase;
+    private List<Integer> categoriaIds;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,121 +44,38 @@ public class CrudProducts extends AppCompatActivity {
         descripcionEditText = findViewById(R.id.descripcionEditText);
         categoriaSpinner = findViewById(R.id.categoriaSpinner);
         saveBtn = findViewById(R.id.saveProduct);
-
-        appDataBase = AppDataBase.getInstance(getApplicationContext());
-
-        // Configurar opciones para el Spinner de Categorías
-        ArrayAdapter<CharSequence> categoriaAdapter = ArrayAdapter.createFromResource(
-                this,
-                R.array.categorias_array, // Debes definir este array en tus recursos
-                android.R.layout.simple_spinner_item
-        );
-        categoriaAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        categoriaSpinner.setAdapter(categoriaAdapter);
-
-        // Configurar opciones para el Spinner de Tipo
-        ArrayAdapter<CharSequence> tipoAdapter = ArrayAdapter.createFromResource(
-                this,
-                R.array.tipos_array, // Debes definir este array en tus recursos
-                android.R.layout.simple_spinner_item
-        );
-        tipoAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        tipoSpinner.setAdapter(tipoAdapter);
-
-        saveBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Obtener los valores ingresados por el usuario
-                String nombre = nombreEditText.getText().toString();
-                String tipoComida = tipoSpinner.getSelectedItem().toString();
-                BigDecimal precio = new BigDecimal(precioEditText.getText().toString());
-                String descripcion = descripcionEditText.getText().toString();
-                String categoria = categoriaSpinner.getSelectedItem().toString();
-
-                int idCategoria = mapCategoriaToId(categoria);
-                String tipo = mapTipoToId(tipoComida);
-                comidaBebida nuevoProducto = new comidaBebida(nombre, tipo, precio, descripcion, idCategoria);
-
-                appDataBase.comidaBebidaDAO().insertComidaBebida(nuevoProducto);
-
-                // Limpia los campos después de guardar
-                nombreEditText.setText("");
-                tipoSpinner.setSelection(0);
-                precioEditText.setText("");
-                descripcionEditText.setText("");
-
-                // Notifica que el producto ha sido insertado
-                Toast.makeText(CrudProducts.this, "Producto guardado", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        // Agregar referencias para el botón de eliminar y el Spinner de productos
         deleteBtn = findViewById(R.id.deleteProduct);
         productSpinner = findViewById(R.id.productSpinner);
 
-        // Configurar el Spinner para mostrar solo los nombres de productos
-        final List<comidaBebida> productos = appDataBase.comidaBebidaDAO().getId_comidaBebida();
-        List<String> productNames = new ArrayList<>();
+        // Inicializar la base de datos
+        appDataBase = AppDataBase.getInstance(getApplicationContext());
 
-        for (comidaBebida producto : productos) {
-            productNames.add(producto.getNombre());
-        }
+        // Configurar el Spinner de categorías con las categorías existentes
+        configurarSpinnerCategorias();
 
-        ArrayAdapter<String> productAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, productNames);
-        productAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        productSpinner.setAdapter(productAdapter);
+        // Configurar el Spinner de tipo con las opciones existentes
+        configurarSpinnerTipo();
 
-        productSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        // Configurar el Spinner de productos
+        configurarSpinnerProductos();
+
+        // Configurar el botón de guardar
+        saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                // Cuando se selecciona un producto, obtén el producto seleccionado desde la lista
-                String productName = productSpinner.getSelectedItem().toString();
-                comidaBebida productoSeleccionado = obtenerProductoPorNombre(productName);
-
-                if (productoSeleccionado != null) {
-                    // Llena el formulario con los datos del producto seleccionado
-                    nombreEditText.setText(productoSeleccionado.getNombre());
-                    tipoSpinner.setSelection(mapTipoToPosition(productoSeleccionado.getTipo()));
-                    precioEditText.setText(productoSeleccionado.getPrecio().toString());
-                    descripcionEditText.setText(productoSeleccionado.getDescripcion());
-                    categoriaSpinner.setSelection(mapCategoriaToPosition(productoSeleccionado.getId_categoria()));
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parentView) {
-                // Maneja el caso en el que no se ha seleccionado ningún producto
+            public void onClick(View view) {
+                guardarProducto();
             }
         });
 
-
-        // Configurar un escuchador para el botón de eliminación
+        // Configurar el botón de eliminar
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Obtener el nombre del producto seleccionado en el Spinner
-                String productName = productSpinner.getSelectedItem().toString();
-
-                if (!productName.isEmpty()) {
-                    // Eliminar el producto de la base de datos
-                    for (comidaBebida producto : productos) {
-                        if (producto.getNombre().equals(productName)) {
-                            appDataBase.comidaBebidaDAO().deleteComidaBebida(producto);
-                            break;
-                        }
-                    }
-
-                    // Actualizar la lista de productos en el Spinner
-                    productNames.remove(productName);
-                    productAdapter.notifyDataSetChanged();
-
-                    // Notificar que el producto ha sido eliminado
-                    Toast.makeText(CrudProducts.this, "Producto eliminado", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(CrudProducts.this, "Selecciona un producto para eliminar", Toast.LENGTH_SHORT).show();
-                }
+                eliminarProducto();
             }
         });
+
+        // Configurar el botón de actualizar
         Button updateBtn = findViewById(R.id.updateProduct);
         updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -161,82 +83,201 @@ public class CrudProducts extends AppCompatActivity {
                 actualizarProductoSeleccionado();
             }
         });
+
+        // Configurar el listener para el Spinner de productos
+        productSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                // Verificar si el elemento seleccionado es el placeholder
+                if (position == 0) {
+                    // Si el placeholder está seleccionado, no hacer nada
+                    return;
+                }
+
+                // Cuando se selecciona un producto, obtener el producto seleccionado desde la lista
+                String productName = productSpinner.getSelectedItem().toString();
+                comidaBebida productoSeleccionado = obtenerProductoPorNombre(productName);
+
+                if (productoSeleccionado != null) {
+                    // Rellenar los campos del formulario con los datos del producto seleccionado
+                    nombreEditText.setText(productoSeleccionado.getNombre());
+                    int tipoPosition = mapTipoToPosition(productoSeleccionado.getTipo());
+                    tipoSpinner.setSelection(tipoPosition);
+                    precioEditText.setText(productoSeleccionado.getPrecio().toString());
+                    descripcionEditText.setText(productoSeleccionado.getDescripcion());
+                    categoriaSpinner.setSelection(mapCategoriaToPosition(productoSeleccionado.getId_categoria()));
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                // No hacer nada cuando no se selecciona nada
+            }
+        });
     }
 
+    // Método para configurar el Spinner de categorías con las categorías existentes
+    private void configurarSpinnerCategorias() {
+        // Obtener todas las categorías desde la base de datos
+        List<categoriaEntity> categorias = appDataBase.categoriaDAO().getAllCategorias();
+
+        // Crear una lista de nombres de categorías y una lista de IDs de categorías
+        List<String> categoriaNombres = new ArrayList<>();
+        categoriaIds = new ArrayList<>();
+
+        for (categoriaEntity categoria : categorias) {
+            categoriaNombres.add(categoria.getNombre());
+            categoriaIds.add(categoria.getId_categoria());
+        }
+
+        // Configurar un adaptador personalizado para el Spinner de categorías
+        ArrayAdapter<String> categoriaAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, categoriaNombres);
+        categoriaAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        categoriaSpinner.setAdapter(categoriaAdapter);
+    }
+
+    // Método para obtener la posición de una categoría en el Spinner de categorías
+    private int mapCategoriaToPosition(int idCategoria) {
+        // Busca la posición del ID de la categoría en la lista de IDs de categorías
+        for (int i = 0; i < categoriaIds.size(); i++) {
+            if (categoriaIds.get(i) == idCategoria) {
+                // Retorna la posición correspondiente al ID de la categoría en el Spinner
+                return i;
+            }
+        }
+        // Si no se encuentra la categoría, retorna la posición por defecto (0)
+        return 0;
+    }
+
+    // Método para obtener el ID de la categoría seleccionada en el Spinner de categorías
+    private int obtenerIdCategoriaSeleccionada() {
+        // Obtener la posición de la categoría seleccionada en el Spinner
+        int selectedCategoryIndex = categoriaSpinner.getSelectedItemPosition();
+
+        // Obtener el ID de la categoría correspondiente a la posición seleccionada
+        return categoriaIds.get(selectedCategoryIndex);
+    }
+
+    // Método para configurar el Spinner de tipo con las opciones existentes
+    private void configurarSpinnerTipo() {
+        ArrayAdapter<CharSequence> tipoAdapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.tipos_array, // Debes definir este array en tus recursos
+                android.R.layout.simple_spinner_item
+        );
+        tipoAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        tipoSpinner.setAdapter(tipoAdapter);
+    }
+
+    // Método para configurar el Spinner de productos con los productos existentes
+    private void configurarSpinnerProductos() {
+        // Obtener todos los productos existentes en la base de datos
+        List<comidaBebida> productos = appDataBase.comidaBebidaDAO().getId_comidaBebida();
+        List<String> productNames = new ArrayList<>();
+
+        // Agregar un elemento placeholder al inicio de la lista de nombres de productos
+        productNames.add("Seleccionar un producto");
+
+        for (comidaBebida producto : productos) {
+            productNames.add(producto.getNombre());
+        }
+
+        // Configurar un adaptador para el Spinner de productos
+        ArrayAdapter<String> productAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, productNames);
+        productAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        productSpinner.setAdapter(productAdapter);
+    }
+
+    // Método para guardar un producto en la base de datos
+    private void guardarProducto() {
+        // Obtener los valores ingresados por el usuario
+        String nombre = nombreEditText.getText().toString();
+        String tipoComida = tipoSpinner.getSelectedItem().toString();
+        BigDecimal precio = new BigDecimal(precioEditText.getText().toString());
+        String descripcion = descripcionEditText.getText().toString();
+
+        // Obtener el ID de la categoría seleccionada en el Spinner
+        int idCategoria = obtenerIdCategoriaSeleccionada();
+
+        // Crear un nuevo producto con los valores ingresados y el ID de la categoría seleccionada
+        comidaBebida nuevoProducto = new comidaBebida(nombre, tipoComida, precio, descripcion, idCategoria);
+
+        // Insertar el nuevo producto en la base de datos
+        appDataBase.comidaBebidaDAO().insertComidaBebida(nuevoProducto);
+
+        // Limpia los campos después de guardar
+        nombreEditText.setText("");
+        tipoSpinner.setSelection(0);
+        precioEditText.setText("");
+        descripcionEditText.setText("");
+        categoriaSpinner.setSelection(0);
+
+        // Notifica que el producto ha sido guardado
+        Toast.makeText(CrudProducts.this, "Producto guardado", Toast.LENGTH_SHORT).show();
+
+        // Actualizar el Spinner de productos
+        configurarSpinnerProductos();
+
+    }
+
+    // Método para eliminar un producto de la base de datos
+    private void eliminarProducto() {
+        // Obtener el nombre del producto seleccionado en el Spinner
+        String productName = productSpinner.getSelectedItem().toString();
+
+        if (!productName.isEmpty()) {
+            // Obtener el producto seleccionado
+            comidaBebida productoSeleccionado = obtenerProductoPorNombre(productName);
+
+            if (productoSeleccionado != null) {
+                // Eliminar el producto de la base de datos
+                appDataBase.comidaBebidaDAO().deleteComidaBebida(productoSeleccionado);
+
+                // Actualizar el Spinner de productos
+                configurarSpinnerProductos();
+
+                // Notificar que el producto ha sido eliminado
+                Toast.makeText(CrudProducts.this, "Producto eliminado", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(CrudProducts.this, "Selecciona un producto para eliminar", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    // Método para actualizar un producto seleccionado
     private void actualizarProductoSeleccionado() {
+        // Obtener el nombre del producto seleccionado en el Spinner
         String productName = productSpinner.getSelectedItem().toString();
         comidaBebida productoSeleccionado = obtenerProductoPorNombre(productName);
 
         if (productoSeleccionado != null) {
-            // Obtén los valores actualizados del formulario
+            // Obtener los valores actualizados del formulario
             String nuevoNombre = nombreEditText.getText().toString();
             String nuevoTipo = tipoSpinner.getSelectedItem().toString();
             BigDecimal nuevoPrecio = new BigDecimal(precioEditText.getText().toString());
             String nuevaDescripcion = descripcionEditText.getText().toString();
-            int nuevaIdCategoria = mapCategoriaToId(categoriaSpinner.getSelectedItem().toString());
+            int nuevaIdCategoria = mapCategoriaToPosition(Integer.parseInt(categoriaSpinner.getSelectedItem().toString()));
 
-            // Actualiza los datos del producto seleccionado
+            // Actualizar los datos del producto seleccionado
             productoSeleccionado.setNombre(nuevoNombre);
             productoSeleccionado.setTipo(nuevoTipo);
             productoSeleccionado.setPrecio(nuevoPrecio);
             productoSeleccionado.setDescripcion(nuevaDescripcion);
             productoSeleccionado.setId_categoria(nuevaIdCategoria);
 
-            // Actualiza el producto en la base de datos
+            // Actualizar el producto en la base de datos
             appDataBase.comidaBebidaDAO().updateComidaBebida(productoSeleccionado);
 
-            // Notifica que el producto ha sido actualizado
+            // Notificar que el producto ha sido actualizado
             Toast.makeText(CrudProducts.this, "Producto actualizado", Toast.LENGTH_SHORT).show();
 
-            // Actualiza el Spinner de productos
-            actualizarSpinnerProductos();
+            // Actualizar el Spinner de productos
+            configurarSpinnerProductos();
         } else {
             Toast.makeText(CrudProducts.this, "Producto no encontrado", Toast.LENGTH_SHORT).show();
         }
     }
 
-
-    // Esta función mapea las categorías a números (puedes personalizarla)
-    private int mapCategoriaToId(String categoria) {
-        switch (categoria) {
-            case "Entrada":
-                return 1;
-            case "Plato principal":
-                return 2;
-            case "Postre":
-                return 3;
-            case "Bebida":
-                return 4;
-            default:
-                // Maneja el caso si no se selecciona una categoría válida
-                return 0; // o cualquier otro valor adecuado
-        }
-    }
-
-    private String mapTipoToId(String tipo) {
-        switch (tipo) {
-            case "Vegetariana":
-                return "Vegetariana";
-            case "Calórica":
-                return "Calórica";
-            case "Ligth":
-                return "Ligth";
-        }
-        return tipo;
-    }
-    private int mapTipoToPosition(String tipo) {
-        ArrayAdapter<CharSequence> tipoAdapter = (ArrayAdapter<CharSequence>) tipoSpinner.getAdapter();
-        return tipoAdapter.getPosition(tipo);
-    }
-    private int mapCategoriaToPosition(int idCategoria) {
-        // Solo existen tres categorías con IDs 1, 2 y 3
-        if (idCategoria >= 1 && idCategoria <= 3) {
-            return idCategoria - 1; // Restar 1 para obtener la posición correcta
-        } else {
-
-            return 0;
-        }
-    }
+    // Método para obtener un producto por nombre
     private comidaBebida obtenerProductoPorNombre(String nombre) {
         List<comidaBebida> productos = appDataBase.comidaBebidaDAO().getId_comidaBebida();
         for (comidaBebida producto : productos) {
@@ -244,19 +285,16 @@ public class CrudProducts extends AppCompatActivity {
                 return producto;
             }
         }
-        return null; // Retorna nulo si no se encuentra el producto
+        return null;
     }
-    private void actualizarSpinnerProductos() {
-        final List<comidaBebida> productos = appDataBase.comidaBebidaDAO().getId_comidaBebida();
-        List<String> productNames = new ArrayList<>();
 
-        for (comidaBebida producto : productos) {
-            productNames.add(producto.getNombre());
-        }
 
-        ArrayAdapter<String> productAdapter = (ArrayAdapter<String>) productSpinner.getAdapter();
-        productAdapter.clear();
-        productAdapter.addAll(productNames);
-        productAdapter.notifyDataSetChanged();
+    // Método para obtener la posición de un tipo en el Spinner de tipos
+    private int mapTipoToPosition(String tipo) {
+        // Obtener el adaptador del Spinner de tipos
+        ArrayAdapter<CharSequence> tipoAdapter = (ArrayAdapter<CharSequence>) tipoSpinner.getAdapter();
+
+        // Retornar la posición del tipo en el adaptador
+        return tipoAdapter.getPosition(tipo);
     }
 }

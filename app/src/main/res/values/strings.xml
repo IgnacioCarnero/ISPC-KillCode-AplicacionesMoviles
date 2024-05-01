@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">Food_app</string>
     <string name="btn_menu">Menú</string>
-    <string name="btn_seleccionar">Mesa</string>
+    <string name="btn_seleccionar_mesa">Mesa</string>
     <string name="btn_welcome">Bienvenidos</string>
+    <string name="btn_config_categoria">Categorías</string>
 
     <string name="menu_title">Entradas:</string>
     <string name="menu_food">Entrada 1 ........ $1235</string>
