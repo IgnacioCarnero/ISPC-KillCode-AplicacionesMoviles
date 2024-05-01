@@ -73,10 +73,17 @@ public class ConfigurarCategoriaActivity extends AppCompatActivity {
         categoriaSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                // Verificar si el elemento seleccionado es el placeholder ("Seleccionar")
+                if (position == 0) {
+                    // Si el placeholder está seleccionado, limpia el `EditText`
+                    nombreCategoriaEditText.setText("");
+                    return;
+                }
+
                 // Obtener la categoría seleccionada
                 categoriaEntity categoriaSeleccionada = (categoriaEntity) parent.getSelectedItem();
 
-                // Rellenar el EditText con el nombre de la categoría seleccionada
+                // Rellenar el `EditText` con el nombre de la categoría seleccionada
                 nombreCategoriaEditText.setText(categoriaSeleccionada.getNombre());
             }
 
@@ -85,6 +92,7 @@ public class ConfigurarCategoriaActivity extends AppCompatActivity {
                 // No hacer nada cuando no se selecciona nada
             }
         });
+
     }
 
     // Método para agregar una nueva categoría a la base de datos
@@ -133,18 +141,19 @@ public class ConfigurarCategoriaActivity extends AppCompatActivity {
 
     // Método para actualizar el Spinner con las categorías existentes
     private void actualizarSpinnerCategorias() {
+        // Obtener todas las categorías existentes en la base de datos
         List<categoriaEntity> categorias = appDataBase.categoriaDAO().getAllCategorias();
 
-        // Crea una nueva lista para agregar la opción "Seleccionar" al principio
+        // Crear una lista de categorías con un elemento adicional de placeholder
         List<categoriaEntity> categoriasConSeleccionar = new ArrayList<>();
 
-        // Agrega una categoría ficticia con nombre "Seleccionar"
-        categoriasConSeleccionar.add(new categoriaEntity(""));
+        // Agregar una categoría ficticia con nombre "Seleccionar"
+        categoriasConSeleccionar.add(new categoriaEntity("Seleccionar"));
 
-        // Agrega las categorías reales a la lista después de la opción "Seleccionar"
+        // Agregar las categorías reales a la lista después del placeholder
         categoriasConSeleccionar.addAll(categorias);
 
-        // Utiliza un adaptador personalizado para el Spinner
+        // Configurar un adaptador personalizado para el Spinner de categorías
         CategoriaAdapter categoriaAdapter = new CategoriaAdapter(this, categoriasConSeleccionar);
         categoriaAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         categoriaSpinner.setAdapter(categoriaAdapter);
