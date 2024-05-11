@@ -66,7 +66,7 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent btn_menu = new Intent(MenuActivity.this, MainActivity.class);
+                Intent btn_menu = new Intent(MenuActivity.this, ClientActivity.class);
                 startActivity(btn_menu);
 
                 // se realiza para despues verificar logs

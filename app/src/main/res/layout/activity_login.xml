@@ -1,93 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondologin2"
-    tools:context=".LoginActivity">
+    android:background="@color/white">
 
-
-    <EditText
-        android:id="@+id/username"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="30dp"
-        android:drawableStart="@drawable/baseline_person_2_24"
-        android:drawablePadding="8dp"
-        android:hint="@string/username"
-        android:inputType="text"
-        android:padding="8dp"
-        android:textColor="@color/black"
-        android:textColorHighlight="@color/cardview_dark_background"
-        app:layout_constraintBottom_toTopOf="@+id/password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.733"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95"
-        android:autofillHints="username"/>
+        android:layout_height="match_parent"
+        android:alpha="0.7"
+        android:background="@drawable/bkgd_welcome" />
 
-    <EditText
-        android:id="@+id/password"
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="30dp"
-        android:drawableStart="@drawable/baseline_lock_24"
-        android:drawablePadding="8dp"
-        android:hint="@string/password_hint"
-        android:inputType="textPassword"
-        android:padding="8dp"
-        android:textColor="@color/black"
-        android:textColorHighlight="@color/cardview_dark_background"
-        app:layout_constraintBottom_toTopOf="@+id/loginButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.889"
-        android:autofillHints="password"/>
-
-    <Button
-        android:id="@+id/loginButton"
-        android:layout_width="320dp"
-        android:layout_height="57dp"
-        android:layout_margin="30dp"
-        android:backgroundTint="#004AAD"
-        android:text="@string/login"
-        android:textSize="18sp"
-
-        app:cornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.793" />
-
-    <Button
-        android:id="@+id/registerButton"
-        android:layout_width="320dp"
-        android:layout_height="57dp"
-        android:layout_margin="30dp"
-        android:backgroundTint="#004AAD"
-        android:text="@string/register"
-        android:textSize="18sp"
-        app:cornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.867"
-        android:onClick="goToRegister"/>
-
-    <CheckBox
-        android:id="@+id/forgotPasswordCheckBox"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="¿Olvidaste tu contraseña?"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registerButton"
-        app:layout_constraintVertical_bias="0.221" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-20dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="28dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical"
+            android:padding="40dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome"
+                android:textColor="@color/black"
+                android:textSize="50sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="45dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.7"
+                android:text="@string/userInput"
+                android:textColor="@color/black"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/etUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:drawableEnd="@drawable/baseline_person_2_24"
+                android:padding="25dp" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="45dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.7"
+                android:text="@string/passwordInput"
+                android:textColor="@color/black"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/eye_svgrepo_com"
+                android:importantForAutofill="no"
+                android:inputType="textPassword"
+                android:padding="25dp"
+                android:textColor="@color/black" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cbRemember"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:alpha="0.7"
+                    android:buttonTint="@color/black"
+                    android:text="@string/cbRemember"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvRecoveryPass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/recoveryPassword"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="45dp" />
+
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="@string/login"
+                android:textAllCaps="true"
+                android:textSize="30sp"
+                android:backgroundTint="@color/black"
+                app:cornerRadius="25dp" />
+
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="45dp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
+
