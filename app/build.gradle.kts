@@ -5,12 +5,12 @@
 
 android {
     namespace = "com.example.food_app"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.food_app"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -44,6 +44,7 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics:21.4.0")
     implementation("com.google.firebase:firebase-auth:22.2.0")
     implementation("com.firebaseui:firebase-ui-auth:7.2.0")
+    implementation("androidx.activity:activity:1.8.0")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

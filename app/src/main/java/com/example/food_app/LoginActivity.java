@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultCallback;
@@ -23,25 +25,28 @@ import com.google.firebase.auth.FirebaseUser;
 public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    private EditText usernameEditText;
-    private EditText passwordEditText;
-    private Button loginButton;
+    private EditText etUsername;
+    private EditText etPassword;
+    private Button btnLogin;
+    private TextView tvRecoveryPass;
+    private CheckBox cbRemember;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        etUsername = findViewById(R.id.etUsername);
+        etPassword = findViewById(R.id.etPassword);
+        btnLogin = findViewById(R.id.btnLogin);
 
         mAuth = FirebaseAuth.getInstance();
-        usernameEditText = findViewById(R.id.username);
-        passwordEditText = findViewById(R.id.password);
-        loginButton = findViewById(R.id.loginButton);
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            /*@Override
             public void onClick(View view) {
-                String email = usernameEditText.getText().toString().trim();
-                String password = passwordEditText.getText().toString().trim();
+                String email = etUsername.getText().toString().trim();
+                String password = etPassword.getText().toString().trim();
 
                 mAuth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
@@ -56,6 +61,12 @@ public class LoginActivity extends AppCompatActivity {
                                 }
                             }
                         });
+            }*/
+            //Utilizo un intent para probar toda la app sin la conexion a firebase
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(LoginActivity.this, MenuActivity.class);
+                startActivity(intent);
             }
         });
     }

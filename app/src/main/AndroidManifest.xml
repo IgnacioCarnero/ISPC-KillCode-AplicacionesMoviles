@@ -6,38 +6,39 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_order_tablet2"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
-
         <activity
-
-            android:name=".LoginActivity"
-            android:exported="true">
-
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Design.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/Theme.Food_app"
+            android:exported="false" />
         <activity
             android:name=".CrudProducts"
             android:exported="false" />
         <activity
             android:name=".NewPassword"
             android:exported="false" />
-
         <activity
             android:name=".passwordResetActivity"
             android:exported="false" />
-
         <activity
             android:name=".RegisterActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".MenuSelectionActivity"
             android:exported="false" />
@@ -47,7 +48,6 @@
         <activity
             android:name=".PaymentMethodActivity"
             android:exported="false" />
-
         <activity
             android:name=".MenuScroll"
             android:exported="false" />
@@ -77,15 +77,13 @@
             android:exported="false" />
         <activity
             android:name=".MenuActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".ConfigurarMesaActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".ConfigurarCategoriaActivity"
-            android:exported="false"/>
-
-
+            android:exported="false" />
     </application>
 
 </manifest>

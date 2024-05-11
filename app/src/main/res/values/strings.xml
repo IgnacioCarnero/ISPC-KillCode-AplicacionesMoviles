@@ -26,6 +26,7 @@
 
 
     <string name="btn_orderconfirm">Confirmar Pedido</string>
+    <string name="btnalt">Btn back</string>
     <string name="btn_specialOrder" />
     <string name="btn_SpecialOrder">Pedidos especiales</string>
     <string name="Preferencias">Preferencias sobre algún plato en particular</string>
@@ -38,14 +39,16 @@
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
+    <string name="welcome">"Bienvenido"</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="login_button_text">Login</string>
-    <string name="btnalt">btnback</string>
-    <string name="Username">Username</string>
-    <string name="password">Password</string>
+    <string name="btn_alt">btnback</string>
+    <string name="userInput">Ingrese su usuario</string>
+    <string name="passwordInput">Ingrese su contraseña</string>
+    <string name="cbRemember">Recuerdame</string>
+    <string name="recoveryPassword">Recuperar contraseña</string>
     <string name="register">Register</string>
     <string name="login">Login</string>
     <string name="username">Username</string>
@@ -62,7 +65,7 @@
     <string name="cantidad05">5</string>
     <string name="cantidad06">6</string>
     <string name="cantidad07">7</string>
-    <string name="btn_demora">demora aproximada</string>
+    <string name="btn_demora">Demora aproximada</string>
     <string name="paymentmethod">Métodos de pago</string>
     <string name="estimatedtime">demora aproximada</string>
     <string name="btn_verpedido">Ver Pedido</string>
