@@ -2,6 +2,9 @@ package com.example.food_app;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -30,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnLogin;
     private TextView tvRecoveryPass;
     private CheckBox cbRemember;
+    private TextView tvNewUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
+        tvNewUser = findViewById(R.id.etNewUser);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -65,10 +70,29 @@ public class LoginActivity extends AppCompatActivity {
             //Utilizo un intent para probar toda la app sin la conexion a firebase
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(LoginActivity.this, MenuActivity.class);
+                Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
                 startActivity(intent);
             }
         });
+
+        String registerUser = "¿No tienes cuenta? Regístrate aquí.";
+        SpannableString spannableString = new SpannableString(registerUser);
+
+        ClickableSpan clickableSpan = new ClickableSpan() {
+            @Override
+            public void onClick(@NonNull View widget) {
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        };
+        spannableString.setSpan(clickableSpan, registerUser.indexOf("Regístrate"), registerUser.length(), SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString.setSpan(new android.text.style.ForegroundColorSpan(getResources().getColor(R.color.blue)), registerUser.indexOf("Regístrate"), registerUser.length(), SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
+        tvNewUser.setText(spannableString);
+        tvNewUser.setMovementMethod(LinkMovementMethod.getInstance());
+        tvNewUser.setLinkTextColor(getResources().getColor(R.color.blue));
+        tvNewUser.setAutoLinkMask(0);
+
+
     }
 }
 
