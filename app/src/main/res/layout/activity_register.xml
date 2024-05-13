@@ -60,13 +60,15 @@
                 android:textSize="30sp" />
 
             <EditText
-                android:id="@+id/etUsernameRegister"
+                android:id="@+id/etUserEmailRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/baseline_person_2_24"
                 android:fontFamily="@font/roboto"
+                android:textColor="@color/black"
+                android:textSize="25sp"
                 android:importantForAutofill="no"
-                android:inputType="text"
+                android:inputType="textEmailAddress"
                 android:padding="25dp"
                 tools:ignore="LabelFor" />
 
@@ -91,6 +93,7 @@
                 android:fontFamily="@font/roboto"
                 android:importantForAutofill="no"
                 android:inputType="textPassword"
+                android:textSize="25sp"
                 android:padding="25dp"
                 android:textColor="@color/black"
                 tools:ignore="LabelFor" />

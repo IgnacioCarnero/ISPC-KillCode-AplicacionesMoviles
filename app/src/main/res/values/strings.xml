@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Food_app</string>
+    <string name="app_name">Order Tablet</string>
     <string name="btn_menu">Menú</string>
     <string name="btn_seleccionar_mesa">Mesa</string>
     <string name="btn_welcome">Bienvenidos</string>
@@ -43,7 +43,7 @@
     <string name="login_failed">"Login failed"</string>
     <string name="login_button_text">Login</string>
     <string name="btn_alt">btnback</string>
-    <string name="userInput">Ingrese su usuario</string>
+    <string name="userInput">Ingrese su email</string>
     <string name="newUser">Crear ususario</string>
     <string name="passwordInput">Ingrese su contraseña</string>
     <string name="newPassword">Crear contraseña</string>

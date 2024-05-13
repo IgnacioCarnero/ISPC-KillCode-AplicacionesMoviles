@@ -20,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract;
 import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -28,7 +29,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    private EditText etUsername;
+    private EditText etUserEmail;
     private EditText etPassword;
     private Button btnLogin;
     private TextView tvRecoveryPass;
@@ -39,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        etUsername = findViewById(R.id.etUsername);
+        etUserEmail = findViewById(R.id.etUserEmail);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
         tvNewUser = findViewById(R.id.etNewUser);
@@ -48,31 +49,38 @@ public class LoginActivity extends AppCompatActivity {
 
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
-            /*@Override
-            public void onClick(View view) {
-                String email = etUsername.getText().toString().trim();
-                String password = etPassword.getText().toString().trim();
-
-                mAuth.signInWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    // Inicio de sesión exitoso, redirige a la actividad de menú
-                                    Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
-                                    startActivity(intent);
-                                } else {
-                                    Toast.makeText(LoginActivity.this, "Fallo en el inicio de sesión", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
-            }*/
-            //Utilizo un intent para probar toda la app sin la conexion a firebase
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
-                startActivity(intent);
+                String emailUser = etUserEmail.getText().toString().trim();
+                String passwordUser = etPassword.getText().toString().trim();
+
+                if(emailUser.isEmpty() && passwordUser.isEmpty()){
+                    Toast.makeText(LoginActivity.this, "Debes ingresar los datos", Toast.LENGTH_SHORT).show();
+                } else {
+                    loginUser(emailUser,passwordUser);
+                }
             }
+
+            private void loginUser(String emailUser, String passwordUser) {
+                mAuth.signInWithEmailAndPassword(emailUser, passwordUser).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful()){
+                                finish();
+                                startActivity(new Intent(LoginActivity.this, MenuActivity.class));
+                                Toast.makeText(LoginActivity.this, "", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(LoginActivity.this, "Usuario incorrecto.", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
+            }
+
         });
 
         String registerUser = "¿No tienes cuenta? Regístrate aquí.";
