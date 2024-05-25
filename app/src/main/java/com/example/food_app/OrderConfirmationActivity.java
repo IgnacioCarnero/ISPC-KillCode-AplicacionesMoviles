@@ -35,7 +35,7 @@ public class OrderConfirmationActivity extends AppCompatActivity {
         btn_backmenuselection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(OrderConfirmationActivity.this, MenuSelectionActivity.class);
+                Intent intent= new Intent(OrderConfirmationActivity.this, MenuActivity.class);
                 startActivity(intent);
             }
         });

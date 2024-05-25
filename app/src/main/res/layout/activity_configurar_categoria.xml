@@ -4,74 +4,95 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ConfigurarCategoriaActivity">
 
-    <!-- EditText para ingresar el nombre de la categoría -->
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:text="@string/new_category"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/nombreCategoriaEditText"
         style="@style/Widget.AppCompat.EditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Nombre de la categoría"
-        android:inputType="text"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="16dp"
         android:layout_marginHorizontal="16dp"
-        tools:ignore="VisualLintTextFieldSize"
-        android:autofillHints="" />
+        android:layout_margin="32dp"
+        android:padding="22dp"
+        android:autofillHints=""
+        android:background="@color/cardview_dark_background"
+        android:hint="@string/name_category"
+        android:inputType="text"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        tools:ignore="VisualLintTextFieldSize" />
 
-    <!-- Botón para agregar una nueva categoría -->
     <Button
         android:id="@+id/agregarBtn"
         style="@style/Widget.AppCompat.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Agregar"
-        app:layout_constraintTop_toBottomOf="@id/nombreCategoriaEditText"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="16dp"
-    />
-
-    <!-- Botón para eliminar una categoría -->
-    <Button
-        android:id="@+id/eliminarBtn"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="Eliminar"
+        android:layout_width="480dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/roundedstyle"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:text="@string/btn_save"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nombreCategoriaEditText"
-        android:layout_marginTop="16dp"
-    />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nombreCategoriaEditText" />
 
-    <!-- Botón para actualizar una categoría -->
+
     <Button
         android:id="@+id/actualizarBtn"
         style="@style/Widget.AppCompat.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Actualizar"
-        app:layout_constraintTop_toBottomOf="@id/nombreCategoriaEditText"
-        app:layout_constraintStart_toEndOf="@+id/agregarBtn"
-        app:layout_constraintEnd_toStartOf="@+id/eliminarBtn"
-        android:layout_marginTop="16dp"
-    />
+        android:layout_width="480dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/roundedstyle"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:text="@string/btn_update"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/agregarBtn" />
 
-    <!-- Spinner para mostrar las categorías existentes -->
+    <Button
+        android:id="@+id/eliminarBtn"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="480dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/roundedstyle"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:text="@string/btn_delete"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/actualizarBtn" />
+
+
     <Spinner
         android:id="@+id/categoriaSpinner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_margin="32dp"
         android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/actualizarBtn"
-        android:layout_marginTop="16dp"
-    />
+        app:layout_constraintTop_toBottomOf="@id/actualizarBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

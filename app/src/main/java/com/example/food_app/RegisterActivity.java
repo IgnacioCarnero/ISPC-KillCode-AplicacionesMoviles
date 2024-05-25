@@ -1,6 +1,7 @@
 package com.example.food_app;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
@@ -51,22 +52,18 @@ public class RegisterActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String userEmialRegister = etUserEmailRegister.getText().toString().trim();
+                String userEmailRegister = etUserEmailRegister.getText().toString().trim();
                 String userPasswordRegister = etPasswordRegister.getText().toString().trim();
 
-                if(userEmialRegister.isEmpty() && userPasswordRegister.isEmpty()){
+                if (userEmailRegister.isEmpty() && userPasswordRegister.isEmpty()) {
                     Toast.makeText(RegisterActivity.this, "Debes ingresar los datos indicados.", Toast.LENGTH_SHORT).show();
 
-                }else {
-                    registerUser(userEmialRegister, userPasswordRegister);
+                } else {
+                    registerUser(userEmailRegister, userPasswordRegister);
                 }
 
             }
         });
-
-
-
-
 
 
         String userExist = "Ya tengo cuenta. Iniciar sesión";
@@ -85,21 +82,24 @@ public class RegisterActivity extends AppCompatActivity {
         tvSignUp.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
-    private void registerUser(String userEmialRegister, String userPasswordRegister) {
-        mAuth.createUserWithEmailAndPassword(userEmialRegister, userPasswordRegister).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+/*
+    private void registerUser(String userEmailRegister, String userPasswordRegister) {
+        mAuth.createUserWithEmailAndPassword(userEmailRegister, userPasswordRegister).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 String id = mAuth.getCurrentUser().getUid();
                 Map<String, Object> map = new HashMap<>();
                 map.put("id", id);
-                map.put("email", userEmialRegister);
+                map.put("email", userEmailRegister);
                 map.put("pass", userPasswordRegister);
 
                 mFirestore.collection("user").document(id).set(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
+                        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
                         finish();
-                        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -115,4 +115,47 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
+}*/
+
+
+    //Uso savedpreferences para almacenar el nuevo usuario y probar que rediriga a la activity login
+
+    private void registerUser(String userEmailRegister, String userPasswordRegister) {
+        mAuth.createUserWithEmailAndPassword(userEmailRegister, userPasswordRegister)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            String id = mAuth.getCurrentUser().getUid();
+                            saveUserLocally(id, userEmailRegister, userPasswordRegister);
+                            redirectToLogin();
+                        } else {
+                            Toast.makeText(RegisterActivity.this, "Error al crear el usuario.", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(RegisterActivity.this, "Error al crear el usuario.", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
+    private void saveUserLocally(String id, String email, String password) {
+        SharedPreferences sharedPreferences = getSharedPreferences("user_data", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("id", id);
+        editor.putString("email", email);
+        editor.putString("password", password);
+        editor.apply();
+    }
+
+    private void redirectToLogin() {
+        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
+    }
+
 }

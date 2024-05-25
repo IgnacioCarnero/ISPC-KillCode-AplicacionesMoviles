@@ -19,7 +19,7 @@ public class EstimatedtimeActivity extends AppCompatActivity {
         btn_backawaiter2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(EstimatedtimeActivity.this, MenuSelectionActivity.class);
+                Intent intent= new Intent(EstimatedtimeActivity.this, MenuActivity.class);
                 startActivity(intent);
             }
         });
