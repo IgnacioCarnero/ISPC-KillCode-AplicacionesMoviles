@@ -4,112 +4,150 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CrudProducts">
+    tools:context=".CrudProducts"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tvCargaProdcutos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/new_products"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="326dp"
         android:orientation="vertical"
-        android:padding="16dp"
+        android:background="@color/cardview_dark_background"
+        android:layout_margin="30dp"
+        android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCargaProdcutos"
         tools:context=".CrudProductoFragment">
 
-        <!-- Campo para el nombre -->
         <EditText
             android:id="@+id/nombreEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
-            android:hint="Nombre"
+            android:hint="@string/name_product"
             android:inputType="text"
-            android:minHeight="48dp" />
+            android:textSize="26sp" />
 
-        <!-- Spinner para el tipo -->
         <Spinner
             android:id="@+id/tipoSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="48dp" />
+            android:minHeight="50dp"
+           />
 
-        <!-- Campo para el precio -->
         <EditText
             android:id="@+id/precioEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
-            android:hint="Precio"
+            android:hint="@string/price_product"
             android:inputType="numberDecimal"
-            android:minHeight="48dp" />
+            android:textSize="26sp" />
 
-        <!-- Campo para la descripción -->
         <EditText
             android:id="@+id/descripcionEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
-            android:hint="Descripción"
+            android:hint="@string/description_product"
             android:inputType="text"
-            android:minHeight="48dp" />
+            android:textSize="26sp" />
 
-        <!-- Spinner para la categoría -->
         <Spinner
             android:id="@+id/categoriaSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="48dp" />
+            android:minHeight="50dp"/>
 
 
     </LinearLayout>
 
-
     <Button
         android:id="@+id/saveProduct"
-        android:layout_width="0dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="150dp"
-        android:text="Guardar"
+        android:layout_width="480dp"
+        android:layout_height="72dp"
+        android:background="@drawable/roundedstyle"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/btn_save"
+        android:textAllCaps="true"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <Button
         android:id="@+id/updateProduct"
-        android:layout_width="0dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginEnd="150dp"
-        android:text="Actualizar"
+        android:layout_width="480dp"
+        android:layout_height="72dp"
+        android:background="@drawable/roundedstyle"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:fontFamily="@font/roboto"
+        android:layout_marginTop="20dp"
+        android:text="@string/btn_update"
+        android:textAllCaps="true"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/saveProduct" />
 
     <Button
         android:id="@+id/deleteProduct"
-        android:layout_width="0dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginEnd="150dp"
-        android:text="Eliminar"
+        android:layout_width="480dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/roundedstyle"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:fontFamily="@font/roboto"
+        android:text="@string/btn_delete"
+        android:textAllCaps="true"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/updateProduct" />
 
+    <TextView
+        android:id="@+id/products"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+         android:textColor="@color/black"
+        android:fontFamily="@font/roboto"
+        android:gravity="center"
+        android:text="@string/check_products"
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/deleteProduct" />
 
     <Spinner
         android:id="@+id/productSpinner"
+        android:background="@color/cardview_dark_background"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="115dp"
-        android:minHeight="32dp"
+        android:layout_margin="30dp"
+        android:minHeight="50sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/deleteProduct"
+        app:layout_constraintTop_toBottomOf="@+id/products"
         tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

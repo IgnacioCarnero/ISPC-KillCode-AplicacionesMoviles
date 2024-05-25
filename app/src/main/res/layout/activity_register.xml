@@ -1,108 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/fondologin"
-    tools:context="RegisterActivity">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
-
-    <ImageView
-        android:id="@+id/ImagenUsuario"
-        android:layout_width="252dp"
-        android:layout_height="310dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:contentDescription="@string/imagen_persona"
-        android:src="@drawable/baseline_person_2_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.067" />
-
-    <EditText
-        android:id="@+id/username"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="30dp"
-        android:drawableStart="@drawable/baseline_person_2_24"
-        android:drawablePadding="8dp"
-        android:hint="Username"
-        android:padding="8dp"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.528" />
+        android:layout_height="match_parent"
+        android:alpha="0.7"
+        android:background="@drawable/bkgd_welcome">
 
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="30dp"
-        android:drawableStart="@drawable/baseline_mail_24"
-        android:drawablePadding="8dp"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"
-        android:padding="8dp"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username"
-        app:layout_constraintVertical_bias="0.656" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="546dp"
+            android:layout_height="761dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="23dp"
+            android:layout_marginBottom="61dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="28dp">
 
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="30dp"
-        android:drawableStart="@drawable/baseline_lock_24"
-        android:drawablePadding="8dp"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:padding="8dp"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.726" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                android:padding="40dp">
 
-    <EditText
-        android:id="@+id/confirmPassword"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="30dp"
-        android:drawableStart="@drawable/baseline_lock_24"
-        android:drawablePadding="8dp"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
-        android:padding="8dp"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/registerButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password"
-        app:layout_constraintVertical_bias="0.141" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/register"
+                    android:textColor="@color/black"
+                    android:textSize="50sp"
+                    android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/registerButton"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:layout_margin="30dp"
-        android:backgroundTint="#004AAD"
-        android:text="Register"
-        android:textSize="18sp"
-        app:cornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.94" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="0.5"
+                    android:padding="8dp"
+                    android:text="@string/newAccount"
+                    android:textColor="@color/black"
+                    android:textSize="25sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.7"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/newUser"
+                    android:textColor="@color/black"
+                    android:textSize="30sp" />
+
+                <EditText
+                    android:id="@+id/etUserEmailRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/baseline_person_2_24"
+                    android:fontFamily="@font/roboto"
+                    android:importantForAutofill="no"
+                    android:inputType="textEmailAddress"
+                    android:padding="25dp"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    tools:ignore="LabelFor" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.7"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/newPassword"
+                    android:textColor="@color/black"
+                    android:textSize="30sp" />
+
+                <EditText
+                    android:id="@+id/etPasswordRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/eye_svgrepo_com"
+                    android:fontFamily="@font/roboto"
+                    android:importantForAutofill="no"
+                    android:inputType="textPassword"
+                    android:padding="25dp"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    tools:ignore="LabelFor" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp" />
+
+                <Button
+                    android:id="@+id/btnRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="77dp"
+                    android:background="@drawable/roundedstyle"
+                    android:backgroundTint="@color/black"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/register"
+                    android:textAllCaps="true"
+                    android:textSize="30sp"
+                    app:cornerRadius="25dp" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp" />
+
+                <TextView
+                    android:id="@+id/tvSignUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="22sp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+
+</RelativeLayout>
+

@@ -1,54 +1,161 @@
 package com.example.food_app;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.Firebase;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private EditText usernameEditText;
-    private EditText emailEditText;
-    private EditText passwordEditText;
-    private EditText confirmPasswordEditText;
-    private Button registerButton;
+    private EditText etUserEmailRegister;
+    private EditText etPasswordRegister;
+    private Button btnRegister;
+    private TextView tvSignUp;
+    FirebaseFirestore mFirestore;
+    FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register); // Asegúrate de que el archivo layout correspondiente se llame "activity_register.xml"
+        setContentView(R.layout.activity_register);
+        mFirestore = FirebaseFirestore.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
-        // Vincula los elementos de la interfaz de usuario con las variables Java
-        usernameEditText = findViewById(R.id.username);
-        emailEditText = findViewById(R.id.email);
-        passwordEditText = findViewById(R.id.password);
-        confirmPasswordEditText = findViewById(R.id.confirmPassword);
-        registerButton = findViewById(R.id.registerButton);
+        etUserEmailRegister = findViewById(R.id.etUserEmailRegister);
+        etPasswordRegister = findViewById(R.id.etPasswordRegister);
+        btnRegister = findViewById(R.id.btnRegister);
+        tvSignUp = findViewById(R.id.tvSignUp);
 
-        // Configura un OnClickListener para el botón de registro
-        registerButton.setOnClickListener(new View.OnClickListener() {
+        btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Obtén los valores de los campos
-                String username = usernameEditText.getText().toString();
-                String email = emailEditText.getText().toString();
-                String password = passwordEditText.getText().toString();
-                String confirmPassword = confirmPasswordEditText.getText().toString();
+                String userEmailRegister = etUserEmailRegister.getText().toString().trim();
+                String userPasswordRegister = etPasswordRegister.getText().toString().trim();
 
-                // Realiza la validación y lógica de registro aquí
-                if (isValidInput(username, email, password, confirmPassword)) {
-                    // Puedes implementar la lógica de registro aquí, por ejemplo, enviar los datos a un servidor.
-                    // Para mostrar un mensaje de éxito, puedes usar Toast o cualquier otro método.
+                if (userEmailRegister.isEmpty() && userPasswordRegister.isEmpty()) {
+                    Toast.makeText(RegisterActivity.this, "Debes ingresar los datos indicados.", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    registerUser(userEmailRegister, userPasswordRegister);
                 }
+
+            }
+        });
+
+
+        String userExist = "Ya tengo cuenta. Iniciar sesión";
+        SpannableString spannableString = new SpannableString(userExist);
+
+        ClickableSpan clickableSpan = new ClickableSpan() {
+            @Override
+            public void onClick(@NonNull View widget) {
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        };
+        spannableString.setSpan(clickableSpan, userExist.indexOf("Iniciar sesión"), userExist.length(), SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString.setSpan(new android.text.style.ForegroundColorSpan(getResources().getColor(R.color.blue)), userExist.indexOf("Iniciar sesión"), userExist.length(), SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
+        tvSignUp.setText(spannableString);
+        tvSignUp.setMovementMethod(LinkMovementMethod.getInstance());
+    }
+
+/*
+    private void registerUser(String userEmailRegister, String userPasswordRegister) {
+        mAuth.createUserWithEmailAndPassword(userEmailRegister, userPasswordRegister).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                String id = mAuth.getCurrentUser().getUid();
+                Map<String, Object> map = new HashMap<>();
+                map.put("id", id);
+                map.put("email", userEmailRegister);
+                map.put("pass", userPasswordRegister);
+
+                mFirestore.collection("user").document(id).set(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                        finish();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(RegisterActivity.this, "Error al guardar el usuario.", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(RegisterActivity.this, "Error al crear el usuario.", Toast.LENGTH_SHORT).show();
             }
         });
     }
+}*/
 
-    // Agrega una función para validar la entrada del usuario
-    private boolean isValidInput(String username, String email, String password, String confirmPassword) {
-        // Aquí puedes implementar tus propias reglas de validación.
-        // Por ejemplo, asegurarte de que las contraseñas coincidan.
-        return password.equals(confirmPassword);
+
+    //Uso savedpreferences para almacenar el nuevo usuario y probar que rediriga a la activity login
+
+    private void registerUser(String userEmailRegister, String userPasswordRegister) {
+        mAuth.createUserWithEmailAndPassword(userEmailRegister, userPasswordRegister)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            String id = mAuth.getCurrentUser().getUid();
+                            saveUserLocally(id, userEmailRegister, userPasswordRegister);
+                            redirectToLogin();
+                        } else {
+                            Toast.makeText(RegisterActivity.this, "Error al crear el usuario.", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(RegisterActivity.this, "Error al crear el usuario.", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
+
+    private void saveUserLocally(String id, String email, String password) {
+        SharedPreferences sharedPreferences = getSharedPreferences("user_data", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("id", id);
+        editor.putString("email", email);
+        editor.putString("password", password);
+        editor.apply();
+    }
+
+    private void redirectToLogin() {
+        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
+    }
+
 }

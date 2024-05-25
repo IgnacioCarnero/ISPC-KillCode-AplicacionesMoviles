@@ -25,7 +25,6 @@
 
         <activity
             android:name=".LoginActivity"
-            android:theme="@style/Theme.Food_app"
             android:exported="false" />
         <activity
             android:name=".CrudProducts"
@@ -84,6 +83,10 @@
         <activity
             android:name=".ConfigurarCategoriaActivity"
             android:exported="false" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
