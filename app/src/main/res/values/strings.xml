@@ -84,5 +84,18 @@
     <string name="txt_comentario">Cuadro para dejar una reseña sobre el lugar</string>
     <string name="txt_greeting">Te esperamos pronto\n</string>
     <string name="crudProducts">Actualizar Menu</string>
+    <string name="btn_order">Mi Pedido</string>
+
+    <!--Actualizar crud y categoria-->
+    <string name="new_products">Alta de Productos</string>
+    <string name="name_product">Alta de Productos</string>
+    <string name="price_product">Alta de Productos</string>
+    <string name="description_product">Alta de Productos</string>
+    <string name="btn_save">Guardar</string>
+    <string name="btn_update">Actualizar</string>
+    <string name="btn_delete">Eliminar</string>
+    <string name="check_products">Consulta de Productos</string>
+    <string name="new_category">Alta de Categoria</string>
+    <string name="name_category">Nombre de la categoria</string>
 
 </resources>

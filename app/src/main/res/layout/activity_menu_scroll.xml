@@ -55,20 +55,19 @@
 
     <Button
         android:id="@+id/btnOrder"
-        style="@style/Widget.Material3.Button.ElevatedButton"
         android:layout_width="250dp"
         android:layout_height="68dp"
         android:layout_gravity="end"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:backgroundTint="#991C1B1F"
-        android:text="Mi Pedido"
+        android:background="@drawable/roundedstyle"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:text="@string/btn_order"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:strokeColor="#121111"
         app:strokeWidth="1dp" />
 
 
