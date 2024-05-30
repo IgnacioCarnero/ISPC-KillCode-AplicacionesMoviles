@@ -1,4 +1,4 @@
-package com.example.food_app;
+package com.example.food_app.auth;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,11 +15,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.food_app.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.Firebase;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -82,7 +82,6 @@ public class RegisterActivity extends AppCompatActivity {
         tvSignUp.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
-/*
     private void registerUser(String userEmailRegister, String userPasswordRegister) {
         mAuth.createUserWithEmailAndPassword(userEmailRegister, userPasswordRegister).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
@@ -115,10 +114,10 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
-}*/
+}
 
 
-    //Uso savedpreferences para almacenar el nuevo usuario y probar que rediriga a la activity login
+   /* //Uso savedpreferences para almacenar el nuevo usuario y probar que rediriga a la activity login
 
     private void registerUser(String userEmailRegister, String userPasswordRegister) {
         mAuth.createUserWithEmailAndPassword(userEmailRegister, userPasswordRegister)
@@ -156,6 +155,6 @@ public class RegisterActivity extends AppCompatActivity {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
         finish();
-    }
+    }*/
 
-}
+

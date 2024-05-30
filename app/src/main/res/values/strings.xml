@@ -88,9 +88,9 @@
 
     <!--Actualizar crud y categoria-->
     <string name="new_products">Alta de Productos</string>
-    <string name="name_product">Alta de Productos</string>
-    <string name="price_product">Alta de Productos</string>
-    <string name="description_product">Alta de Productos</string>
+    <string name="name_product">Nombre del Producto</string>
+    <string name="price_product">Precio del Producto</string>
+    <string name="description_product">Descripción del Producto</string>
     <string name="btn_save">Guardar</string>
     <string name="btn_update">Actualizar</string>
     <string name="btn_delete">Eliminar</string>
