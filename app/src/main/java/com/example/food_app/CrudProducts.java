@@ -17,7 +17,9 @@ import com.example.food_app.database.entity.comidaBebida;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class CrudProducts extends AppCompatActivity {
 
@@ -31,6 +33,7 @@ public class CrudProducts extends AppCompatActivity {
     private Spinner productSpinner;
     private AppDataBase appDataBase;
     private List<Integer> categoriaIds;
+    private Map<String, Integer> categoriaMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,6 +111,7 @@ public class CrudProducts extends AppCompatActivity {
                     categoriaSpinner.setSelection(mapCategoriaToPosition(productoSeleccionado.getId_categoria()));
                 }
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> parentView) {
                 // No hacer nada cuando no se selecciona nada
@@ -123,10 +127,12 @@ public class CrudProducts extends AppCompatActivity {
         // Crear una lista de nombres de categorías y una lista de IDs de categorías
         List<String> categoriaNombres = new ArrayList<>();
         categoriaIds = new ArrayList<>();
+        categoriaMap = new HashMap<>();
 
         for (categoriaEntity categoria : categorias) {
             categoriaNombres.add(categoria.getNombre());
             categoriaIds.add(categoria.getId_categoria());
+            categoriaMap.put(categoria.getNombre(), categoria.getId_categoria());
         }
 
         // Configurar un adaptador personalizado para el Spinner de categorías
@@ -150,11 +156,9 @@ public class CrudProducts extends AppCompatActivity {
 
     // Método para obtener el ID de la categoría seleccionada en el Spinner de categorías
     private int obtenerIdCategoriaSeleccionada() {
-        // Obtener la posición de la categoría seleccionada en el Spinner
-        int selectedCategoryIndex = categoriaSpinner.getSelectedItemPosition();
-
-        // Obtener el ID de la categoría correspondiente a la posición seleccionada
-        return categoriaIds.get(selectedCategoryIndex);
+        // Obtener el nombre de la categoría seleccionada en el Spinner
+        String categoriaSeleccionada = categoriaSpinner.getSelectedItem().toString();
+        return categoriaMap.get(categoriaSeleccionada);
     }
 
     // Método para configurar el Spinner de tipo con las opciones existentes
@@ -216,7 +220,6 @@ public class CrudProducts extends AppCompatActivity {
 
         // Actualizar el Spinner de productos
         configurarSpinnerProductos();
-
     }
 
     // Método para eliminar un producto de la base de datos
@@ -250,28 +253,36 @@ public class CrudProducts extends AppCompatActivity {
         comidaBebida productoSeleccionado = obtenerProductoPorNombre(productName);
 
         if (productoSeleccionado != null) {
-            // Obtener los valores actualizados del formulario
-            String nuevoNombre = nombreEditText.getText().toString();
-            String nuevoTipo = tipoSpinner.getSelectedItem().toString();
-            BigDecimal nuevoPrecio = new BigDecimal(precioEditText.getText().toString());
-            String nuevaDescripcion = descripcionEditText.getText().toString();
-            int nuevaIdCategoria = mapCategoriaToPosition(Integer.parseInt(categoriaSpinner.getSelectedItem().toString()));
+            try {
+                // Obtener los valores actualizados del formulario
+                String nuevoNombre = nombreEditText.getText().toString();
+                String nuevoTipo = tipoSpinner.getSelectedItem().toString();
+                BigDecimal nuevoPrecio = new BigDecimal(precioEditText.getText().toString());
+                String nuevaDescripcion = descripcionEditText.getText().toString();
 
-            // Actualizar los datos del producto seleccionado
-            productoSeleccionado.setNombre(nuevoNombre);
-            productoSeleccionado.setTipo(nuevoTipo);
-            productoSeleccionado.setPrecio(nuevoPrecio);
-            productoSeleccionado.setDescripcion(nuevaDescripcion);
-            productoSeleccionado.setId_categoria(nuevaIdCategoria);
+                // Obtener el ID de la categoría seleccionada en el Spinner
+                int nuevaIdCategoria = obtenerIdCategoriaSeleccionada();
 
-            // Actualizar el producto en la base de datos
-            appDataBase.comidaBebidaDAO().updateComidaBebida(productoSeleccionado);
+                // Actualizar los datos del producto seleccionado
+                productoSeleccionado.setNombre(nuevoNombre);
+                productoSeleccionado.setTipo(nuevoTipo);
+                productoSeleccionado.setPrecio(nuevoPrecio);
+                productoSeleccionado.setDescripcion(nuevaDescripcion);
+                productoSeleccionado.setId_categoria(nuevaIdCategoria);
 
-            // Notificar que el producto ha sido actualizado
-            Toast.makeText(CrudProducts.this, "Producto actualizado", Toast.LENGTH_SHORT).show();
+                // Actualizar el producto en la base de datos
+                appDataBase.comidaBebidaDAO().updateComidaBebida(productoSeleccionado);
 
-            // Actualizar el Spinner de productos
-            configurarSpinnerProductos();
+                // Notificar que el producto ha sido actualizado
+                Toast.makeText(CrudProducts.this, "Producto actualizado", Toast.LENGTH_SHORT).show();
+
+                // Actualizar el Spinner de productos
+                configurarSpinnerProductos();
+            } catch (Exception e) {
+                // Manejar cualquier otra excepción que pueda ocurrir
+                Toast.makeText(CrudProducts.this, "Error al actualizar el producto", Toast.LENGTH_SHORT).show();
+                e.printStackTrace();
+            }
         } else {
             Toast.makeText(CrudProducts.this, "Producto no encontrado", Toast.LENGTH_SHORT).show();
         }
@@ -287,7 +298,6 @@ public class CrudProducts extends AppCompatActivity {
         }
         return null;
     }
-
 
     // Método para obtener la posición de un tipo en el Spinner de tipos
     private int mapTipoToPosition(String tipo) {
