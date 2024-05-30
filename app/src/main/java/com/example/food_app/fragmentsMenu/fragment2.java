@@ -1,4 +1,4 @@
-package com.example.food_app;
+package com.example.food_app.fragmentsMenu;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,12 +7,14 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.food_app.R;
 import com.example.food_app.adapter.ListAdapter;
 import com.example.food_app.database.AppDataBase;
 import com.example.food_app.database.entity.comidaBebida;
 import java.util.List;
 
-public class fragment3 extends Fragment {
+public class fragment2 extends Fragment {
     private RecyclerView recyclerView;
     private ListAdapter listAdapter;
     private AppDataBase appDataBase;
@@ -26,7 +28,7 @@ public class fragment3 extends Fragment {
         appDataBase = AppDataBase.getInstance(requireContext());
 
         // Recupera los datos de la base de datos
-        List<comidaBebida> comidaBebidaList = appDataBase.comidaBebidaDAO().getId_categoria(3);
+        List<comidaBebida> comidaBebidaList = appDataBase.comidaBebidaDAO().getId_categoria(2);
 
         // Inicializa el adaptador con los datos recuperados
         listAdapter = new ListAdapter(comidaBebidaList, requireContext());

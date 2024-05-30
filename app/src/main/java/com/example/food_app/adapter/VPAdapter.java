@@ -4,10 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
-import com.example.food_app.fragment1;
-import com.example.food_app.fragment2;
-import com.example.food_app.fragment3;
-import com.example.food_app.fragment4;
+import com.example.food_app.fragmentsMenu.fragment1;
+import com.example.food_app.fragmentsMenu.fragment2;
+import com.example.food_app.fragmentsMenu.fragment3;
+import com.example.food_app.fragmentsMenu.fragment4;
 
 
 public class VPAdapter extends FragmentStateAdapter {
