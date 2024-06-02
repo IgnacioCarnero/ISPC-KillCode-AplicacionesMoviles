@@ -24,7 +24,7 @@
         </activity>
 
         <activity
-            android:name=".LoginActivity"
+            android:name=".auth.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".CrudProducts"
@@ -36,7 +36,7 @@
             android:name=".passwordResetActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".auth.RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".MenuSelectionActivity"
@@ -48,13 +48,13 @@
             android:name=".PaymentMethodActivity"
             android:exported="false" />
         <activity
-            android:name=".MenuScroll"
+            android:name=".menu.MenuScroll"
             android:exported="false" />
         <activity
-            android:name=".EstimatedtimeActivity"
+            android:name=".menu.EstimatedtimeActivity"
             android:exported="false" />
         <activity
-            android:name=".OrderConfirmationActivity"
+            android:name=".menu.OrderConfirmationActivity"
             android:exported="false" />
         <activity
             android:name=".ToConfirmOrderActivity"
@@ -75,7 +75,7 @@
             android:name=".waiterActivity"
             android:exported="false" />
         <activity
-            android:name=".MenuActivity"
+            android:name=".menu.MenuActivity"
             android:exported="false" />
         <activity
             android:name=".ConfigurarMesaActivity"

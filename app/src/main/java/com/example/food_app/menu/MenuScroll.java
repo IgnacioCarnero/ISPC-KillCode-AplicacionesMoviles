@@ -1,4 +1,4 @@
-package com.example.food_app;
+package com.example.food_app.menu;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
@@ -6,9 +6,12 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
+import com.example.food_app.ListElement;
+import com.example.food_app.R;
+import com.example.food_app.ToConfirmOrderActivity;
 import com.example.food_app.adapter.VPAdapter;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.List;
@@ -18,7 +21,7 @@ public class MenuScroll extends AppCompatActivity {
     TabLayout tabLayout;
     ViewPager2 viewPager2;
     VPAdapter vpAdapter;
-    Button btnOrder;
+    FloatingActionButton btnOrder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

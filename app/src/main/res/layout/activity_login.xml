@@ -10,153 +10,147 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:alpha="0.7"
-        android:background="@drawable/bkgd_welcome">
+        android:background="@drawable/bkgd_welcome" />
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="775dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="31dp"
-            android:layout_marginTop="71dp"
-            android:layout_marginEnd="31dp"
-            android:layout_marginBottom="116dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="28dp">
 
-            <LinearLayout
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-20dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="28dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical"
+            android:padding="40dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="@string/welcome"
+                android:textColor="@color/black"
+                android:textSize="50sp"
+                android:textStyle="bold" />
+
+            <View
                 android:layout_width="wrap_content"
-                android:layout_height="743dp"
-                android:layout_margin="10dp"
-                android:orientation="vertical"
-                android:padding="40dp">
+                android:layout_height="45dp" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto"
-                    android:text="@string/welcome"
-                    android:textColor="@color/black"
-                    android:textSize="50sp"
-                    android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.7"
+                android:fontFamily="@font/roboto"
+                android:text="@string/userInput"
+                android:textColor="@color/black"
+                android:textSize="30sp" />
 
-                <View
+            <EditText
+                android:id="@+id/etUserEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/baseline_person_2_24"
+                android:fontFamily="@font/roboto"
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress"
+                android:textSize="25sp"
+                android:padding="25dp"
+                tools:ignore="LabelFor"
+                android:textColor="@color/black"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="45dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.7"
+                android:fontFamily="@font/roboto"
+                android:text="@string/passwordInput"
+                android:textColor="@color/black"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/eye_svgrepo_com"
+                android:fontFamily="@font/roboto"
+                android:importantForAutofill="no"
+                android:inputType="textPassword"
+                android:textSize="25sp"
+                android:padding="25dp"
+                android:textColor="@color/black"
+                tools:ignore="LabelFor" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cbRemember"
                     android:layout_width="wrap_content"
-                    android:layout_height="45dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
                     android:alpha="0.7"
+                    android:buttonTint="@color/black"
                     android:fontFamily="@font/roboto"
-                    android:text="@string/userInput"
+                    android:text="@string/cbRemember"
                     android:textColor="@color/black"
-                    android:textSize="30sp" />
-
-                <EditText
-                    android:id="@+id/etUserEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="77dp"
-                    android:drawableEnd="@drawable/baseline_person_2_24"
-                    android:fontFamily="@font/roboto"
-                    android:importantForAutofill="no"
-                    android:inputType="textEmailAddress"
-                    android:padding="25dp"
-                    android:textColor="@color/black"
-                    android:textSize="25sp"
-                    tools:ignore="LabelFor" />
-
-                <View
-                    android:layout_width="wrap_content"
-                    android:layout_height="21dp" />
+                    android:textSize="20sp" />
 
                 <TextView
+                    android:id="@+id/tvRecoveryPass"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:alpha="0.7"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
                     android:fontFamily="@font/roboto"
-                    android:text="@string/passwordInput"
+                    android:text="@string/recoveryPassword"
                     android:textColor="@color/black"
-                    android:textSize="30sp" />
+                    android:textSize="20sp"
+                    tools:ignore="RelativeOverlap" />
+            </RelativeLayout>
 
-                <EditText
-                    android:id="@+id/etPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/vector"
-                    android:fontFamily="@font/roboto"
-                    android:importantForAutofill="no"
-                    android:inputType="textPassword"
-                    android:padding="25dp"
-                    android:textColor="@color/black"
-                    android:textSize="25sp"
-                    tools:ignore="LabelFor" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <CheckBox
-                        android:id="@+id/cbRemember"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:alpha="0.7"
-                        android:buttonTint="@color/black"
-                        android:fontFamily="@font/roboto"
-                        android:text="@string/cbRemember"
-                        android:textColor="@color/black"
-                        android:textSize="20sp" />
-
-                    <TextView
-                        android:id="@+id/tvRecoveryPass"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:fontFamily="@font/roboto"
-                        android:text="@string/recoveryPassword"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        tools:ignore="RelativeOverlap" />
-                </RelativeLayout>
-
-                <View
-                    android:layout_width="wrap_content"
-                    android:layout_height="45dp" />
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="45dp" />
 
 
-                <Button
-                    android:id="@+id/btnLogin"
-                    android:layout_width="match_parent"
-                    android:layout_height="72dp"
-                    android:background="@drawable/roundedstyle"
-                    android:backgroundTint="@color/black"
-                    android:fontFamily="@font/roboto"
-                    android:text="@string/login"
-                    android:textAllCaps="true"
-                    android:textSize="30sp" />
+            <Button
+                android:background="@drawable/roundedstyle"
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:backgroundTint="@color/black"
+                android:text="@string/login"
+                android:fontFamily="@font/roboto"
+                android:textAllCaps="true"
+                android:textSize="30sp" />
 
 
-                <View
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp" />
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="20dp" />
 
-                <TextView
-                    android:id="@+id/etNewUser"
-                    android:layout_width="match_parent"
-                    android:layout_height="41dp"
-                    android:gravity="center"
-                    android:textColor="@color/black"
-                    android:textSize="22sp" />
+            <TextView
+                android:id="@+id/etNewUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textSize="22sp"
+                />
 
-            </LinearLayout>
+        </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
-    </RelativeLayout>
-
+    </androidx.cardview.widget.CardView>
 
 </RelativeLayout>
 

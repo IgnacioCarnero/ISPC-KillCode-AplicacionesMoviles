@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,14 +11,13 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
+        android:layout_height="100dp"
         android:layout_marginEnd="2dp"
         android:background="#66FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tabTextAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:tabTextAppearance="@style/TabTextAppearance"
         app:tabTextColor="#000000">
 
         <com.google.android.material.tabs.TabItem
@@ -53,24 +52,18 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
 
-    <Button
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnOrder"
-        style="@style/Widget.Material3.Button.ElevatedButton"
-        android:layout_width="250dp"
-        android:layout_height="68dp"
-        android:layout_gravity="end"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="#991C1B1F"
-        android:text="Mi Pedido"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:cornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:strokeColor="#121111"
-        app:strokeWidth="1dp" />
+        android:layout_width="200dp"
+        android:layout_height="120dp"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="32dp"
+        android:src="@drawable/ic_restaurant_waiter"
+        app:fabSize="normal"
+        app:maxImageSize="80dp"
+        app:fabCustomSize="120dp"
+        app:backgroundTint="@color/cardview_dark_background"/>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
 

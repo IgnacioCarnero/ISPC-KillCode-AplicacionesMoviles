@@ -1,4 +1,4 @@
-package com.example.food_app;
+package com.example.food_app.menu;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -14,10 +14,14 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.food_app.ClientActivity;
+import com.example.food_app.ConfigurarCategoriaActivity;
+import com.example.food_app.ConfigurarMesaActivity;
+import com.example.food_app.CrudProducts;
+import com.example.food_app.R;
 import com.example.food_app.database.AppDataBase;
 import com.example.food_app.database.entity.categoriaEntity;
 import com.example.food_app.database.entity.comidaBebida;
-import com.example.food_app.database.entity.mesaEntity;
 
 import java.util.List;
 

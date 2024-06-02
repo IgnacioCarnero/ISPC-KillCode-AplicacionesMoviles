@@ -1,4 +1,4 @@
-package com.example.food_app;
+package com.example.food_app.menu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+
+import com.example.food_app.R;
 
 public class EstimatedtimeActivity extends AppCompatActivity {
     ImageButton btn_backawaiter2;
@@ -19,7 +21,7 @@ public class EstimatedtimeActivity extends AppCompatActivity {
         btn_backawaiter2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(EstimatedtimeActivity.this, MenuSelectionActivity.class);
+                Intent intent= new Intent(EstimatedtimeActivity.this, MenuActivity.class);
                 startActivity(intent);
             }
         });

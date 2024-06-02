@@ -1,4 +1,4 @@
-package com.example.food_app;
+package com.example.food_app.menu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+
+import com.example.food_app.R;
 
 public class OrderConfirmationActivity extends AppCompatActivity {
 
@@ -35,7 +37,7 @@ public class OrderConfirmationActivity extends AppCompatActivity {
         btn_backmenuselection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(OrderConfirmationActivity.this, MenuSelectionActivity.class);
+                Intent intent= new Intent(OrderConfirmationActivity.this, MenuActivity.class);
                 startActivity(intent);
             }
         });
