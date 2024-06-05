@@ -44,7 +44,7 @@
     <string name="login_button_text">Login</string>
     <string name="btn_alt">btnback</string>
     <string name="userInput">Ingrese su email</string>
-    <string name="newUser">Crear ususario</string>
+    <string name="newUser">Crear usuario</string>
     <string name="passwordInput">Ingrese su contraseña</string>
     <string name="newPassword">Crear contraseña</string>
     <string name="cbRemember">Recuerdame</string>
@@ -79,7 +79,7 @@
     <string name="btn_estimatedtime">Demora aproximada</string>
     <string name="txt_pedidorecibido">Recibimos su pedido con éxito</string>
     <string name="btn_waiter">Llamar al mozo</string>
-    <string name="btn_waiter2">Llamar al moz</string>
+    <string name="btn_waiter2">Llamar al mozo</string>
     <string name="btn_comentario">Dejanos tu comentario</string>
     <string name="txt_comentario">Cuadro para dejar una reseña sobre el lugar</string>
     <string name="txt_greeting">Te esperamos pronto\n</string>

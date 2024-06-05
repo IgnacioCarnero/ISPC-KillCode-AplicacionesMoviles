@@ -10,12 +10,14 @@
 
     <Button
         android:id="@+id/btn_menu"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:backgroundTint="#66121111"
+        android:layout_width="364dp"
+        android:layout_height="99dp"
+        android:background="@drawable/roundedstyle"
+        android:backgroundTint="#2f2b2b"
+        android:fontFamily="@font/roboto"
         android:text="@string/waiter_msj"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textSize="30sp"
-        app:cornerRadius="20dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_backwaiter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.541"
