@@ -14,7 +14,7 @@ import com.example.food_app.database.AppDataBase;
 import com.example.food_app.database.entity.comidaBebida;
 import java.util.List;
 
-public class fragment2 extends Fragment {
+public class PrincipalFragment extends Fragment {
     private RecyclerView recyclerView;
     private ListAdapter listAdapter;
     private AppDataBase appDataBase;
