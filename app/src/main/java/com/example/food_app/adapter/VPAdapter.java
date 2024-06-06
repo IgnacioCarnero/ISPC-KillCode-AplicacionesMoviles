@@ -5,9 +5,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import com.example.food_app.fragmentsMenu.EntradasFragment;
-import com.example.food_app.fragmentsMenu.fragment2;
-import com.example.food_app.fragmentsMenu.fragment3;
-import com.example.food_app.fragmentsMenu.fragment4;
+import com.example.food_app.fragmentsMenu.PrincipalFragment;
+import com.example.food_app.fragmentsMenu.PostresFragment;
+import com.example.food_app.fragmentsMenu.BebidaFragment;
 
 
 public class VPAdapter extends FragmentStateAdapter {
@@ -22,9 +22,9 @@ public class VPAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position) {
             case 0 : return new EntradasFragment();
-            case 1 : return new fragment2();
-            case 2 : return new fragment3();
-            case 3 : return new fragment4();
+            case 1 : return new PrincipalFragment();
+            case 2 : return new PostresFragment();
+            case 3 : return new BebidaFragment();
             default: return new EntradasFragment();
 
         }
