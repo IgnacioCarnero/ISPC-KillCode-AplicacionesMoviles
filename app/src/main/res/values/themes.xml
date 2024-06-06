@@ -12,10 +12,4 @@
         <item name="colorPrimary">@color/black</item>
     </style>
 
-    <style name="TabTextAppearance" parent="TextAppearance.AppCompat.Body1">
-        <item name="android:textSize">22sp</item>
-        <item name="textAllCaps">true</item>
-    </style>
-
-
 </resources>

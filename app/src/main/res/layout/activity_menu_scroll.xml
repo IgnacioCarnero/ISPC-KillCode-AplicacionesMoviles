@@ -17,28 +17,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tabTextAppearance="@style/TabTextAppearance"
+        app:tabTextAppearance="@style/TabTextAppearanceAutoSize"
         app:tabTextColor="#000000">
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Entradas" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Principal" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Postres" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Bebidas" />
+        <!-- TabItem elements removed -->
     </com.google.android.material.tabs.TabLayout>
 
 
@@ -49,9 +30,7 @@
         app:layout_constraintTop_toBottomOf="@id/tabLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
-
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnOrder"
@@ -67,4 +46,3 @@
         app:maxImageSize="80dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
