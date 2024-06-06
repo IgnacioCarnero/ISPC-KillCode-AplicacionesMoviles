@@ -13,9 +13,9 @@
         android:theme="@style/Theme.Food_app"
         tools:targetApi="31">
         <activity
-
             android:name=".PaymentMethodActivity"
-
+            android:exported="false" />
+        <activity
             android:name=".MenuSelectionActivity"
             android:exported="false" />
         <activity
