@@ -14,7 +14,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.food_app.ClientActivity;
 import com.example.food_app.ConfigurarCategoriaActivity;
 import com.example.food_app.ConfigurarMesaActivity;
 import com.example.food_app.CrudProducts;
@@ -70,7 +69,7 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent btn_menu = new Intent(MenuActivity.this, ClientActivity.class);
+                Intent btn_menu = new Intent(MenuActivity.this, MenuScroll.class);
                 startActivity(btn_menu);
 
                 // se realiza para despues verificar logs
