@@ -15,14 +15,13 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.food_app.R;
 import com.example.food_app.menu.MenuActivity;
+import com.example.food_app.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -45,13 +44,7 @@ public class LoginActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser != null) {
-            // El usuario ya está autenticado, navega directamente al MenuActivity
-            startActivity(new Intent(LoginActivity.this, MenuActivity.class));
-            finish();
-            return;
-        }
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,6 +65,7 @@ public class LoginActivity extends AppCompatActivity {
                             if(task.isSuccessful()){
                                 finish();
                                 startActivity(new Intent(LoginActivity.this, MenuActivity.class));
+                                Toast.makeText(LoginActivity.this, "", Toast.LENGTH_SHORT).show();
                             }
                         }
                 }).addOnFailureListener(new OnFailureListener() {

@@ -5,41 +5,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bkgd_welcome"
-    tools:context=".waiterActivity">
-
+    tools:context=".ClientActivity">
 
     <Button
         android:id="@+id/btn_menu"
-        android:layout_width="364dp"
-        android:layout_height="99dp"
+        android:layout_width="304dp"
+        android:layout_height="69dp"
         android:background="@drawable/roundedstyle"
-        android:backgroundTint="#2f2b2b"
+        android:backgroundTint="#2F2B2B"
         android:fontFamily="@font/roboto"
-        android:text="@string/waiter_msj"
+        android:text="@string/btn_menu"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_backwaiter"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintHorizontal_bias="0.205"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.932"
+        app:layout_constraintVertical_bias="0.799"
         app:strokeColor="#050505"
         app:strokeWidth="1dp" />
 
     <ImageButton
-        android:id="@+id/btn_backwaiter"
-        android:layout_width="142dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="52dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleX="1.5"
-        android:scaleY="1.5"
+        android:id="@+id/btn_waiter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundedstyle"
+        android:backgroundTint="#2F2B2B"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/img_btnback" />
+        app:layout_constraintHorizontal_bias="0.32"
+        app:layout_constraintStart_toEndOf="@+id/btn_menu"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.835"
+        app:srcCompat="@mipmap/img_btnwaiter" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
