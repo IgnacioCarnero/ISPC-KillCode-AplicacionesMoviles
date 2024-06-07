@@ -19,13 +19,14 @@ import com.example.food_app.ConfigurarCategoriaActivity;
 import com.example.food_app.ConfigurarMesaActivity;
 import com.example.food_app.CrudProducts;
 import com.example.food_app.R;
+import com.example.food_app.adapter.OnItemQuantityChangedListener;
 import com.example.food_app.database.AppDataBase;
 import com.example.food_app.database.entity.categoriaEntity;
 import com.example.food_app.database.entity.comidaBebida;
 
 import java.util.List;
 
-public class MenuActivity extends AppCompatActivity {
+public class MenuActivity extends AppCompatActivity{
     ImageButton btn_waiter;
     Button btn_bienvenida;
     Button btn_seleccionar_mesa;
@@ -33,7 +34,6 @@ public class MenuActivity extends AppCompatActivity {
     TextView txtMesaSeleccionada;
     Button btn_config_categoria;
     AppDataBase appDataBase;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

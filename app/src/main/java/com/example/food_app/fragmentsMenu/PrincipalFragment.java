@@ -49,8 +49,11 @@ public class PrincipalFragment extends Fragment {
         // Recupera los datos de la base de datos
         List<comidaBebida> comidaBebidaList = appDataBase.comidaBebidaDAO().getId_categoria(categoryId);
 
-        // Inicializa el adaptador con los datos recuperados
-        listAdapter = new ListAdapter(comidaBebidaList, requireContext());
+        // Obtén la actividad y asegúrate de que implementa OnQuantityChangeListener
+        ListAdapter.OnQuantityChangeListener listener = (ListAdapter.OnQuantityChangeListener) getActivity();
+
+        // Inicializa el adaptador con los datos recuperados y el listener
+        listAdapter = new ListAdapter(comidaBebidaList, requireContext(), listener);
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,10 +21,22 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     private LayoutInflater mInflater;
     private Context context;
 
-    public ListAdapter(List<comidaBebida> itemList, Context context) {
+    // Agrega una interfaz de Listener
+    public interface OnQuantityChangeListener {
+        // Implementación del método de la interfaz OnItemQuantityChangedListener
+        void onQuantityChanged(comidaBebida comida);
+
+        void onQuantityChanged(comidaBebida comida, int newQuantity);
+    }
+
+    // Añade una variable de listener en el adapter
+    private OnQuantityChangeListener onQuantityChangeListener;
+
+    public ListAdapter(List<comidaBebida> itemList, Context context, OnQuantityChangeListener listener) {
         this.mInflater = LayoutInflater.from(context);
         this.context = context;
         this.mData = itemList;
+        this.onQuantityChangeListener = listener;
     }
 
     @Override
@@ -56,15 +69,20 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView addBtn, subsBtn;
         TextView nombre, tipo, precio, descripcion;
+        EditText cantidad;
 
         ViewHolder(View itemView) {
             super(itemView);
             addBtn = itemView.findViewById(R.id.btnAdd);
+            cantidad = itemView.findViewById(R.id.editTextNumberSigned);
             subsBtn = itemView.findViewById(R.id.btnSubs);
             nombre = itemView.findViewById(R.id.nombre);
             tipo = itemView.findViewById(R.id.tipo);
             precio = itemView.findViewById(R.id.precio);
             descripcion = itemView.findViewById(R.id.descripcion);
+
+            // Inicializar la cantidad en 0
+            cantidad.setText("0");
         }
 
         void bindData(final comidaBebida comida) {
@@ -72,6 +90,34 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             tipo.setText(comida.getTipo());
             precio.setText(comida.getPrecio().toString());
             descripcion.setText(comida.getDescripcion());
+
+            // Listener para incrementar cantidad
+            addBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int currentCantidad = Integer.parseInt(cantidad.getText().toString());
+                    currentCantidad += 1;
+                    cantidad.setText(String.valueOf(currentCantidad));
+                    if (onQuantityChangeListener != null) {
+                        onQuantityChangeListener.onQuantityChanged(comida, currentCantidad);
+                    }
+                }
+            });
+
+            // Listener para decrementar cantidad, asegurando que no sea menor a 0
+            subsBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int currentCantidad = Integer.parseInt(cantidad.getText().toString());
+                    if (currentCantidad > 0) {
+                        currentCantidad -= 1;
+                        cantidad.setText(String.valueOf(currentCantidad));
+                        if (onQuantityChangeListener != null) {
+                            onQuantityChangeListener.onQuantityChanged(comida, currentCantidad);
+                        }
+                    }
+                }
+            });
         }
     }
 }

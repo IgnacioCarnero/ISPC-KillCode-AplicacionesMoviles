@@ -6,12 +6,15 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.math.BigDecimal;
 
 @Entity(tableName = "comidaBebida" , foreignKeys = @ForeignKey(entity = categoriaEntity.class,
         parentColumns = "id_categoria", childColumns = "id_categoria", onDelete = ForeignKey.CASCADE))
 
-public class comidaBebida {
+public class comidaBebida implements Parcelable{
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id_comidaBebida")
     private int id_comidaBebida;
@@ -43,6 +46,51 @@ public class comidaBebida {
         this.precio = precio;
         this.descripcion = descripcion;
         this.id_categoria = id_categoria;
+    }
+
+    protected comidaBebida(Parcel in) {
+        id_comidaBebida = in.readInt();
+        nombre = in.readString();
+        tipo = in.readString();
+        if (in.readByte() == 0) {
+            precio = null;
+        } else {
+            precio = new BigDecimal(in.readString());
+        }
+        descripcion = in.readString();
+        id_categoria = in.readInt();
+    }
+
+    public static final Creator<comidaBebida> CREATOR = new Creator<comidaBebida>() {
+        @Override
+        public comidaBebida createFromParcel(Parcel in) {
+            return new comidaBebida(in);
+        }
+
+        @Override
+        public comidaBebida[] newArray(int size) {
+            return new comidaBebida[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id_comidaBebida);
+        dest.writeString(nombre);
+        dest.writeString(tipo);
+        if (precio == null) {
+            dest.writeByte((byte) 0);
+        } else {
+            dest.writeByte((byte) 1);
+            dest.writeString(precio.toString());
+        }
+        dest.writeString(descripcion);
+        dest.writeInt(id_categoria);
     }
 
     public int getId_comidaBebida() {
