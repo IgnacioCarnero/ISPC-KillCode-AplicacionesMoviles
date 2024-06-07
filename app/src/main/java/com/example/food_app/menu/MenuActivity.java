@@ -18,9 +18,11 @@ import com.example.food_app.ConfigurarCategoriaActivity;
 import com.example.food_app.ConfigurarMesaActivity;
 import com.example.food_app.CrudProducts;
 import com.example.food_app.R;
+import com.example.food_app.auth.LoginActivity;
 import com.example.food_app.database.AppDataBase;
 import com.example.food_app.database.entity.categoriaEntity;
 import com.example.food_app.database.entity.comidaBebida;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.List;
 
@@ -31,8 +33,10 @@ public class MenuActivity extends AppCompatActivity {
     Button btn_actualizar_menu;
     TextView txtMesaSeleccionada;
     Button btn_config_categoria;
+    Button btnLogout;
     AppDataBase appDataBase;
 
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +44,12 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
         appDataBase = AppDataBase.getInstance(getApplicationContext());
 
-
+        mAuth = FirebaseAuth.getInstance();
         btn_bienvenida = findViewById(R.id.btn_bienvenida);
         btn_seleccionar_mesa = findViewById(R.id.btn_seleccionar_mesa);
         btn_actualizar_menu = findViewById(R.id.btn_actualizar_menu);
         btn_config_categoria = findViewById(R.id.btn_config_categoria);
+        btnLogout = findViewById(R.id.btnLogout);
         txtMesaSeleccionada = findViewById(R.id.txtMesaSeleccionada);
 
 
@@ -61,6 +66,20 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intentConfigurarCategoria = new Intent(MenuActivity.this, ConfigurarCategoriaActivity.class);
                 startActivity(intentConfigurarCategoria);
+            }
+        });
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mAuth != null) {
+                    mAuth.signOut();
+                    Intent intent = new Intent(MenuActivity.this, LoginActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    Toast.makeText(MenuActivity.this, "Error al cerrar sesión. Intente nuevamente.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
