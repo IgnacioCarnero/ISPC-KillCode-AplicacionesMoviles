@@ -4,34 +4,36 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
-import com.example.food_app.fragmentsMenu.EntradasFragment;
+
 import com.example.food_app.fragmentsMenu.PrincipalFragment;
-import com.example.food_app.fragmentsMenu.PostresFragment;
-import com.example.food_app.fragmentsMenu.BebidaFragment;
+import com.example.food_app.database.entity.categoriaEntity;
+
+import java.util.List;
 
 
 public class VPAdapter extends FragmentStateAdapter {
 
-
-    public VPAdapter(@NonNull FragmentActivity fragmentActivity) {
+    private List<categoriaEntity> categorias;
+    public VPAdapter(@NonNull FragmentActivity fragmentActivity, List<categoriaEntity> categorias) {
         super(fragmentActivity);
+        this.categorias = categorias;
     }
 
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        switch (position) {
-            case 0 : return new EntradasFragment();
-            case 1 : return new PrincipalFragment();
-            case 2 : return new PostresFragment();
-            case 3 : return new BebidaFragment();
-            default: return new EntradasFragment();
-
-        }
+        int categoryId = categorias.get(position).getId_categoria();
+        return PrincipalFragment.newInstance(categoryId); // Asegúrate de que el fragmento acepte esta nueva instancia
     }
 
     @Override
     public int getItemCount() {
-        return 4;
+        return categorias.size();
     }
+
+    // Método para obtener el título de la página (nombre de la categoría)
+    public String getPageTitle(int position) {
+        return categorias.get(position).getNombre();
+    }
+
 }

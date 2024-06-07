@@ -19,16 +19,35 @@ public class PrincipalFragment extends Fragment {
     private ListAdapter listAdapter;
     private AppDataBase appDataBase;
 
+    private static final String ARG_CATEGORY_ID = "category_id";
+    private int categoryId;
+
+        public static PrincipalFragment newInstance(int categoryId) {
+            PrincipalFragment fragment = new PrincipalFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_CATEGORY_ID, categoryId);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            if (getArguments() != null) {
+                categoryId = getArguments().getInt(ARG_CATEGORY_ID);
+            }
+        }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_entradas, container, false);
+        View view = inflater.inflate(R.layout.principal_fragment, container, false);
         recyclerView = view.findViewById(R.id.recycler1);
 
         // Inicializa la base de datos
         appDataBase = AppDataBase.getInstance(requireContext());
 
         // Recupera los datos de la base de datos
-        List<comidaBebida> comidaBebidaList = appDataBase.comidaBebidaDAO().getId_categoria(2);
+        List<comidaBebida> comidaBebidaList = appDataBase.comidaBebidaDAO().getId_categoria(categoryId);
 
         // Inicializa el adaptador con los datos recuperados
         listAdapter = new ListAdapter(comidaBebidaList, requireContext());

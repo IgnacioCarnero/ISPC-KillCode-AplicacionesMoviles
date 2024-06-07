@@ -6,12 +6,16 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.example.food_app.database.dao.CategoriaDAO;
 import com.example.food_app.database.entity.categoriaEntity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 // Adaptador personalizado para mostrar solo el nombre de la categoría
 public class CategoriaAdapter extends ArrayAdapter<categoriaEntity> {
+
+    private List<categoriaEntity> categorias;
     public CategoriaAdapter(Context context, List<categoriaEntity> categorias) {
         super(context, android.R.layout.simple_spinner_item, categorias);
     }
@@ -40,5 +44,16 @@ public class CategoriaAdapter extends ArrayAdapter<categoriaEntity> {
             ((TextView) view).setText(categoria.getNombre());
         }
         return view;
+    }
+
+    // Nuevo método para recuperar las categorías de la base de datos
+    public static List<categoriaEntity> getCategoriasFromDB(CategoriaDAO categoriaDAO) {
+        return categoriaDAO.getAllCategorias();
+    }
+
+    public void updateCategorias(List<categoriaEntity> newCategorias) {
+        this.categorias.clear();
+        this.categorias.addAll(newCategorias);
+        notifyDataSetChanged();
     }
 }

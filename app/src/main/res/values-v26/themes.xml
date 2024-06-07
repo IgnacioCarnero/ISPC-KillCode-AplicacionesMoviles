@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TabTextAppearanceAutoSize" parent="TextAppearance.Design.Tab">
+        <item name="android:autoSizeTextType">uniform
+        </item> <!-- Ajuste uniforme del tamaño del texto -->
+        <item name="android:autoSizeMinTextSize">12sp</item> <!-- Tamaño mínimo del texto -->
+        <item name="android:autoSizeMaxTextSize">24sp</item> <!-- Tamaño máximo del texto -->
+        <item name="android:autoSizeStepGranularity">1sp
+        </item> <!-- Incremento en el cambio de tamaño -->
+        <item name="android:textColor">@android:color/black</item> <!-- Color del texto -->
+    </style>
+</resources>
