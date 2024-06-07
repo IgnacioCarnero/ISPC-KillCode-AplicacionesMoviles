@@ -23,6 +23,7 @@ public class OrderConfirmationActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private OrderConfirmationAdapter adapter;
 
+
     private static final String TAG = "OrderConfirmationActivity";
 
     @SuppressLint("MissingInflatedId")
@@ -40,6 +41,7 @@ public class OrderConfirmationActivity extends AppCompatActivity {
         }
 
         Log.d(TAG, "onCreate: received products list with size " + productos.size());
+
 
         adapter = new OrderConfirmationAdapter(productos, this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
