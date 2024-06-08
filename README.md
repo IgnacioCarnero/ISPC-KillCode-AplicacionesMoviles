@@ -33,7 +33,7 @@ OrderTablet es una aplicación para dispositivos Android, diseñada especialment
 - Android 7.0 o superior
 
 ## Características principales
-- **Ordenar sin esperar**: Los comenzales pueden explorar el menú completo y realizar sus pedidos de alimentos y bebidas directamente desde la tableta o dispositivo móvil disponible en su mesa sin necesidad de esperar al mozo/moza.
+- **Ordenar sin esperar**: Los comenzales pueden explorar el menú completo y realizar sus pedidos de alimentos y bebidas directamente desde la tablet o dispositivo móvil disponible en su mesa sin necesidad de esperar al mozo/moza.
 - **Personalización**: Permite a los comenzales elegir dentro de una variada carta de alimentos, incluyendo menús vegetarianos, veganos y aptos para celíacos.
 - **Menús Digitales**: Menús digitales atractivos y fáciles de navegar, con descripciones detalladas de los platos, imágenes y recomendaciones. Los precios de cada producto son claros y visibles.
 - **Solicitud de servicio**: Los comenzales pueden solicitar la atención del personal o hacer peticiones especiales de manera sencilla si así lo necesitan.
