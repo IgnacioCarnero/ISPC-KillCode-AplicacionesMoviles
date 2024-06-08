@@ -1,13 +1,13 @@
 package com.example.food_app.menu;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager2.widget.ViewPager2;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.food_app.ListElement;
 import com.example.food_app.R;
@@ -17,8 +17,12 @@ import com.example.food_app.adapter.VPAdapter;
 import com.example.food_app.database.AppDataBase;
 import com.example.food_app.database.dao.CategoriaDAO;
 import com.example.food_app.database.entity.categoriaEntity;
+
 import com.example.food_app.database.entity.comidaBebida;
 import com.example.food_app.database.utility.OrderUtils;
+
+import com.example.food_app.waiterActivity;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -33,6 +37,7 @@ public class MenuScroll extends AppCompatActivity  implements ListAdapter.OnQuan
     ViewPager2 viewPager2;
     VPAdapter vpAdapter;
     FloatingActionButton btnOrder;
+    FloatingActionButton btnWaiter;
 
     private AppDataBase appDataBase;
     private CategoriaDAO categoriaDAO;
@@ -68,6 +73,7 @@ public class MenuScroll extends AppCompatActivity  implements ListAdapter.OnQuan
         tabLayout = findViewById(R.id.tabLayout);
         viewPager2 = findViewById(R.id.viewpager);
         btnOrder = findViewById(R.id.btnOrder);
+        btnWaiter = findViewById(R.id.btn_waiter);
 
         appDataBase = AppDataBase.getInstance(this);
         categoriaDAO = appDataBase.categoriaDAO();
@@ -94,6 +100,14 @@ public class MenuScroll extends AppCompatActivity  implements ListAdapter.OnQuan
                 } else {
                     Toast.makeText(MenuScroll.this, "No items selected", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        btnWaiter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent btnWaiter = new Intent(MenuScroll.this, waiterActivity.class);
+                startActivity(btnWaiter);
             }
         });
     }
