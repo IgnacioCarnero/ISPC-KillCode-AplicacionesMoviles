@@ -13,29 +13,31 @@
 
     <Button
         android:id="@+id/btn_orderwithchanges"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:backgroundTint="#66121111"
+        android:layout_width="360dp"
+        android:layout_height="90dp"
+        android:background="@drawable/roundedstyle"
+        android:backgroundTint="#121111"
         android:text="@string/btn_confirmapedido"
         android:textSize="30sp"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.209"
+        app:layout_constraintHorizontal_bias="0.215"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.844"
+        app:layout_constraintVertical_bias="0.839"
         app:strokeColor="#050505" />
 
     <ImageButton
         android:id="@+id/btn_back_toconfirmorder"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:background="@color/black"
-        android:backgroundTint="#80090909"
+
+        android:backgroundTint="#090909"
         android:contentDescription="botón para volver a ver el pedido"
         android:scaleX="2"
         android:scaleY="2"
+        android:background="@drawable/roundedstyle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.785"

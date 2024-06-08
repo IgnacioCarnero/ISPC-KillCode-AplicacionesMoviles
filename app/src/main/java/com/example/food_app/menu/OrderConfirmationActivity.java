@@ -1,49 +1,51 @@
 package com.example.food_app.menu;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.food_app.R;
+import com.example.food_app.adapter.OrderConfirmationAdapter;
+import com.example.food_app.database.entity.comidaBebida;
+
+import java.util.ArrayList;
 
 public class OrderConfirmationActivity extends AppCompatActivity {
 
-    Button btn_demora;
-    ImageButton btn_backmenuselection;
+    private RecyclerView recyclerView;
+    private OrderConfirmationAdapter adapter;
 
 
+    private static final String TAG = "OrderConfirmationActivity";
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_order_confirmation);
+        setContentView(R.layout.activity_to_confirm_order);
 
-        btn_demora= findViewById(R.id.btn_demora);
-        btn_backmenuselection=findViewById(R.id.btn_backmenuselection);
+        recyclerView = findViewById(R.id.to_confirm_order);
+
+        // Recibe la lista de productos desde el intent
+        ArrayList<comidaBebida> productos = getIntent().getParcelableArrayListExtra("productos");
+        if (productos == null) {
+            productos = new ArrayList<>();
+        }
+
+        Log.d(TAG, "onCreate: received products list with size " + productos.size());
 
 
-
-        btn_demora.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(OrderConfirmationActivity.this, EstimatedtimeActivity.class);
-                startActivity(intent);
-            }
-        });
-        btn_backmenuselection.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent= new Intent(OrderConfirmationActivity.this, MenuActivity.class);
-                startActivity(intent);
-            }
-        });
-
+        adapter = new OrderConfirmationAdapter(productos, this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
 
     }
-
-
 }
