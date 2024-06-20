@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CrudProducts"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tvCargaProdcutos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/new_products"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="326dp"
+        android:orientation="vertical"
+        android:background="@color/cardview_dark_background"
+        android:layout_margin="30dp"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCargaProdcutos"
+        tools:context=".CrudProductoFragment">
+
+        <EditText
+            android:id="@+id/nombreEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/name_product"
+            android:inputType="text"
+            android:textSize="26sp" />
+
+        <Spinner
+            android:id="@+id/tipoSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="50dp"
+           />
+
+        <EditText
+            android:id="@+id/precioEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/price_product"
+            android:inputType="numberDecimal"
+            android:textSize="26sp" />
+
+        <EditText
+            android:id="@+id/descripcionEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/description_product"
+            android:inputType="text"
+            android:textSize="26sp" />
+
+        <Spinner
+            android:id="@+id/categoriaSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="50dp"/>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/saveProduct"
+        android:layout_width="480dp"
+        android:layout_height="72dp"
+        android:background="@drawable/roundedstyle"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/btn_save"
+        android:textAllCaps="true"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <Button
+        android:id="@+id/updateProduct"
+        android:layout_width="480dp"
+        android:layout_height="72dp"
+        android:background="@drawable/roundedstyle"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:fontFamily="@font/roboto"
+        android:layout_marginTop="20dp"
+        android:text="@string/btn_update"
+        android:textAllCaps="true"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/saveProduct" />
+
+    <Button
+        android:id="@+id/deleteProduct"
+        android:layout_width="480dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/roundedstyle"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:fontFamily="@font/roboto"
+        android:text="@string/btn_delete"
+        android:textAllCaps="true"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/updateProduct" />
+
+    <TextView
+        android:id="@+id/products"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+         android:textColor="@color/black"
+        android:fontFamily="@font/roboto"
+        android:gravity="center"
+        android:text="@string/check_products"
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/deleteProduct" />
+
+    <Spinner
+        android:id="@+id/productSpinner"
+        android:background="@color/cardview_dark_background"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="30dp"
+        android:minHeight="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/products"
+        tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

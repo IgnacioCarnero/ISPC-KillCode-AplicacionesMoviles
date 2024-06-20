@@ -10,32 +10,23 @@
 
     <Button
         android:id="@+id/btn_menu"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:backgroundTint="#40121111"
+        android:layout_width="364dp"
+        android:layout_height="99dp"
+        android:background="@drawable/roundedstyle"
+        android:backgroundTint="#2f2b2b"
+        android:fontFamily="@font/roboto"
         android:text="@string/waiter_msj"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_backwaiter"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.541"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.932"
-        app:strokeColor="#050505" />
+        app:strokeColor="#050505"
+        app:strokeWidth="1dp" />
 
-    <ImageButton
-        android:id="@+id/btn_backwaiter"
-        android:layout_width="142dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="52dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleX="1.5"
-        android:scaleY="1.5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/img_btnback" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

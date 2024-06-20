@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,73 +6,11 @@
     android:background="@drawable/bkgd_orderview"
     tools:context=".ToConfirmOrderActivity">
 
-    <Button
-        android:id="@+id/btn_orderconfirm"
-        android:layout_width="326dp"
-        android:layout_height="109dp"
-        android:backgroundTint="@color/bkg_btn"
-        android:text="@string/btn_orderconfirm"
-        android:textSize="30sp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/to_confirm_order"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
+    <!-- Otros elementos de UI -->
+</LinearLayout>
 
-        app:cornerRadius="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.524"
-        app:strokeColor="#050505"
-        app:strokeWidth="1.5sp" />
-
-    <Button
-        android:id="@+id/btn_specialOrder"
-        android:layout_width="325dp"
-        android:layout_height="104dp"
-        android:backgroundTint="@color/bkg_btn"
-        android:text="@string/btn_SpecialOrder"
-        android:textSize="30sp"
-
-
-        app:cornerRadius="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_orderconfirm"
-        app:layout_constraintVertical_bias="0.145"
-        app:strokeColor="#050505"
-        app:strokeWidth="1.5sp" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="360dp"
-        android:layout_height="119dp"
-        android:layout_marginBottom="128dp"
-        android:text="@string/Preferencias"
-        android:textAlignment="center"
-        android:textColor="#8693C1"
-        android:textColorLink="#726691"
-        android:textSize="24sp"
-        android:textStyle="bold"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.141"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="77dp"
-        android:layout_height="97dp"
-        android:layout_marginBottom="104dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleX="1.7"
-        android:scaleY="1.7"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.888"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/img_btnback" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>

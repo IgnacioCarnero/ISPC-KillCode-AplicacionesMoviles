@@ -1,13 +1,13 @@
 package com.example.food_app;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.food_app.menu.MenuScroll;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         btn_welcome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent( MainActivity.this, MenuActivity.class);
+                Intent intent= new Intent( MainActivity.this, MenuScroll.class);
                 startActivity(intent);
             }
         });

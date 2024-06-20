@@ -1,20 +1,30 @@
+# OrderTablet – Demo APK
+
+https://drive.google.com/file/d/1ekuqhCx4wSBbNz6893lCkYYuaZPVU6XO/view?usp=drive_link
+Usuario de prueba: leonardo@gmail.com
+Password: leonardo
+
+## Video final grupal
+
+https://drive.google.com/drive/folders/1hP5Hdm2awlI4uBn7Khi9JebMYLp8rby-
+
 # OrderTablet – Documentación
 
 ## Documento IEEE 830
 https://docs.google.com/document/d/1qRBMHlPtyhzC0heptoHxnlGo8XgIVy0t/edit#heading=h.gjdgxs
 
-## Diagramas
+## Diagramas (versiones corregidas)
 - Casos de uso
 - Clases
-<br><br>[https://drive.google.com/file/d/1zgEFqjmu0G9twLi2vIQAQ0yNalFE1Dxt/view?usp=drive_link](https://drive.google.com/file/d/1zgEFqjmu0G9twLi2vIQAQ0yNalFE1Dxt/view?usp=sharing)
+<br><br>https://drive.google.com/file/d/1CFNwI2CFi4YkM1WAL8cm8i8i-rkwCsle/view?usp=drive_link
 
 - Entidad-relación
 - Modelo relacional
-<br><br>[https://drive.google.com/file/d/1RuJH2Tp-Q8gEbLVIGbtxpnfJYgyFYpB8/view?usp=drive_link](https://drive.google.com/file/d/150KcSo5vYZYkaW3lfpwFeKE8WCtU9doG/view?usp=sharing)
+<br><br>https://drive.google.com/file/d/1T4-SwKiZqddY06yOedKaVU6dtXSIsEoU/view?usp=drive_link
 
-## Script Base de Datos
+## Script Base de Datos (version corregida)
 
-https://drive.google.com/file/d/1H_BfoHY30iqEsAJg0G1puHsZmq2xq6CJ/view?usp=sharing
+https://drive.google.com/file/d/10ObNqb-WCBHKWzzpS9k0aVKKGeLi7F3H/view?usp=drive_link
 
 ## Descripción
 OrderTablet es una aplicación para dispositivos Android, diseñada especialmente para tabletas. Representa una solución completa e innovadora en la forma en que los bares y restaurantes gestionan los pedidos de sus comenzales. Llevamos la comodidad y la eficiencia a un nuevo nivel al permitir que los comenzales realicen sus pedidos directamente desde la comodidad de su mesa, sin necesidad de esperar al mozo/a. Además, ofrece un sistema de gestión integral que conecta a los 4 roles principales: Comenzal/Mesa, Caja, Cocina, Barra.
@@ -23,7 +33,7 @@ OrderTablet es una aplicación para dispositivos Android, diseñada especialment
 - Android 7.0 o superior
 
 ## Características principales
-- **Ordenar sin esperar**: Los comenzales pueden explorar el menú completo y realizar sus pedidos de alimentos y bebidas directamente desde la tableta o dispositivo móvil disponible en su mesa sin necesidad de esperar al mozo/moza.
+- **Ordenar sin esperar**: Los comenzales pueden explorar el menú completo y realizar sus pedidos de alimentos y bebidas directamente desde la tablet o dispositivo móvil disponible en su mesa sin necesidad de esperar al mozo/moza.
 - **Personalización**: Permite a los comenzales elegir dentro de una variada carta de alimentos, incluyendo menús vegetarianos, veganos y aptos para celíacos.
 - **Menús Digitales**: Menús digitales atractivos y fáciles de navegar, con descripciones detalladas de los platos, imágenes y recomendaciones. Los precios de cada producto son claros y visibles.
 - **Solicitud de servicio**: Los comenzales pueden solicitar la atención del personal o hacer peticiones especiales de manera sencilla si así lo necesitan.
@@ -80,7 +90,7 @@ Este proyecto se lleva a cabo de manera colaborativa por un equipo compuesto por
 ----|----|----
 Romina Herrera|https://github.com/Romherre|https://www.linkedin.com/in/romina-herreramicv/|
 Leonardo Farran|https://github.com/Leo-Farran|https://www.linkedin.com/in/leonardo-cesar-farran|
-Facundo Cascallares |https://github.com/FacundoCascallares|https://www.linkedin.com/in/facundocascallares/|
+Tomas Lencina |https://github.com/TomiLencina| www.linkedin.com/in/tomas-lencina
 Mariana Florencia Morisse Rodriguez|https://github.com/florenciamorisse|https://www.linkedin.com/in/mariana-florencia-morisse-rodriguez/|
 Ignacio Carnero|https://github.com/IgnacioCarnero|https://www.linkedin.com/in/ignacio-carnero/|
 Ezequiel Falzoi |https://github.com/ezefalzoi|https://www.linkedin.com/in/ezequielfalzoi/|

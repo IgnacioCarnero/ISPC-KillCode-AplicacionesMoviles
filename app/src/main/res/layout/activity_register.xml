@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.7"
+        android:background="@drawable/bkgd_welcome">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="546dp"
+            android:layout_height="761dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="23dp"
+            android:layout_marginBottom="61dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="28dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                android:padding="40dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/register"
+                    android:textColor="@color/black"
+                    android:textSize="50sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="0.5"
+                    android:padding="8dp"
+                    android:text="@string/newAccount"
+                    android:textColor="@color/black"
+                    android:textSize="25sp" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.7"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/newUser"
+                    android:textColor="@color/black"
+                    android:textSize="30sp" />
+
+                <EditText
+                    android:id="@+id/etUserEmailRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/baseline_person_2_24"
+                    android:fontFamily="@font/roboto"
+                    android:importantForAutofill="no"
+                    android:inputType="textEmailAddress"
+                    android:padding="25dp"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    tools:ignore="LabelFor" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.7"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/newPassword"
+                    android:textColor="@color/black"
+                    android:textSize="30sp" />
+
+                <EditText
+                    android:id="@+id/etPasswordRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/eye_svgrepo_com"
+                    android:fontFamily="@font/roboto"
+                    android:importantForAutofill="no"
+                    android:inputType="textPassword"
+                    android:padding="25dp"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    tools:ignore="LabelFor" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp" />
+
+                <Button
+                    android:id="@+id/btnRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="77dp"
+                    android:background="@drawable/roundedstyle"
+                    android:backgroundTint="@color/black"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/register"
+                    android:textAllCaps="true"
+                    android:textSize="30sp"
+                    app:cornerRadius="25dp" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp" />
+
+                <TextView
+                    android:id="@+id/tvSignUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="22sp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+
+</RelativeLayout>
+

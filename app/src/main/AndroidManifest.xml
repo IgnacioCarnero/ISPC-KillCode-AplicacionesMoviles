@@ -6,42 +6,87 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_order_tablet2"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Food_app"
+        android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
-
-            android:name=".EstimatedtimeActivity"
-
-
-            android:name=".OrderConfirmationActivity"
-            android:exported="false"/>
-        <activity
-            android:name=".ToConfirmOrderActivity"
-            android:exported="false"/>
-        <activity
-            android:name=".SpecialOrdersActivity"
-
-
-            android:exported="false" />
-        <activity
-            android:name=".waiterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MenuActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Design.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".auth.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CrudProducts"
+            android:exported="false" />
+        <activity
+            android:name=".NewPassword"
+            android:exported="false" />
+        <activity
+            android:name=".passwordResetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".auth.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuSelectionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ClientActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PaymentMethodActivity"
+            android:exported="false" />
+        <activity
+            android:name=".menu.MenuScroll"
+            android:exported="false" />
+        <activity
+            android:name=".menu.EstimatedtimeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".menu.OrderConfirmationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ToConfirmOrderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SpecialOrdersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".greetingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CommentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".waiterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".menu.MenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConfigurarMesaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConfigurarCategoriaActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

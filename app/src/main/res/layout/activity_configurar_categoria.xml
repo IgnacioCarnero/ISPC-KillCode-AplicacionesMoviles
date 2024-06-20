@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ConfigurarCategoriaActivity">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:text="@string/new_category"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/nombreCategoriaEditText"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_margin="32dp"
+        android:padding="22dp"
+        android:autofillHints=""
+        android:background="@color/cardview_dark_background"
+        android:hint="@string/name_category"
+        android:inputType="text"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        tools:ignore="VisualLintTextFieldSize" />
+
+    <Button
+        android:id="@+id/agregarBtn"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="480dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/roundedstyle"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:text="@string/btn_save"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nombreCategoriaEditText" />
+
+
+    <Button
+        android:id="@+id/actualizarBtn"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="480dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/roundedstyle"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:text="@string/btn_update"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/agregarBtn" />
+
+    <Button
+        android:id="@+id/eliminarBtn"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="480dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/roundedstyle"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:text="@string/btn_delete"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/actualizarBtn" />
+
+    <TextView
+        android:id="@+id/products"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:fontFamily="@font/roboto"
+        android:gravity="center"
+        android:text="@string/check_categorias"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eliminarBtn" />
+
+    <Spinner
+        android:id="@+id/categoriaSpinner"
+        android:layout_width="412dp"
+        android:layout_height="58dp"
+        android:layout_margin="32dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="@color/cardview_dark_background"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/products"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
